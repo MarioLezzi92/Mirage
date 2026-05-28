@@ -26,23 +26,25 @@ ir = IdentityResolver()
 def collect_target_information(target: TargetInput):
     try:
         # ========================================================
-        # 🛑 MOCK ATTIVO: COMMENTIAMO IL CRAWLER LIVE PER I TEST
+        # 🟢 OPZIONE 1: CRAWLER LIVE (Scommenta per usare internet)
         # ========================================================
-        # raw_data = pb.collect_raw(target)
-        # raw_filename = jw.save(target.full_name, raw_data)
-        
-        # Forziamo il caricamento dal file locale congelato
-        raw_filename = "mario-lezzi-raw-1.json"
-        print(f"🛠️ MODALITÀ TEST: Caricamento dati locali da {raw_filename}...")
-        
-        file_path = Path(r"C:\Users\mario\OneDrive\Desktop\SocialEng\target_information_collector\data\raw") / raw_filename
+        print("Avvio raccolta dati dal vivo...")
+        raw_data = pb.collect_raw(target)
+        raw_filename = jw.save(target.full_name, raw_data)
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            saved_raw_data = json.load(f)
+        # ========================================================
+        # 🛑 OPZIONE 2: MOCK ATTIVO (Scommenta per test offline)
+        # ========================================================
+        #raw_filename = "mario-lezzi-raw-1.json"
+        #print(f"🛠️ MODALITÀ TEST: Caricamento dati locali da {raw_filename}...")
+        #file_path = Path(r"C:\Users\mario\OneDrive\Desktop\SocialEng\target_information_collector\data\raw") / raw_filename
+        #with open(file_path, "r", encoding="utf-8") as f:
+        #    raw_data = json.load(f)
         # ========================================================
 
-        raw_candidates_list = saved_raw_data.get("candidates", [])
-        raw_evidence_list = saved_raw_data.get("evidence", [])
+        # Estrazione unificata valida per entrambe le opzioni
+        raw_candidates_list = raw_data.get("candidates", [])
+        raw_evidence_list = raw_data.get("evidence", [])
         
         # ==========================================
         # FASE 3: RISOLUZIONE GENERICA & STRUTTURAZIONE
@@ -50,7 +52,6 @@ def collect_target_information(target: TargetInput):
         evidence_objects = [Evidence(**ev) for ev in raw_evidence_list]
         profiles = [PublicProfile(**c) for c in raw_candidates_list]
         
-        # Il resolver screma i dati grezzi applicando l'algoritmo di esclusione delle omonimie
         resolved = ir.resolve(
             target=target,
             candidates=[],

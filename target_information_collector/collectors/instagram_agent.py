@@ -83,33 +83,40 @@ class InstagramAgent(BaseAgent):
         headers = {"Content-Type": "application/json"}
 
         try:
-            
             print(f"\n[DEBUG] Lancio Apify per {self.PLATFORM}!")
             print(f"[DEBUG] URL: {sync_url}")
             print(f"[DEBUG] Payload: {payload}")
             
             response = requests.post(sync_url, json=payload, headers=headers, timeout=60)
-            if response.status_code == 200:
+            
+            # FIX: Apify restituisce 201 Created o 200 OK
+            if response.status_code in (200, 201):
                 results = response.json()
                 
-                print(f"[DEBUG] Oggetti trovati: {len(results)}\n")
+                print(f"[DEBUG] Oggetti trovati su Instagram: {len(results)}\n")
                 
                 for item in results:
                     biography = item.get("biography") or item.get("biographyText") or ""
+                    full_name = item.get("fullName") or ""
                     username = item.get("username")
                     profile_url = f"https://instagram.com/{username}" if username else item.get("url")
                     
-                    if biography.strip():
+                    combined_text = f"{full_name} {biography}".strip()
+                    
+                    if combined_text:
                         store.add_evidence(
                             source=self.SOURCE,
                             evidence_type=EvidenceType.PROFILE,
-                            value=biography,
+                            value=combined_text,
                             url=profile_url,
                             platform=self.PLATFORM,
                             username=username,
                             confidence=0.90,
                             raw_data=item
                         )
+            else:
+                print(f"[ERROR] Errore API Apify Instagram: {response.status_code} - {response.text}")
+                
         except Exception as e:
             store.add_evidence(
                 source=self.SOURCE,

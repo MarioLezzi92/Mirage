@@ -44,12 +44,12 @@
     }
   ],
   "tech_stack": [
-    "Machine Learning",
     "Jupyter Notebook",
-    "Cyber Security",
-    "JavaScript",
     "penetration-testing-ethical-hacking-vulnhub",
-    "HTML",
-    "Penetration Testing"
+    "JavaScript",
+    "Penetration Testing",
+    "Machine Learning",
+    "Cyber Security",
+    "HTML"
   ]
 }

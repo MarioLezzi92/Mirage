@@ -75,6 +75,7 @@ class FacebookAgent(BaseAgent):
         urls_to_scrape = []
         for candidate in store.candidates:
             if candidate.platform == self.PLATFORM and candidate.url:
+                # Questo actor vuole l'URL intero, non lo username
                 urls_to_scrape.append(candidate.url)
 
         urls_to_scrape = list(set(urls_to_scrape))
@@ -82,45 +83,71 @@ class FacebookAgent(BaseAgent):
             return
 
         sync_url = f"https://api.apify.com/v2/acts/{settings.apify_facebook_profile_actor_id}/run-sync-get-dataset-items?token={settings.apify_token}"
-        payload = {"urls": urls_to_scrape}
         headers = {"Content-Type": "application/json"}
 
-        try:
-            print(f"\n[DEBUG] Lancio Apify per {self.PLATFORM}!")
-            print(f"[DEBUG] URL: {sync_url}")
-            print(f"[DEBUG] Payload: {payload}")
+        # Invia una richiesta per ogni URL trovato
+        for url in urls_to_scrape:
+            # Il payload esatto richiesto dal nuovo actor "cleansyntax"
+            payload = {
+                "endpoint": "details_by_url",
+                "max_posts": 0,
+                "urls_text": url
+            }
             
-            response = requests.post(sync_url, json=payload, headers=headers, timeout=60)
-            if response.status_code == 200:
-                results = response.json()
+            try:
+                print(f"\n[DEBUG] Lancio Apify per {self.PLATFORM} - URL: {url}!")
                 
-                print(f"[DEBUG] Oggetti trovati: {len(results)}\n")
-                
-                for item in results:
-                    about = item.get("about") or item.get("biography") or ""
-                    posts = " ".join([p.get("text", "") for p in item.get("posts", []) if isinstance(p, dict)])
-                    combined_text = f"{about} {posts}"
-                    profile_url = item.get("url")
-                    username = item.get("username") or (store.extract_username(profile_url) if profile_url else None)
+                response = requests.post(sync_url, json=payload, headers=headers, timeout=120)
+                if response.status_code in (200, 201):
+                    results = response.json()
+                    
+                    print(f"[DEBUG] Oggetti trovati per {url}: {len(results)}\n")
+                    
+                    for item in results:
+                        profile = item.get("profile") or {}
+                        if not profile:
+                            continue
+                            
+                        # Peschiamo i dati navigando la nuova struttura JSON
+                        about = profile.get("about") or {}
+                        work = about.get("work") or ""
+                        college = about.get("college") or ""
+                        school = about.get("secondary_school") or ""
+                        intro = profile.get("intro") or ""
+                        city = profile.get("current_city") or ""
+                        hometown = profile.get("hometown") or ""
+                        
+                        # Fondiamo tutto il testo utile per lo scoring
+                        combined_text = f"{intro} {work} {college} {school} {city} {hometown}"
+                        
+                        profile_url = profile.get("url")
+                        found_username = store.extract_username(profile_url) if profile_url else None
 
-                    if combined_text.strip():
-                        store.add_evidence(
-                            source=self.SOURCE,
-                            evidence_type=EvidenceType.PROFILE,
-                            value=combined_text,
-                            url=profile_url,
-                            platform=self.PLATFORM,
-                            username=username,
-                            confidence=0.90,
-                            raw_data=item
-                        )
-        except Exception as e:
-            store.add_evidence(
-                source=self.SOURCE,
-                evidence_type=EvidenceType.ERROR,
-                value=f"Errore durante lo scraping attivo di Facebook: {str(e)}",
-                confidence=0.0
-            )
+                        if combined_text.strip():
+                            store.add_evidence(
+                                source=self.SOURCE,
+                                evidence_type=EvidenceType.PROFILE,
+                                value=combined_text,
+                                url=profile_url,
+                                platform=self.PLATFORM,
+                                username=found_username,
+                                confidence=0.90,
+                                raw_data=item
+                            )
+                else:
+                    store.add_evidence(
+                        source=self.SOURCE,
+                        evidence_type=EvidenceType.ERROR,
+                        value=f"Errore API Apify per {url}: {response.status_code} - {response.text}",
+                        confidence=0.0
+                    )
+            except Exception as e:
+                store.add_evidence(
+                    source=self.SOURCE,
+                    evidence_type=EvidenceType.ERROR,
+                    value=f"Errore durante lo scraping attivo di Facebook per {url}: {str(e)}",
+                    confidence=0.0
+                )
 
     def _extract_facebook_context(self, store: EvidenceStore) -> None:
         # Estrazione iniziale dai frammenti web/candidati scoperti
@@ -130,7 +157,10 @@ class FacebookAgent(BaseAgent):
             raw_data = candidate.raw_data or {}
             if "source_evidence" in raw_data:
                 source_ev = raw_data["source_evidence"]
-                text = (source_ev.get("title", "") + " " + source_ev.get("description", "")).lower()
+                title = source_ev.get("title") or ""
+                description = source_ev.get("description") or ""
+                text = f"{title} {description}".lower()
+                
                 self._extract_locations(store, candidate, text, candidate.confidence)
                 self._extract_roles(store, candidate, text, candidate.confidence)
         

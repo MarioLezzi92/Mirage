@@ -79,7 +79,7 @@ class WebAgent(BaseAgent):
                 url,
                 params={"token": settings.apify_token, "format": "json", "clean": "true"},
                 json=payload,
-                timeout=60,
+                timeout=180,
             )
 
             if response.status_code >= 400:
@@ -262,6 +262,12 @@ class WebAgent(BaseAgent):
             queries.append(f'"{name}" "{term}" site:facebook.com')
             queries.append(f'"{name}" "{term}" Instagram')
             queries.append(f'"{name}" "{term}" site:instagram.com')
+        
+        for candidate in store.candidates:
+            if candidate.username:
+                # Usa gli username scoperti altrove (es. GitHub) per cercare su FB e IG
+                queries.append(f'"{candidate.username}" site:facebook.com')
+                queries.append(f'"{candidate.username}" site:instagram.com')
 
         return store.unique(queries)[:40]
 

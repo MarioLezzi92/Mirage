@@ -105,7 +105,7 @@ class LinkedInAgent(BaseAgent):
             return
 
         sync_url = f"https://api.apify.com/v2/acts/{settings.apify_linkedin_profile_actor_id}/run-sync-get-dataset-items?token={settings.apify_token}"
-        payload = {"urls": urls_to_scrape}
+        payload = {"profileUrls": urls_to_scrape}
         headers = {"Content-Type": "application/json"}
 
         try:
@@ -138,6 +138,14 @@ class LinkedInAgent(BaseAgent):
                             confidence=0.95,
                             raw_data=item
                         )
+            else:
+                store.add_evidence(
+                    source=self.SOURCE,
+                    evidence_type=EvidenceType.ERROR,
+                    value=f"Errore API Apify: {response.status_code} - {response.text}",
+                    confidence=0.0
+                )
+                
         except Exception as e:
             store.add_evidence(
                 source=self.SOURCE,

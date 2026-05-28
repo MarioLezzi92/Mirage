@@ -1,6 +1,79 @@
 {
   "candidates": [
     {
+      "platform": "facebook",
+      "url": "https://www.facebook.com/mario.lezzi.9",
+      "username": "mario.lezzi.9",
+      "display_name": "Mario Lezzi",
+      "confidence": 0.48,
+      "matched_context": [
+        "Mario Lezzi"
+      ],
+      "raw_data": {
+        "query": "\"Mario Lezzi\" Facebook",
+        "phase": "social_contextual_web_search",
+        "result_class": "social_profile_candidate",
+        "title": "Mario Lezzi",
+        "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
+        "source_evidence": {
+          "source": "facebook",
+          "evidence_type": "profile",
+          "value": "Mario lezzi     ",
+          "url": "https://www.facebook.com/mario.lezzi.9",
+          "platform": "facebook",
+          "username": "mario.lezzi.9",
+          "title": null,
+          "description": null,
+          "confidence": 0.9,
+          "raw_data": {
+            "profile": {
+              "name": "Mario Lezzi",
+              "profile_id": "100001145140673",
+              "url": "https://www.facebook.com/mario.lezzi.9",
+              "image": "https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-1/241837159_4312029875511808_411755694697934001_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=1d2534&_nc_ohc=eRjtu-46WI8Q7kNvwE21eal&_nc_oc=Adr29ws4Yf5PVqbrGWnb4xwI72OyS5-jTJ-iYyRqZcCa0jWzOb5gVLBix5dcEL8d42L7wkMcwvH4FM3VYEd_2_ij&_nc_zt=24&_nc_ht=scontent.fhan3-3.fna&_nc_gid=h93Sj9EUZ8mHvjbdLvKmOA&_nc_ss=7f289&oh=00_Af6lS6vDqPxMaVm4MCrZHc1Oh7dmd88HZaXrrJHtRQx9kg&oe=6A1E2964",
+              "intro": "Mario lezzi",
+              "cover_image": "https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-6/514089589_24467363262869721_5238559056065849019_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=pjCfyBWyP90Q7kNvwFoHPnn&_nc_oc=AdpaIFMy469MQgCDYD4lq5CPSHXiFjqxCxi5vK58JKX8RwJ4sVvNG7JxwYZHQMXwKM2BbAQ5GVCwCM1p0sz45umL&_nc_zt=23&_nc_ht=scontent.fhan3-4.fna&_nc_gid=h93Sj9EUZ8mHvjbdLvKmOA&_nc_ss=7f289&oh=00_Af4MbFLqxgvKz6kTtY-4ZskHqfgJPfMsIeCD0k1KfIlUaA&oe=6A1E1258",
+              "gender": "MALE",
+              "about": {},
+              "about_public": [
+                {
+                  "icon": {
+                    "height": 40,
+                    "scale": 2,
+                    "uri": "https://static.xx.fbcdn.net/rsrc.php/yz/r/77rw1oPmYdg.webp",
+                    "width": 40
+                  },
+                  "text": "Profile · Digital creator",
+                  "external_url": null
+                },
+                {
+                  "icon": {
+                    "height": 40,
+                    "scale": 2,
+                    "uri": "https://static.xx.fbcdn.net/rsrc.php/yq/r/y0mkugUWQIp.webp",
+                    "width": 40
+                  },
+                  "text": "Joined on May 2010",
+                  "external_url": null
+                }
+              ],
+              "verified": false,
+              "delegate_page_id": null,
+              "reels_profile_id": "YXBwX2NvbGxlY3Rpb246cGZiaWQwMjZWSEJEeFRBUDZKeUFmMWM2TGhvTktKcURyTnNyRGNDQUpBWXA0c1lWSEZyZG1pcUQzUHVvTmFIcnNqMmtDcVlqb3BmVUJvUlJrZjl4YU44Y29zUEFyeFoxR01GcXV5MmJUM3dZbA==",
+              "influencer_category": "Profile · Digital creator",
+              "education": null,
+              "current_city": null,
+              "hometown": null,
+              "relationship": null,
+              "member_since": "Joined on May 2010",
+              "reels_page_id": "YXBwX2NvbGxlY3Rpb246cGZiaWQwMjZWSEJEeFRBUDZKeUFmMWM2TGhvTktKcURyTnNyRGNDQUpBWXA0c1lWSEZyZG1pcUQzUHVvTmFIcnNqMmtDcVlqb3BmVUJvUlJrZjl4YU44Y29zUEFyeFoxR01GcXV5MmJUM3dZbA=="
+            },
+            "url (search term)": "https://www.facebook.com/mario.lezzi.9"
+          }
+        }
+      }
+    },
+    {
       "platform": "linkedin",
       "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
       "username": "mario-lezzi-3b69a2262",
@@ -18,7 +91,7 @@
         "Cyber Security"
       ],
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Università degli Studi di Salerno\" Facebook",
+        "query": "\"Mario Lezzi\" \"Studente magistrale di Cyber Security\" Facebook",
         "phase": "social_contextual_web_search",
         "result_class": "professional_profile",
         "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
@@ -26,118 +99,22 @@
         "source_evidence": {
           "source": "web",
           "evidence_type": "profile",
-          "value": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
+          "value": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
           "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
           "platform": "linkedin",
           "username": "mario-lezzi-3b69a2262",
-          "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-          "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-          "confidence": 0.79,
+          "title": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
+          "description": "Laureato in informatica, studente magistrale di Cyber Security · Laureato in informatica. · Formazione: Università degli Studi di Salerno · Località: ...",
+          "confidence": 1.0,
           "raw_data": {
-            "query": "\"Mario Lezzi\" site:linkedin.com/in",
+            "query": "\"Mario Lezzi\" \"unisa.it\"",
             "phase": "base_web_search",
             "result_class": "professional_profile",
             "platform": "linkedin",
             "username": "mario-lezzi-3b69a2262",
-            "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-            "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
+            "title": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
+            "description": "Laureato in informatica, studente magistrale di Cyber Security · Laureato in informatica. · Formazione: Università degli Studi di Salerno · Località: ...",
             "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-          }
-        }
-      }
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
-      "username": "mario-lezzi-8590393b5",
-      "display_name": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "confidence": 0.67,
-      "matched_context": [
-        "Mario Lezzi",
-        "Crotone"
-      ],
-      "raw_data": {
-        "query": "\"Mario Lezzi\" LinkedIn",
-        "phase": "base_web_search",
-        "result_class": "professional_profile",
-        "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
-        "source_evidence": {
-          "source": "web",
-          "evidence_type": "profile",
-          "value": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-          "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
-          "platform": "linkedin",
-          "username": "mario-lezzi-8590393b5",
-          "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-          "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
-          "confidence": 0.55,
-          "raw_data": {
-            "query": "\"Mario Lezzi\" site:linkedin.com/in",
-            "phase": "base_web_search",
-            "result_class": "professional_profile",
-            "platform": "linkedin",
-            "username": "mario-lezzi-8590393b5",
-            "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-            "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
-            "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
-          }
-        }
-      }
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
-      "username": "carmine-calabrese-8929bb189",
-      "display_name": "Carmine Calabrese - Università degli Studi di Salerno",
-      "confidence": 0.51,
-      "matched_context": [
-        "Salerno",
-        "Università degli Studi di Salerno",
-        "Informatica"
-      ],
-      "raw_data": {
-        "query": "\"Mario Lezzi\" \"Università degli Studi di Salerno\"",
-        "phase": "base_web_search",
-        "result_class": "professional_profile",
-        "title": "Carmine Calabrese - Università degli Studi di Salerno",
-        "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ..."
-      }
-    },
-    {
-      "platform": "facebook",
-      "url": "https://www.facebook.com/mario.lezzi.9",
-      "username": "mario.lezzi.9",
-      "display_name": "Mario Lezzi",
-      "confidence": 0.48,
-      "matched_context": [
-        "Mario Lezzi"
-      ],
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:facebook.com",
-        "phase": "social_contextual_web_search",
-        "result_class": "social_profile_candidate",
-        "title": "Mario Lezzi",
-        "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
-        "source_evidence": {
-          "source": "web",
-          "evidence_type": "public_link",
-          "value": "Mario Lezzi",
-          "url": "https://www.facebook.com/mario.lezzi.9",
-          "platform": "facebook",
-          "username": "mario.lezzi.9",
-          "title": "Mario Lezzi",
-          "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
-          "confidence": 0.48,
-          "raw_data": {
-            "query": "\"Mario Lezzi\"",
-            "phase": "base_web_search",
-            "result_class": "social_profile_candidate",
-            "platform": "facebook",
-            "username": "mario.lezzi.9",
-            "title": "Mario Lezzi",
-            "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
-            "url": "https://www.facebook.com/mario.lezzi.9"
           }
         }
       }
@@ -157,6 +134,64 @@
         "result_class": "social_profile_candidate",
         "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
         "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private."
+      }
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
+      "username": "carmine-calabrese-8929bb189",
+      "display_name": "Carmine Calabrese - Università degli Studi di Salerno",
+      "confidence": 0.51,
+      "matched_context": [
+        "Salerno",
+        "Università degli Studi di Salerno",
+        "Informatica"
+      ],
+      "raw_data": {
+        "query": "\"Mario Lezzi\" \"Università degli Studi di Salerno\" LinkedIn",
+        "phase": "base_web_search",
+        "result_class": "professional_profile",
+        "title": "Carmine Calabrese - Università degli Studi di Salerno",
+        "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ..."
+      }
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
+      "username": "mario-lezzi-8590393b5",
+      "display_name": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+      "confidence": 0.67,
+      "matched_context": [
+        "Mario Lezzi",
+        "Crotone"
+      ],
+      "raw_data": {
+        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "phase": "base_web_search",
+        "result_class": "professional_profile",
+        "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+        "source_evidence": {
+          "source": "web",
+          "evidence_type": "profile",
+          "value": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+          "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
+          "platform": "linkedin",
+          "username": "mario-lezzi-8590393b5",
+          "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+          "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
+          "confidence": 0.55,
+          "raw_data": {
+            "query": "\"Mario Lezzi\" LinkedIn",
+            "phase": "base_web_search",
+            "result_class": "professional_profile",
+            "platform": "linkedin",
+            "username": "mario-lezzi-8590393b5",
+            "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+            "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
+            "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
+          }
+        }
       }
     },
     {
@@ -244,6 +279,23 @@
       }
     },
     {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/mariolezzi",
+      "username": "mariolezzi",
+      "display_name": "Mario Lezzi (@mariolezzi)",
+      "confidence": 0.48,
+      "matched_context": [
+        "Mario Lezzi"
+      ],
+      "raw_data": {
+        "query": "\"Mario Lezzi\" Instagram",
+        "phase": "social_contextual_web_search",
+        "result_class": "social_profile_candidate",
+        "title": "Mario Lezzi (@mariolezzi)",
+        "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message."
+      }
+    },
+    {
       "platform": "facebook",
       "url": "https://www.facebook.com/mario.lezzi.9/photos",
       "username": "mario.lezzi.9",
@@ -279,23 +331,6 @@
             "url": "https://www.facebook.com/mario.lezzi.9/photos"
           }
         }
-      }
-    },
-    {
-      "platform": "instagram",
-      "url": "https://www.instagram.com/mariolezzi",
-      "username": "mariolezzi",
-      "display_name": "Mario Lezzi (@mariolezzi)",
-      "confidence": 0.48,
-      "matched_context": [
-        "Mario Lezzi"
-      ],
-      "raw_data": {
-        "query": "\"Mario Lezzi\" Instagram",
-        "phase": "social_contextual_web_search",
-        "result_class": "social_profile_candidate",
-        "title": "Mario Lezzi (@mariolezzi)",
-        "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message."
       }
     }
   ],
@@ -358,6 +393,27 @@
     },
     {
       "source": "web",
+      "evidence_type": "public_link",
+      "value": "Mario Lezzi",
+      "url": "https://www.facebook.com/mario.lezzi.9",
+      "platform": "facebook",
+      "username": "mario.lezzi.9",
+      "title": "Mario Lezzi",
+      "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
+      "confidence": 0.48,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "result_class": "social_profile_candidate",
+        "platform": "facebook",
+        "username": "mario.lezzi.9",
+        "title": "Mario Lezzi",
+        "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
+        "url": "https://www.facebook.com/mario.lezzi.9"
+      }
+    },
+    {
+      "source": "web",
       "evidence_type": "profile",
       "value": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
       "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
@@ -367,7 +423,7 @@
       "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
       "confidence": 0.79,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "platform": "linkedin",
@@ -388,7 +444,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -404,7 +460,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -420,7 +476,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -436,7 +492,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -452,7 +508,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -468,7 +524,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -484,7 +540,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -500,7 +556,7 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -516,46 +572,72 @@
       "description": null,
       "confidence": 0.8400000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
     },
     {
       "source": "web",
-      "evidence_type": "profile",
-      "value": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
-      "platform": "linkedin",
-      "username": "mario-lezzi-8590393b5",
-      "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
-      "confidence": 0.55,
+      "evidence_type": "public_link",
+      "value": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
+      "url": "https://www.instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
+      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
+      "confidence": 0.48,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
-        "result_class": "professional_profile",
-        "platform": "linkedin",
-        "username": "mario-lezzi-8590393b5",
-        "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
-        "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
+        "result_class": "social_profile_candidate",
+        "platform": "instagram",
+        "username": "mario_lezzi_",
+        "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
+        "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
+        "url": "https://www.instagram.com/mario_lezzi_"
       }
     },
     {
       "source": "web",
-      "evidence_type": "location",
-      "value": "Crotone",
-      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
-      "platform": "linkedin",
-      "username": "mario-lezzi-8590393b5",
-      "title": null,
-      "description": null,
-      "confidence": 0.6000000000000001,
+      "evidence_type": "web_mention",
+      "value": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
+      "url": "https://www.xing.com/profile/Mario_Lezzi",
+      "platform": "web",
+      "username": "profile",
+      "title": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
+      "description": "Mario Lezzi, Essen Professional experience, contact details, portfolio, etc.: Find out more or get in touch with Mario Lezzi on XING.",
+      "confidence": 0.4,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\"",
         "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
+        "result_class": "web_mention",
+        "platform": "web",
+        "username": "profile",
+        "title": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
+        "description": "Mario Lezzi, Essen Professional experience, contact details, portfolio, etc.: Find out more or get in touch with Mario Lezzi on XING.",
+        "url": "https://www.xing.com/profile/Mario_Lezzi"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "web_mention",
+      "value": "Mario Lezzi",
+      "url": "https://www.youtube.com/channel/UC460V6vDuZbpERSMx9bhpfQ",
+      "platform": "web",
+      "username": "channel",
+      "title": "Mario Lezzi",
+      "description": "Mario Lezzi. Home. Shorts. Library. Mario Lezzi. @mariolezzi9677. 4 subscribers. More about this channel ...more. More about this channel ...more ...more.",
+      "confidence": 0.4,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "result_class": "web_mention",
+        "platform": "web",
+        "username": "channel",
+        "title": "Mario Lezzi",
+        "description": "Mario Lezzi. Home. Shorts. Library. Mario Lezzi. @mariolezzi9677. 4 subscribers. More about this channel ...more. More about this channel ...more ...more.",
+        "url": "https://www.youtube.com/channel/UC460V6vDuZbpERSMx9bhpfQ"
       }
     },
     {
@@ -569,7 +651,7 @@
       "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
       "confidence": 0.51,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" \"Salerno\" LinkedIn",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "platform": "linkedin",
@@ -590,7 +672,7 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" \"Salerno\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
       }
@@ -606,7 +688,7 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" \"Salerno\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
       }
@@ -622,9 +704,46 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" \"Salerno\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "profile",
+      "value": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
+      "platform": "linkedin",
+      "username": "mario-lezzi-8590393b5",
+      "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
+      "confidence": 0.55,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" LinkedIn",
+        "phase": "base_web_search",
+        "result_class": "professional_profile",
+        "platform": "linkedin",
+        "username": "mario-lezzi-8590393b5",
+        "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
+        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
+        "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "location",
+      "value": "Crotone",
+      "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5",
+      "platform": "linkedin",
+      "username": "mario-lezzi-8590393b5",
+      "title": null,
+      "description": null,
+      "confidence": 0.6000000000000001,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" LinkedIn",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
       }
     },
     {
@@ -709,117 +828,17 @@
       "platform": "web",
       "username": "wp-content",
       "title": "Partito socialista italiano - PSI - Direzione nazionale",
-      "description": "8 giu 2020 — ... Salerno, Centola, San Giovanni a Piro, Pisciotta, Serrara Fontana ... Mario Lezzi in merito ad una ispezione svolta presso l'Opera del ...",
+      "description": "8 giu 2020 — ... informatica in. Italia. Corrispondenza con Remo Arduini e Giulio ... Mario Lezzi in merito ad una ispezione svolta presso l'Opera del ...",
       "confidence": 0.52,
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Salerno\"",
+        "query": "\"Mario Lezzi\" \"Informatica\"",
         "phase": "base_web_search",
         "result_class": "web_mention",
         "platform": "web",
         "username": "wp-content",
         "title": "Partito socialista italiano - PSI - Direzione nazionale",
-        "description": "8 giu 2020 — ... Salerno, Centola, San Giovanni a Piro, Pisciotta, Serrara Fontana ... Mario Lezzi in merito ad una ispezione svolta presso l'Opera del ...",
+        "description": "8 giu 2020 — ... informatica in. Italia. Corrispondenza con Remo Arduini e Giulio ... Mario Lezzi in merito ad una ispezione svolta presso l'Opera del ...",
         "url": "https://www.fondazionestudistoriciturati.it/wp-content/uploads/2020/06/Inventario-De-Martino-08.06.2020.pdf"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "location",
-      "value": "Salerno",
-      "url": "https://www.fondazionestudistoriciturati.it/wp-content/uploads/2020/06/Inventario-De-Martino-08.06.2020.pdf",
-      "platform": "web",
-      "username": "wp-content",
-      "title": null,
-      "description": null,
-      "confidence": 0.5700000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" \"Salerno\"",
-        "phase": "base_web_search",
-        "source_url": "https://www.fondazionestudistoriciturati.it/wp-content/uploads/2020/06/Inventario-De-Martino-08.06.2020.pdf"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "public_link",
-      "value": "Mario Lezzi",
-      "url": "https://www.facebook.com/mario.lezzi.9",
-      "platform": "facebook",
-      "username": "mario.lezzi.9",
-      "title": "Mario Lezzi",
-      "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
-      "confidence": 0.48,
-      "raw_data": {
-        "query": "\"Mario Lezzi\"",
-        "phase": "base_web_search",
-        "result_class": "social_profile_candidate",
-        "platform": "facebook",
-        "username": "mario.lezzi.9",
-        "title": "Mario Lezzi",
-        "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
-        "url": "https://www.facebook.com/mario.lezzi.9"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "public_link",
-      "value": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
-      "url": "https://www.instagram.com/mario_lezzi_",
-      "platform": "instagram",
-      "username": "mario_lezzi_",
-      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
-      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
-      "confidence": 0.48,
-      "raw_data": {
-        "query": "\"Mario Lezzi\"",
-        "phase": "base_web_search",
-        "result_class": "social_profile_candidate",
-        "platform": "instagram",
-        "username": "mario_lezzi_",
-        "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
-        "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
-        "url": "https://www.instagram.com/mario_lezzi_"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "web_mention",
-      "value": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
-      "url": "https://www.xing.com/profile/Mario_Lezzi",
-      "platform": "web",
-      "username": "profile",
-      "title": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
-      "description": "Mario Lezzi, Essen Professional experience, contact details, portfolio, etc.: Find out more or get in touch with Mario Lezzi on XING.",
-      "confidence": 0.4,
-      "raw_data": {
-        "query": "\"Mario Lezzi\"",
-        "phase": "base_web_search",
-        "result_class": "web_mention",
-        "platform": "web",
-        "username": "profile",
-        "title": "Mario Lezzi - Kfm. Leiter - Enviro GmbH",
-        "description": "Mario Lezzi, Essen Professional experience, contact details, portfolio, etc.: Find out more or get in touch with Mario Lezzi on XING.",
-        "url": "https://www.xing.com/profile/Mario_Lezzi"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "web_mention",
-      "value": "Mario Lezzi",
-      "url": "https://www.youtube.com/channel/UC460V6vDuZbpERSMx9bhpfQ",
-      "platform": "web",
-      "username": "channel",
-      "title": "Mario Lezzi",
-      "description": "Mario Lezzi. Home. Shorts. Library. Mario Lezzi. @mariolezzi9677. 4 subscribers. More about this channel ...more. More about this channel ...more ...more.",
-      "confidence": 0.4,
-      "raw_data": {
-        "query": "\"Mario Lezzi\"",
-        "phase": "base_web_search",
-        "result_class": "web_mention",
-        "platform": "web",
-        "username": "channel",
-        "title": "Mario Lezzi",
-        "description": "Mario Lezzi. Home. Shorts. Library. Mario Lezzi. @mariolezzi9677. 4 subscribers. More about this channel ...more. More about this channel ...more ...more.",
-        "url": "https://www.youtube.com/channel/UC460V6vDuZbpERSMx9bhpfQ"
       }
     },
     {
@@ -836,6 +855,80 @@
         "query": "\"Mario Lezzi\" \"Informatica\"",
         "phase": "base_web_search",
         "source_url": "https://www.fondazionestudistoriciturati.it/wp-content/uploads/2020/06/Inventario-De-Martino-08.06.2020.pdf"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "profile",
+      "value": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
+      "description": "Laureato in informatica, studente magistrale di Cyber Security · Laureato in informatica. · Formazione: Università degli Studi di Salerno · Località: ...",
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" \"unisa.it\"",
+        "phase": "base_web_search",
+        "result_class": "professional_profile",
+        "platform": "linkedin",
+        "username": "mario-lezzi-3b69a2262",
+        "title": "Mario Lezzi - Laureato in informatica, studente magistrale di ...",
+        "description": "Laureato in informatica, studente magistrale di Cyber Security · Laureato in informatica. · Formazione: Università degli Studi di Salerno · Località: ...",
+        "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "web_mention",
+      "value": "Mario TESTA | - ORGANIZZAZIONE AZIENDALE",
+      "url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517",
+      "platform": "institutional",
+      "username": "020861",
+      "title": "Mario TESTA | - ORGANIZZAZIONE AZIENDALE",
+      "description": "language it it unisa.itUniversità degli Studi di Salerno · Sitemap; language it it. Logo UNISA Università degli Studi di Salerno. Toggle navigation. Menu. Mario ...",
+      "confidence": 0.42,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" \"unisa.it\"",
+        "phase": "base_web_search",
+        "result_class": "institutional_reference",
+        "platform": "institutional",
+        "username": "020861",
+        "title": "Mario TESTA | - ORGANIZZAZIONE AZIENDALE",
+        "description": "language it it unisa.itUniversità degli Studi di Salerno · Sitemap; language it it. Logo UNISA Università degli Studi di Salerno. Toggle navigation. Menu. Mario ...",
+        "url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "location",
+      "value": "Salerno",
+      "url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517",
+      "platform": "institutional",
+      "username": "020861",
+      "title": null,
+      "description": null,
+      "confidence": 0.47,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" \"unisa.it\"",
+        "phase": "base_web_search",
+        "source_url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "education",
+      "value": "Università degli Studi di Salerno",
+      "url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517",
+      "platform": "institutional",
+      "username": "020861",
+      "title": null,
+      "description": null,
+      "confidence": 0.47,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" \"unisa.it\"",
+        "phase": "base_web_search",
+        "source_url": "https://docenti.unisa.it/020861/didattica?anno=2025&id=523517"
       }
     },
     {
@@ -863,7 +956,7 @@
       "source": "web",
       "evidence_type": "web_mention",
       "value": "Antonio Lezzi Storia della famiglia e documenti storici",
-      "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOort4c7sDsbBpEoC0oKUYlZ23xCNw7YpOQLIpFk_XTBAkckNxRY8",
+      "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOop0xSa6s75yZppMLibGq89OnZtrE82-245ntBpbOJhc16Yg5rWs",
       "platform": "web",
       "username": "names",
       "title": "Antonio Lezzi Storia della famiglia e documenti storici",
@@ -877,7 +970,7 @@
         "username": "names",
         "title": "Antonio Lezzi Storia della famiglia e documenti storici",
         "description": "Antonio sposò Domenica Greco. Domenica nacque il giorno giorno mese 1888, a luogo di nascita. Ebbero 2 figli maschi: Mario Lezzi e un altro figlio.",
-        "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOort4c7sDsbBpEoC0oKUYlZ23xCNw7YpOQLIpFk_XTBAkckNxRY8"
+        "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOop0xSa6s75yZppMLibGq89OnZtrE82-245ntBpbOJhc16Yg5rWs"
       }
     },
     {
@@ -1891,6 +1984,18 @@
     },
     {
       "source": "linkedin",
+      "evidence_type": "error",
+      "value": "Errore API Apify: 201 - [{\n  \"error\": \"❌ Users on the free Apify plan can run the actor through the UI and not via other methods.\"\n}]",
+      "url": null,
+      "platform": null,
+      "username": null,
+      "title": null,
+      "description": null,
+      "confidence": 0.0,
+      "raw_data": {}
+    },
+    {
+      "source": "linkedin",
       "evidence_type": "identity",
       "value": "Mario Lezzi",
       "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
@@ -1941,6 +2046,48 @@
       "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
       "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
       "confidence": 0.79,
+      "raw_data": {
+        "derived_from": "linkedin_snippet"
+      }
+    },
+    {
+      "source": "linkedin",
+      "evidence_type": "location",
+      "value": "Salerno",
+      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
+      "platform": "linkedin",
+      "username": "carmine-calabrese-8929bb189",
+      "title": "Carmine Calabrese - Università degli Studi di Salerno",
+      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
+      "confidence": 0.6,
+      "raw_data": {
+        "derived_from": "linkedin_snippet"
+      }
+    },
+    {
+      "source": "linkedin",
+      "evidence_type": "organization",
+      "value": "Università degli Studi di Salerno",
+      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
+      "platform": "linkedin",
+      "username": "carmine-calabrese-8929bb189",
+      "title": "Carmine Calabrese - Università degli Studi di Salerno",
+      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
+      "confidence": 0.6,
+      "raw_data": {
+        "derived_from": "linkedin_snippet"
+      }
+    },
+    {
+      "source": "linkedin",
+      "evidence_type": "role",
+      "value": "Informatica",
+      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
+      "platform": "linkedin",
+      "username": "carmine-calabrese-8929bb189",
+      "title": "Carmine Calabrese - Università degli Studi di Salerno",
+      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
+      "confidence": 0.6,
       "raw_data": {
         "derived_from": "linkedin_snippet"
       }
@@ -1953,138 +2100,10 @@
       "platform": "linkedin",
       "username": "mario-lezzi-8590393b5",
       "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
       "confidence": 0.6,
       "raw_data": {
         "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "linkedin",
-      "evidence_type": "location",
-      "value": "Salerno",
-      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
-      "platform": "linkedin",
-      "username": "carmine-calabrese-8929bb189",
-      "title": "Carmine Calabrese - Università degli Studi di Salerno",
-      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
-      "confidence": 0.6,
-      "raw_data": {
-        "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "linkedin",
-      "evidence_type": "organization",
-      "value": "Università degli Studi di Salerno",
-      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
-      "platform": "linkedin",
-      "username": "carmine-calabrese-8929bb189",
-      "title": "Carmine Calabrese - Università degli Studi di Salerno",
-      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
-      "confidence": 0.6,
-      "raw_data": {
-        "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "linkedin",
-      "evidence_type": "role",
-      "value": "Informatica",
-      "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
-      "platform": "linkedin",
-      "username": "carmine-calabrese-8929bb189",
-      "title": "Carmine Calabrese - Università degli Studi di Salerno",
-      "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
-      "confidence": 0.6,
-      "raw_data": {
-        "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "apify",
-      "evidence_type": "error",
-      "value": "HTTPSConnectionPool(host='api.apify.com', port=443): Read timed out. (read timeout=60)",
-      "url": null,
-      "platform": null,
-      "username": null,
-      "title": null,
-      "description": null,
-      "confidence": 0.0,
-      "raw_data": {
-        "collector_error": true,
-        "error": "HTTPSConnectionPool(host='api.apify.com', port=443): Read timed out. (read timeout=60)",
-        "actor_id": "apify~google-search-scraper",
-        "payload": {
-          "queries": "\"Mario Lezzi\" Facebook\n\"Mario Lezzi\" Instagram\n\"Mario Lezzi\" site:facebook.com\n\"Mario Lezzi\" site:instagram.com\n\"Mario Lezzi\" \"Salerno\" Facebook\n\"Mario Lezzi\" \"Salerno\" site:facebook.com\n\"Mario Lezzi\" \"Salerno\" Instagram\n\"Mario Lezzi\" \"Salerno\" site:instagram.com\n\"Mario Lezzi\" \"Monteforte Irpino\" Facebook\n\"Mario Lezzi\" \"Monteforte Irpino\" site:facebook.com\n\"Mario Lezzi\" \"Monteforte Irpino\" Instagram\n\"Mario Lezzi\" \"Monteforte Irpino\" site:instagram.com\n\"Mario Lezzi\" \"Campania\" Facebook\n\"Mario Lezzi\" \"Campania\" site:facebook.com\n\"Mario Lezzi\" \"Campania\" Instagram\n\"Mario Lezzi\" \"Campania\" site:instagram.com\n\"Mario Lezzi\" \"Crotone\" Facebook\n\"Mario Lezzi\" \"Crotone\" site:facebook.com\n\"Mario Lezzi\" \"Crotone\" Instagram\n\"Mario Lezzi\" \"Crotone\" site:instagram.com\n\"Mario Lezzi\" \"Avellino, Italy\" Facebook\n\"Mario Lezzi\" \"Avellino, Italy\" site:facebook.com\n\"Mario Lezzi\" \"Avellino, Italy\" Instagram\n\"Mario Lezzi\" \"Avellino, Italy\" site:instagram.com\n\"Mario Lezzi\" \"Università degli Studi di Salerno\" Facebook\n\"Mario Lezzi\" \"Università degli Studi di Salerno\" site:facebook.com\n\"Mario Lezzi\" \"Università degli Studi di Salerno\" Instagram\n\"Mario Lezzi\" \"Università degli Studi di Salerno\" site:instagram.com\n\"Mario Lezzi\" \"Laureato in Informatica\" Facebook\n\"Mario Lezzi\" \"Laureato in Informatica\" site:facebook.com\n\"Mario Lezzi\" \"Laureato in Informatica\" Instagram\n\"Mario Lezzi\" \"Laureato in Informatica\" site:instagram.com\n\"Mario Lezzi\" \"Studente magistrale di Cyber Security\" Facebook\n\"Mario Lezzi\" \"Studente magistrale di Cyber Security\" site:facebook.com\n\"Mario Lezzi\" \"Studente magistrale di Cyber Security\" Instagram\n\"Mario Lezzi\" \"Studente magistrale di Cyber Security\" site:instagram.com\n\"Mario Lezzi\" \"Informatica\" Facebook\n\"Mario Lezzi\" \"Informatica\" site:facebook.com\n\"Mario Lezzi\" \"Informatica\" Instagram\n\"Mario Lezzi\" \"Informatica\" site:instagram.com",
-          "maxPagesPerQuery": 1,
-          "resultsPerPage": 10,
-          "countryCode": "it",
-          "languageCode": "it",
-          "geminiSearch": {
-            "enableGemini": false
-          },
-          "perplexitySearch": {
-            "enablePerplexity": false
-          },
-          "chatGptSearch": {
-            "enableChatGpt": false
-          },
-          "copilotSearch": {
-            "enableCopilot": false
-          }
-        }
-      }
-    },
-    {
-      "source": "instagram",
-      "evidence_type": "identity",
-      "value": "Mario Lezzi",
-      "url": "https://www.instagram.com/mario_lezzi_",
-      "platform": "instagram",
-      "username": "mario_lezzi_",
-      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
-      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
-      "confidence": 0.6,
-      "raw_data": {
-        "derived_from": "instagram_snippet"
-      }
-    },
-    {
-      "source": "instagram",
-      "evidence_type": "social_hint",
-      "value": "possible_age:25",
-      "url": "https://www.instagram.com/mario_lezzi_",
-      "platform": "instagram",
-      "username": "mario_lezzi_",
-      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
-      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
-      "confidence": 0.55,
-      "raw_data": {
-        "hint_type": "possible_age",
-        "age": 25,
-        "derived_from": "instagram_snippet"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "public_link",
-      "value": "Mario Lezzi (@mario.lezzi.9) - Photos",
-      "url": "https://www.facebook.com/mario.lezzi.9/photos",
-      "platform": "facebook",
-      "username": "mario.lezzi.9",
-      "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
-      "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
-      "confidence": 0.48,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" Facebook",
-        "phase": "social_contextual_web_search",
-        "result_class": "social_profile_candidate",
-        "platform": "facebook",
-        "username": "mario.lezzi.9",
-        "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
-        "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
-        "url": "https://www.facebook.com/mario.lezzi.9/photos"
       }
     },
     {
@@ -2119,7 +2138,7 @@
       "description": "Concetta Salerno. Io o un nipote che va in moto anche io o sempre paura e ... Mario Lezzi and 4 others · 󰍸. 5 · 󰤦 · Felicità. 33m󰞋󱟠. 󳄫. May be an ...",
       "confidence": 0.42,
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Salerno\" site:facebook.com",
+        "query": "\"Mario Lezzi\" \"Salerno\" Facebook",
         "phase": "social_contextual_web_search",
         "result_class": "social_contextual_mention",
         "platform": "facebook",
@@ -2140,7 +2159,7 @@
       "description": null,
       "confidence": 0.47,
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Salerno\" site:facebook.com",
+        "query": "\"Mario Lezzi\" \"Salerno\" Facebook",
         "phase": "social_contextual_web_search",
         "source_url": "https://www.facebook.com/FelicitaOfficialPage/posts/-ultima-ora-spaventoso-incidente-finisce-con-la-moto-contro-un-palo-alla-guida-u/1298593464957566"
       }
@@ -2184,6 +2203,27 @@
     },
     {
       "source": "web",
+      "evidence_type": "public_link",
+      "value": "Mario Lezzi (@mario.lezzi.9) - Photos",
+      "url": "https://www.facebook.com/mario.lezzi.9/photos",
+      "platform": "facebook",
+      "username": "mario.lezzi.9",
+      "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
+      "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
+      "confidence": 0.48,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" Facebook",
+        "phase": "social_contextual_web_search",
+        "result_class": "social_profile_candidate",
+        "platform": "facebook",
+        "username": "mario.lezzi.9",
+        "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
+        "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
+        "url": "https://www.facebook.com/mario.lezzi.9/photos"
+      }
+    },
+    {
+      "source": "web",
       "evidence_type": "location",
       "value": "Campania",
       "url": "https://www.ilrievocatore.it/upload/periodico/pdf/Rievocatore12019.pdf",
@@ -2199,6 +2239,602 @@
       }
     },
     {
+      "source": "facebook",
+      "evidence_type": "profile",
+      "value": " No workplaces to show No schools/universities to show No schools/universities to show  ",
+      "url": "https://www.facebook.com/mario.lezzi.524",
+      "platform": "facebook",
+      "username": "mario.lezzi.524",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "profile": {
+          "name": "Mario Lezzi",
+          "profile_id": "100024522973897",
+          "url": "https://www.facebook.com/mario.lezzi.524",
+          "image": "https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-1/448724412_1659975804829836_2284649864306724948_n.jpg?stp=c0.0.404.404a_dst-jpg_s404x403_tt6&_nc_cat=106&ccb=1-7&_nc_sid=e99d92&_nc_ohc=RzIDVBX2r0UQ7kNvwH2PCBz&_nc_oc=AdoVN1s9eVaOWtqXvo-_2USN3lFQkMMOTbk2ks2UDxrVAGnDcnj8FcZ_1H9F7j1yh13ewzIoCym5207N5717tU_d&_nc_zt=24&_nc_ht=scontent.fhan3-4.fna&_nc_gid=gc4peY2JZjzz_-9sGpWxiw&_nc_ss=7f289&oh=00_Af53_QKqTWVe9bNGbVVzoC6nhZj5WVFtAL9CcvL6REZnqQ&oe=6A1E2D6A",
+          "intro": null,
+          "cover_image": null,
+          "gender": "MALE",
+          "about": {
+            "work": "No workplaces to show",
+            "college": "No schools/universities to show",
+            "secondary_school": "No schools/universities to show"
+          },
+          "about_public": [],
+          "verified": false,
+          "delegate_page_id": null,
+          "reels_profile_id": null,
+          "influencer_category": null,
+          "education": null,
+          "current_city": null,
+          "hometown": null,
+          "relationship": null,
+          "member_since": null,
+          "reels_page_id": null
+        },
+        "url (search term)": "https://www.facebook.com/mario.lezzi.524"
+      }
+    },
+    {
+      "source": "facebook",
+      "evidence_type": "profile",
+      "value": "Mario lezzi     ",
+      "url": "https://www.facebook.com/mario.lezzi.9",
+      "platform": "facebook",
+      "username": "mario.lezzi.9",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "profile": {
+          "name": "Mario Lezzi",
+          "profile_id": "100001145140673",
+          "url": "https://www.facebook.com/mario.lezzi.9",
+          "image": "https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-1/241837159_4312029875511808_411755694697934001_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=1d2534&_nc_ohc=eRjtu-46WI8Q7kNvwE21eal&_nc_oc=Adr29ws4Yf5PVqbrGWnb4xwI72OyS5-jTJ-iYyRqZcCa0jWzOb5gVLBix5dcEL8d42L7wkMcwvH4FM3VYEd_2_ij&_nc_zt=24&_nc_ht=scontent.fhan3-3.fna&_nc_gid=h93Sj9EUZ8mHvjbdLvKmOA&_nc_ss=7f289&oh=00_Af6lS6vDqPxMaVm4MCrZHc1Oh7dmd88HZaXrrJHtRQx9kg&oe=6A1E2964",
+          "intro": "Mario lezzi",
+          "cover_image": "https://scontent.fhan3-4.fna.fbcdn.net/v/t39.30808-6/514089589_24467363262869721_5238559056065849019_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=pjCfyBWyP90Q7kNvwFoHPnn&_nc_oc=AdpaIFMy469MQgCDYD4lq5CPSHXiFjqxCxi5vK58JKX8RwJ4sVvNG7JxwYZHQMXwKM2BbAQ5GVCwCM1p0sz45umL&_nc_zt=23&_nc_ht=scontent.fhan3-4.fna&_nc_gid=h93Sj9EUZ8mHvjbdLvKmOA&_nc_ss=7f289&oh=00_Af4MbFLqxgvKz6kTtY-4ZskHqfgJPfMsIeCD0k1KfIlUaA&oe=6A1E1258",
+          "gender": "MALE",
+          "about": {},
+          "about_public": [
+            {
+              "icon": {
+                "height": 40,
+                "scale": 2,
+                "uri": "https://static.xx.fbcdn.net/rsrc.php/yz/r/77rw1oPmYdg.webp",
+                "width": 40
+              },
+              "text": "Profile · Digital creator",
+              "external_url": null
+            },
+            {
+              "icon": {
+                "height": 40,
+                "scale": 2,
+                "uri": "https://static.xx.fbcdn.net/rsrc.php/yq/r/y0mkugUWQIp.webp",
+                "width": 40
+              },
+              "text": "Joined on May 2010",
+              "external_url": null
+            }
+          ],
+          "verified": false,
+          "delegate_page_id": null,
+          "reels_profile_id": "YXBwX2NvbGxlY3Rpb246cGZiaWQwMjZWSEJEeFRBUDZKeUFmMWM2TGhvTktKcURyTnNyRGNDQUpBWXA0c1lWSEZyZG1pcUQzUHVvTmFIcnNqMmtDcVlqb3BmVUJvUlJrZjl4YU44Y29zUEFyeFoxR01GcXV5MmJUM3dZbA==",
+          "influencer_category": "Profile · Digital creator",
+          "education": null,
+          "current_city": null,
+          "hometown": null,
+          "relationship": null,
+          "member_since": "Joined on May 2010",
+          "reels_page_id": "YXBwX2NvbGxlY3Rpb246cGZiaWQwMjZWSEJEeFRBUDZKeUFmMWM2TGhvTktKcURyTnNyRGNDQUpBWXA0c1lWSEZyZG1pcUQzUHVvTmFIcnNqMmtDcVlqb3BmVUJvUlJrZjl4YU44Y29zUEFyeFoxR01GcXV5MmJUM3dZbA=="
+        },
+        "url (search term)": "https://www.facebook.com/mario.lezzi.9"
+      }
+    },
+    {
+      "source": "facebook",
+      "evidence_type": "identity",
+      "value": "Mario Lezzi",
+      "url": "https://www.facebook.com/mario.lezzi.9",
+      "platform": "facebook",
+      "username": "mario.lezzi.9",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "derived_from": "facebook_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "profile",
+      "value": "Mario Lezzi 25 | @unisalerno",
+      "url": "https://instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "inputUrl": "https://www.instagram.com/mario_lezzi_",
+        "id": "2094763805",
+        "username": "mario_lezzi_",
+        "url": "https://www.instagram.com/mario_lezzi_",
+        "fullName": "Mario Lezzi",
+        "biography": "25 | @unisalerno",
+        "externalUrls": [],
+        "followersCount": 377,
+        "followsCount": 886,
+        "highlightReelCount": 0,
+        "isBusinessAccount": false,
+        "joinedRecently": false,
+        "businessCategoryName": null,
+        "private": true,
+        "verified": false,
+        "profilePicUrl": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gEj_1NP64J0AwmBeU5kj1lU3LxdQxuVf3F-z9ikMPzEZHG-k69-2ug0V1v2MdzUKSaxJWAT0WiCA10tDasXN6O3&_nc_ohc=tZhxNLVoiCcQ7kNvwG47PAE&_nc_gid=ctf6RS-9so-1TSRKw8hvQw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4YBoEr8iHkmE-fUqKc8JQp0eDb_GLDJM2IUz1rodXOKA&oe=6A1E19E8&_nc_sid=8b3546",
+        "profilePicUrlHD": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gEj_1NP64J0AwmBeU5kj1lU3LxdQxuVf3F-z9ikMPzEZHG-k69-2ug0V1v2MdzUKSaxJWAT0WiCA10tDasXN6O3&_nc_ohc=tZhxNLVoiCcQ7kNvwG47PAE&_nc_gid=ctf6RS-9so-1TSRKw8hvQw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af7oTmtkNytiwkgefnVRQTS9nbLdvxH0puVqVBkGoNuggA&oe=6A1E19E8&_nc_sid=8b3546",
+        "igtvVideoCount": 0,
+        "relatedProfiles": [],
+        "latestIgtvVideos": [],
+        "postsCount": 8,
+        "latestPosts": [],
+        "fbid": "17841402034171845"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "profile",
+      "value": "Mario Lezzi",
+      "url": "https://instagram.com/mariolezzi",
+      "platform": "instagram",
+      "username": "mariolezzi",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "inputUrl": "https://www.instagram.com/mariolezzi",
+        "id": "2254230707",
+        "username": "mariolezzi",
+        "url": "https://www.instagram.com/mariolezzi",
+        "fullName": "Mario Lezzi",
+        "biography": "",
+        "externalUrls": [],
+        "followersCount": 288,
+        "followsCount": 368,
+        "highlightReelCount": 0,
+        "isBusinessAccount": false,
+        "joinedRecently": false,
+        "businessCategoryName": null,
+        "private": false,
+        "verified": false,
+        "profilePicUrl": "https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=5voHFt1edzUQ7kNvwGtR8T1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4sCnBz3oDmAEGZ75tCgfbWQ_uOsMPHG1DG7geCgqmsjg&oe=6A1E3572&_nc_sid=8b3546",
+        "profilePicUrlHD": "https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=5voHFt1edzUQ7kNvwGtR8T1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4CgB4XkvCUTFSwis3WoIMWt4ZpbgiNeMHyQOrZYjvXYg&oe=6A1E3572&_nc_sid=8b3546",
+        "igtvVideoCount": 0,
+        "relatedProfiles": [],
+        "latestIgtvVideos": [],
+        "postsCount": 112,
+        "latestPosts": [
+          {
+            "id": "3814429026761749083",
+            "type": "Video",
+            "shortCode": "DTvkv15ErJb",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DTvkv15ErJb/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1333,
+            "dimensionsWidth": 750,
+            "displayUrl": "https://scontent-atl3-2.cdninstagram.com/v/t15.5256-10/618973760_896323622843606_4264243156242648881_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=DoJAqcA4baEQ7kNvwHRC2h8&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6YwNsQ3nQydOIE7NHRkQXeftp_CtnD0gDCw_1MPeIinA&oe=6A1E1146&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-2.cdninstagram.com/o1/v/t2/f2/m412/AQOxVVsiu_4AZcdpDD0G-l9ObGVJKj_rmbUeIMXEEhbyGLSJ4r0z632CJI2TcVIAssmiMmzRjGNhAw_tvQ4bD4CZiITu-2rHx2WFRKDYHA.mp4?_nc_cat=102&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=TrnxgICjFbMQ7kNvwG3BRqa&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIxMjI0NzQyNzAyNDczMywiYXNzZXRfYWdlX2RheXMiOjEyNywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7jRGTTQ9qGMA1lZew2PkTYYYQtDkbP2Of7wDpIJXgf3Q&oe=6A1E07E4",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 25,
+            "timestamp": "2026-01-20T18:56:39.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Coma_Cose",
+              "song_name": "CUORICINI",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "451089104747950"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3801432555858220988",
+            "type": "Video",
+            "shortCode": "DTBZsTJiNe8",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DTBZsTJiNe8/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1136,
+            "dimensionsWidth": 640,
+            "displayUrl": "https://scontent-atl3-2.cdninstagram.com/v/t51.71878-15/610698355_885171937801612_4546412015876072766_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=dkfCxR8mh_IQ7kNvwG1cxRa&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af5Ma25W8a3BE4s6NWtX-7YjNHJLrwc83QpZ-Fo2ZeIfDQ&oe=6A1E1D7D&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-1.cdninstagram.com/o1/v/t2/f2/m86/AQPN7SHEIj45fmwlxhjF3Z0fRapRwM59MyY32xAqqsfV-qpgdyiVC-jeIGSBNUP67UFpFgyG7A2I6o1rLId9rhXIsHgshL567biYrig.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=_UjKfLGAhG0Q7kNvwHMPn9W&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTIyNjk1NjEzMjcxODUzOSwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=ef21db5b6c8a6cfa&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNzQ0OEFFOEY5REM4ODg0RUJCMzUyRkI3MzE5MjJCOF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xNjA0MzA5OTI3MjkyMjE4XzI3Nzc0NTA1MjE2MjY1NzQxNjgubXA0FQICyAESACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJpbfkMef-q0EFQIoAkMzLBdAFCHKwIMSbxgSZGFzaF9iYXNlbGluZV8zX3YxEQB1_gdl5p0BAA&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af749ZALhlNfgP3ZX40ksHaU0cBnJogZ4wSMbDsrs8Jf1w&oe=6A1A26CF",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 51,
+            "timestamp": "2026-01-02T20:35:01.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "La Crotti",
+              "song_name": "Amati così come sei",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "4208363916045428"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3801431991204247183",
+            "type": "Video",
+            "shortCode": "DTBZkFRiPaP",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DTBZkFRiPaP/",
+            "commentsCount": 0,
+            "dimensionsHeight": 480,
+            "dimensionsWidth": 640,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/609942379_904937021973317_8270147545093367431_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=UvWUIDHCqIYQ7kNvwHu63zV&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4uXyNl6Pmn8sMnlf1W__VH5je7IZ7DBUhpshh3jRK7rw&oe=6A1E2C4D&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-3.cdninstagram.com/o1/v/t2/f2/m86/AQMEio7nhNkpSdMNAZVxrWu67cw1UvZjkcdHp9iz2Ktj6ZkliY2dYxhrRAnbrcNeHl5csfT9-waHw-rlRG0gJDAL8MjAocmX685pees.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_ohc=qdlEoDIoFOUQ7kNvwG6lgbB&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNDgwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTM5NTk0NjQ3MjAyNDAxNywiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=46e50a0d212f3ada&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zRDRBQTc1MkYxOUUwNThEQUJBOUREMERENTMyM0RBRV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84NzQ0NTY2OTE2NTg2NjRfNDU2MTcxNDk4ODIwMDcyODI2Mi5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmop-52ePm-gQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4Jyco9qQ6zhq07_JlbA1FW0P6i-qH6fngTXt9TP0bNZQ&oe=6A1A1D57",
+            "alt": null,
+            "likesCount": 6,
+            "videoViewCount": 59,
+            "timestamp": "2026-01-02T20:33:54.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Renato Casalenuovo",
+              "song_name": "Vivere ogni giorno felicemente",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "1071145107772364"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3801431409185845923",
+            "type": "Video",
+            "shortCode": "DTBZbnOiPKj",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DTBZbnOiPKj/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1136,
+            "dimensionsWidth": 640,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t51.71878-15/610298747_4129303364049641_5640965055239775319_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=5UNKJ4EGYHcQ7kNvwGu7Hqw&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6yV2gTqAH6FZ4gN2llB2SwwhXL25CTrtyna5iwCSaB0Q&oe=6A1E13B3&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-1.cdninstagram.com/o1/v/t2/f2/m86/AQOtuhmJfL1IjAmW-GcUkQuWTH3CkxfC1ocGKrEdRKVFyHhMsGfkulqQSFOV89kDHtTEWHo62zeWW4DYYVixQFnj4WFB0Kw4M0hJ-F4.mp4?_nc_cat=103&_nc_sid=5e9851&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=NtOKyHPSPTgQ7kNvwH0U8LW&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTE4MzIzMjA4NzI2OTc0NCwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=2819c791aa6bb1f5&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83NTQ5REU4MEJFMkRDMzM1OTY3QUZCMzE5NEZFMTc4Q192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xMjI0Njk5NzAyOTA5MTY0XzE3MzA2NjE4MjgxMzAyMjc5OC5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAm4IX9g5aJmgQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7En5weT9-6-FYb-k-bfFeX_us6aXLGtmb9O0MCDIDJWA&oe=6A1A4158",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 31,
+            "timestamp": "2026-01-02T20:32:46.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Buon anno 2026",
+              "song_name": "Feliz año nuevo 2026",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "642356708741821"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3793409963923414540",
+            "type": "Video",
+            "shortCode": "DSk5kOLFR4M",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DSk5kOLFR4M/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1333,
+            "dimensionsWidth": 750,
+            "displayUrl": "https://scontent-atl3-3.cdninstagram.com/v/t15.5256-10/602694677_1933126637615960_1565157942796713958_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=hJyVzUv7mBUQ7kNvwESQpjI&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af57zrJLaGmOeTbaw4MpKVN1rhc8Q9PEOn14fcf0CVEVwA&oe=6A1E3499&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-3.cdninstagram.com/o1/v/t2/f2/m412/AQOy7cp71raHRhAWEbeqp0MGJic8ZDw5x2F54WvbR71eOgDdnXyqeP2xvwbY34VFfsreEN_Ob6AUJjbdWXxSkpq90I35_976LY1Ryxia4g.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_ohc=eOIWg9x3ZgsQ7kNvwHJrjMa&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mzc4NTk5NjUxMTUzMjU3MiwiYXNzZXRfYWdlX2RheXMiOjE1NiwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjUxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af45BlyaufFvvg7776v5yhLhf7gG3FP3Y1g57PjxXuGxZQ&oe=6A1E3685",
+            "alt": null,
+            "likesCount": 1,
+            "videoViewCount": 34,
+            "timestamp": "2025-12-22T18:55:31.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Gianna Nannini",
+              "song_name": "Ti voglio tanto bene",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "176258123061055"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3784594567917332424",
+            "type": "Video",
+            "shortCode": "DSFlLU3lefI",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DSFlLU3lefI/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1333,
+            "dimensionsWidth": 750,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t15.5256-10/594354771_1006835814990651_4736092376250602158_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=XuGhW81tVNgQ7kNvwHqpGr1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6NHHdV_sDr-qZ2hQszlsrMKBJT-LLRYcRwCcCvDdjvcg&oe=6A1E2ED1&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-2.cdninstagram.com/o1/v/t2/f2/m412/AQNYgj0Y584oZimadzNoGFP_hV8FV3KPKXNOxFeMdfvGqDwIG6BpZOh0d53u-MtmQ4EP-FHs-hh60H8oKGui_2pgz9YWPmZfOr9T_G74ug.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=j3lmDv7sqPsQ7kNvwG4lTCY&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NzEzMTc4MjI0NzkwMDU3LCJhc3NldF9hZ2VfZGF5cyI6MTY4LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6NjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4mMU-gh3BTNUMqlFo26HLYjMJsN7ueuEKyRHgc6CNbjw&oe=6A1E3775",
+            "alt": null,
+            "likesCount": 1,
+            "videoViewCount": 7,
+            "timestamp": "2025-12-10T15:00:55.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "",
+              "song_name": "",
+              "uses_original_audio": false,
+              "should_mute_audio": true,
+              "should_mute_audio_reason": "This music can't be played due to recent licensing changes with the rights holder.",
+              "audio_id": "0"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3778860473597675296",
+            "type": "Video",
+            "shortCode": "DRxNZRYjccg",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DRxNZRYjccg/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1333,
+            "dimensionsWidth": 750,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t15.5256-10/591966719_1367514241427175_569114338998422493_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=AT7nMNNggAYQ7kNvwEMenuv&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af5scxpREZm9wGiD08rshiNQogGHAu7oR1YQID6bqaxnBA&oe=6A1E2E06&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-2.cdninstagram.com/o1/v/t2/f2/m412/AQM2huzFuLeEv1XGW991j1VTk-7cAzyQaawFy0mekYgLfV2zlrwz_Ek09OeTLr-6p6PDoivAN16HblbDRXzz4vXmW_j9bqXdk98ZjP3ReA.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=SanSzmpfdtUQ7kNvwFQT20T&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI2ODM4NDAwOTk5MDQ1MywiYXNzZXRfYWdlX2RheXMiOjE3NiwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjI4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af46yphIJLKVn_B9wSGoHvkCg7OAGeyevX2c3P8_jg6jFA&oe=6A1E2665",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 34,
+            "timestamp": "2025-12-02T17:08:17.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Coma_Cose",
+              "song_name": "CUORICINI",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "451089104747950"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3755532774041095017",
+            "type": "Video",
+            "shortCode": "DQeVSkLDotp",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DQeVSkLDotp/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1333,
+            "dimensionsWidth": 750,
+            "displayUrl": "https://scontent-atl3-2.cdninstagram.com/v/t15.5256-10/568278910_2060461847822821_1760428618369856426_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=mR9CSpVEfRMQ7kNvwE5tdiD&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6g1P86R21yU8zGJPEBfzuviBjChQsBY85ZqrKtJ4yCxQ&oe=6A1E1489&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-3.cdninstagram.com/o1/v/t2/f2/m412/AQNShrOlxDMzE_SeFdZMGMb_FGK3nDTUM7MJkuEFlvB3Y6d7qoDnfzKoHE2lbtAwgpFj1j2AlOQ87sS5rDAOj4x8GTn_ZFgVVO0SL9xQ3w.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_ohc=mf5_AU64eWAQ7kNvwH7UBRc&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI2OTc5OTk1MzQ0OTIwNSwiYXNzZXRfYWdlX2RheXMiOjIwOSwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7qV1NLJcMo68T1JnxjG-jkUAN_BPDHudkEZyXdo2xo_w&oe=6A1E176D",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 24,
+            "timestamp": "2025-10-31T12:40:18.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "",
+              "song_name": "",
+              "uses_original_audio": false,
+              "should_mute_audio": true,
+              "should_mute_audio_reason": "This music can't be played due to recent licensing changes with the rights holder.",
+              "audio_id": "0"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3754948425813697408",
+            "type": "Video",
+            "shortCode": "DQcQbLeiaOA",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DQcQbLeiaOA/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1920,
+            "dimensionsWidth": 1080,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t15.5256-10/568283249_1349309696788661_1261835161999065743_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=WODapHCzC4YQ7kNvwHvXXBr&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af7XI9oODdhizLVtdC9s1SUneXsBRMI4JHkfsECrVoIyxA&oe=6A1E19CF&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-3.cdninstagram.com/o1/v/t2/f2/m412/AQNUEqnCz7Qz7GKlYOATKN9U0vkiBUpz0QsZ_O0J55GkmsyE8KOB8ZmXTZVsumgdEtbL5CuzWFpTEOZHXhnV2XqfhXMvyoMWE7TDwGa4jg.mp4?_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_ohc=KQMisIvV2eIQ7kNvwEMihMN&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI0MjM0Mzc5OTU5NjY1NywiYXNzZXRfYWdlX2RheXMiOjIwOSwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjU0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4SczYu4c6_gFqapAu4ZgMVQqysX5XxPPChWPBXJs7q8w&oe=6A1E1400",
+            "alt": null,
+            "likesCount": 1,
+            "videoViewCount": 28,
+            "timestamp": "2025-10-30T17:19:19.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Aurora Codazzi",
+              "song_name": "Vivere felici",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "579991261309161"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3752475264744036617",
+            "type": "Video",
+            "shortCode": "DQTeF8vghkJ",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DQTeF8vghkJ/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1920,
+            "dimensionsWidth": 1080,
+            "displayUrl": "https://scontent-atl3-2.cdninstagram.com/v/t15.5256-10/567899326_1497940441358508_4126989510328026858_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=YbKrzXY5F5cQ7kNvwFjFAjo&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4qNdXf311gUDJZWuugfIE7q4lBv52TMu-zK9z9QK6lig&oe=6A1E342F&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-2.cdninstagram.com/o1/v/t2/f2/m412/AQPy1Sr-oa3JLRyMt5Cn3Hj8mNOZYM64GnMWbjJRyCaJXlayAYA5LxMl9R5yIIqN-9afl6MV6B2NNSvngyHFcI7gLoWJ8WacZG-IVTXpCA.mp4?_nc_cat=104&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_ohc=SlYVbzjnURAQ7kNvwGdycxG&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mjk1Mzc2NzMxMTQ5ODExMSwiYXNzZXRfYWdlX2RheXMiOjIxMywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7GWIdTfOBrspr-aMlqP9fSduAhKFYsw93P8N1GdP5owA&oe=6A1E2876",
+            "alt": null,
+            "likesCount": 2,
+            "videoViewCount": 22,
+            "timestamp": "2025-10-27T07:25:40.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Coma_Cose",
+              "song_name": "CUORICINI",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "451089104747950"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3742440086298444057",
+            "type": "Video",
+            "shortCode": "DPv0W4hAEEZ",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DPv0W4hAEEZ/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1920,
+            "dimensionsWidth": 1080,
+            "displayUrl": "https://scontent-atl3-2.cdninstagram.com/v/t15.5256-10/563082639_4341321659526736_8628506789245614850_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=lnOrcmoBAQgQ7kNvwHF1WC5&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af5ImSbabHq-yk4KZDfvBNavDMEwtwRV4PfaSIMqgwla1Q&oe=6A1E2011&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-3.cdninstagram.com/o1/v/t2/f2/m412/AQOxRjWF1-6j97E1Se42U6OqU1v4LeWU8sFJg7las5cn6mUg0rtXQWMuO6Y9kjStNM74KuHn9ytxydoRZct_9fodeJ7ZDvmCsgPpVXzC-w.mp4?_nc_cat=107&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-3.cdninstagram.com&_nc_ohc=BCYaVjN9h-oQ7kNvwF780yI&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODIxMzExMzYzNjE4ODU5LCJhc3NldF9hZ2VfZGF5cyI6MjI3LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6MzYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7FO-kE7qgfnkBZ4FhzTWdjjxLjVs_aI2nPlH4nzCLnLw&oe=6A1E2973",
+            "alt": null,
+            "likesCount": 5,
+            "videoViewCount": 25,
+            "timestamp": "2025-10-13T11:07:28.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "Dj_Steve",
+              "song_name": "Brilla come il sole",
+              "uses_original_audio": false,
+              "should_mute_audio": false,
+              "should_mute_audio_reason": "",
+              "audio_id": "885417706966620"
+            },
+            "isCommentsDisabled": false
+          },
+          {
+            "id": "3717082910819191782",
+            "type": "Video",
+            "shortCode": "DOVuzakDYvm",
+            "caption": "",
+            "hashtags": [],
+            "mentions": [],
+            "url": "https://www.instagram.com/p/DOVuzakDYvm/",
+            "commentsCount": 0,
+            "dimensionsHeight": 1920,
+            "dimensionsWidth": 1080,
+            "displayUrl": "https://scontent-atl3-1.cdninstagram.com/v/t15.5256-10/543883415_1133113665344202_51983119836078526_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gFCzixPs91QSaTDHOboAES6E2mKdGdcL4u63m5Bp-UK6RdIEVVmFFcCWCE9m8D6704&_nc_ohc=qBV6ZVJ5SmAQ7kNvwFWHqIs&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af5DB43z1qvG_GPy6dv0OEUTMPtnxxom_Wzsgu0XoTRTxg&oe=6A1E1304&_nc_sid=8b3546",
+            "images": [],
+            "videoUrl": "https://scontent-atl3-1.cdninstagram.com/o1/v/t2/f2/m366/AQOrpgDH43Q6nqKBFLWjOOlELoS3vaa7d3gkQVZLdwo0HaWgpGv9iS3gR5ljFOYFDZ4cwb2K8eda06i-BsOOUwlg4miCZpxwfHBkuu-gZQ.mp4?_nc_cat=103&_nc_sid=8bf8fe&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=int7h2SbaQMQ7kNvwG_WzwT&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA5Nzg5MzQyMjU0OTMyMiwiYXNzZXRfYWdlX2RheXMiOjI2MiwidmlfdXNlY2FzZV9pZCI6MTAxMjAsImR1cmF0aW9uX3MiOjc4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=GZhYvyHmLqbmzU9yEJ3ekQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6mMZ9c-WBdYh86hJmvCSNXJ5YlE8lQpaxkU0s_1-t6FQ&oe=6A1E0D3B",
+            "alt": null,
+            "likesCount": 4,
+            "videoViewCount": 29,
+            "timestamp": "2025-09-08T11:27:17.000Z",
+            "childPosts": [],
+            "ownerUsername": "mariolezzi",
+            "ownerId": "2254230707",
+            "productType": "clips",
+            "musicInfo": {
+              "artist_name": "",
+              "song_name": "",
+              "uses_original_audio": false,
+              "should_mute_audio": true,
+              "should_mute_audio_reason": "This music can't be played due to recent licensing changes with the rights holder.",
+              "audio_id": "0"
+            },
+            "isCommentsDisabled": false
+          }
+        ],
+        "fbid": "17841402361221778"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "identity",
+      "value": "Mario Lezzi",
+      "url": "https://www.instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
+      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
+      "confidence": 0.6,
+      "raw_data": {
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "social_hint",
+      "value": "possible_age:25",
+      "url": "https://www.instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": "Mario Lezzi (@mario_lezzi_) • Instagram photos and videos",
+      "description": "Log in · Open app · mario_lezzi_'s profile picture. mario_lezzi_. Mario Lezzi. 378 followers. 881 following. 25. Follow. Message. This profile is private.",
+      "confidence": 0.55,
+      "raw_data": {
+        "hint_type": "possible_age",
+        "age": 25,
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
       "source": "instagram",
       "evidence_type": "identity",
       "value": "Mario Lezzi",
@@ -2208,6 +2844,64 @@
       "title": "Mario Lezzi (@mariolezzi)",
       "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
       "confidence": 0.6,
+      "raw_data": {
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "identity",
+      "value": "Mario Lezzi",
+      "url": "https://instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "location",
+      "value": "Salerno",
+      "url": "https://instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
+      "raw_data": {
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "social_hint",
+      "value": "possible_age:25",
+      "url": "https://instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "username": "mario_lezzi_",
+      "title": null,
+      "description": null,
+      "confidence": 0.55,
+      "raw_data": {
+        "hint_type": "possible_age",
+        "age": 25,
+        "derived_from": "instagram_snippet"
+      }
+    },
+    {
+      "source": "instagram",
+      "evidence_type": "identity",
+      "value": "Mario Lezzi",
+      "url": "https://instagram.com/mariolezzi",
+      "platform": "instagram",
+      "username": "mariolezzi",
+      "title": null,
+      "description": null,
+      "confidence": 0.9,
       "raw_data": {
         "derived_from": "instagram_snippet"
       }
