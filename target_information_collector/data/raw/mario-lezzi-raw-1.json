@@ -72,81 +72,17 @@
       "platform": "linkedin",
       "username": "mario-lezzi-3b69a2262",
       "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-      "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-      "confidence": 0.79,
+      "description": "... Irpino · 39 collegamenti su LinkedIn. Vedi il profilo di Mario Lezzi su LinkedIn, una community professionale di 1 miliardo di utenti.",
+      "confidence": 0.55,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "platform": "linkedin",
         "username": "mario-lezzi-3b69a2262",
         "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-        "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
+        "description": "... Irpino · 39 collegamenti su LinkedIn. Vedi il profilo di Mario Lezzi su LinkedIn, una community professionale di 1 miliardo di utenti.",
         "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "location",
-      "value": "Monteforte Irpino",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "location",
-      "value": "Salerno",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "location",
-      "value": "Campania",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "education",
-      "value": "Università degli Studi di Salerno",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
     },
     {
@@ -158,25 +94,9 @@
       "username": "mario-lezzi-3b69a2262",
       "title": null,
       "description": null,
-      "confidence": 0.8400000000000001,
+      "confidence": 0.6000000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "education",
-      "value": "Studente magistrale di Cyber Security",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -190,41 +110,9 @@
       "username": "mario-lezzi-3b69a2262",
       "title": null,
       "description": null,
-      "confidence": 0.8400000000000001,
+      "confidence": 0.6000000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "education",
-      "value": "Cyber Security",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
-        "phase": "base_web_search",
-        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
-      }
-    },
-    {
-      "source": "web",
-      "evidence_type": "tech_stack",
-      "value": "Cyber Security",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": null,
-      "description": null,
-      "confidence": 0.8400000000000001,
-      "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
@@ -237,16 +125,16 @@
       "platform": "linkedin",
       "username": "mario-lezzi-8590393b5",
       "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
       "confidence": 0.55,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "platform": "linkedin",
         "username": "mario-lezzi-8590393b5",
         "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
         "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
       }
     },
@@ -261,7 +149,7 @@
       "description": null,
       "confidence": 0.6000000000000001,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
       }
@@ -277,7 +165,7 @@
       "description": "Studente magistrale in Informatica -Software Engineering and IT Management · Formazione: Università degli Studi di Salerno · Località: Sant'Antonio Abate ...",
       "confidence": 0.51,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "platform": "linkedin",
@@ -298,7 +186,7 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
       }
@@ -314,7 +202,7 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
       }
@@ -330,7 +218,7 @@
       "description": null,
       "confidence": 0.56,
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:linkedin.com/in",
+        "query": "\"Mario Lezzi\" LinkedIn",
         "phase": "base_web_search",
         "source_url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189"
       }
@@ -354,6 +242,118 @@
         "title": "Mario Lezzi",
         "description": "Mario Lezzi · Con Marta sales - Ho appena ottenuto un riconoscimento come uno dei fan più attivi! · Buongiorno <3 · #love #immaginifantastichelucy #goodnight # ...",
         "url": "https://www.facebook.com/mario.lezzi.9"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "location",
+      "value": "Monteforte Irpino",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "location",
+      "value": "Salerno",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "location",
+      "value": "Campania",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "education",
+      "value": "Università degli Studi di Salerno",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "education",
+      "value": "Studente magistrale di Cyber Security",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "education",
+      "value": "Cyber Security",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "tech_stack",
+      "value": "Cyber Security",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
+      "raw_data": {
+        "query": "\"Mario Lezzi\"",
+        "phase": "base_web_search",
+        "source_url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
       }
     },
     {
@@ -555,7 +555,7 @@
       "source": "web",
       "evidence_type": "web_mention",
       "value": "Antonio Lezzi Storia della famiglia e documenti storici",
-      "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOoqfCf86QjDENsoVloMxi8sTZElOefejS-5_o2yJEnojVmVYuslj",
+      "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOopWxzgxO2PbhPapeoihXWdYn0C4AqKSiEGZyh6iWTJPcQJen3Nm",
       "platform": "web",
       "username": "names",
       "title": "Antonio Lezzi Storia della famiglia e documenti storici",
@@ -569,7 +569,7 @@
         "username": "names",
         "title": "Antonio Lezzi Storia della famiglia e documenti storici",
         "description": "Antonio sposò Domenica Greco. Domenica nacque il giorno giorno mese 1888, a luogo di nascita. Ebbero 2 figli maschi: Mario Lezzi e un altro figlio.",
-        "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOoqfCf86QjDENsoVloMxi8sTZElOefejS-5_o2yJEnojVmVYuslj"
+        "url": "https://www.myheritage.it/names/antonio_lezzi?srsltid=AfmBOopWxzgxO2PbhPapeoihXWdYn0C4AqKSiEGZyh6iWTJPcQJen3Nm"
       }
     },
     {
@@ -591,6 +591,27 @@
         "title": "Ristorante Onda Verde Torre Chianca (Lecce) — Menu turistico a ...",
         "description": "Recensioni (5). 4,6/5. Mario Lezzi (Google). 12/01/2026. Pranzo di natale ché dire precisamente staff eccellente ambiente accogliente tantissimo divertimento ...",
         "url": "https://menuturistico.net/ristorante/torre-chianca/ristorante-onda-verde-lecce"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "web_mention",
+      "value": "Untitled",
+      "url": "https://acncpubfilesprodstorage.blob.core.windows.net/public/63591656-3aaf-e811-a962-000d3ad24a0d-0b0354aa-eb58-4e0a-9e52-f7063e22d44f-Annual%20Report-0a242ec0-e06c-ea11-a811-000d3acae853-30_June_2019_signed_financial_statement.pdf",
+      "platform": "web",
+      "username": "public",
+      "title": "Untitled",
+      "description": "Dated: Lomiar 17 Cowen. Louise Cowan. Committee Member m 1 Czz I. Mario lezzi. Committee Member. The accompanying notes form part of these financial statements.",
+      "confidence": 0.4,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" email",
+        "phase": "base_web_search",
+        "result_class": "web_mention",
+        "platform": "web",
+        "username": "public",
+        "title": "Untitled",
+        "description": "Dated: Lomiar 17 Cowen. Louise Cowan. Committee Member m 1 Czz I. Mario lezzi. Committee Member. The accompanying notes form part of these financial statements.",
+        "url": "https://acncpubfilesprodstorage.blob.core.windows.net/public/63591656-3aaf-e811-a962-000d3ad24a0d-0b0354aa-eb58-4e0a-9e52-f7063e22d44f-Annual%20Report-0a242ec0-e06c-ea11-a811-000d3acae853-30_June_2019_signed_financial_statement.pdf"
       }
     },
     {
@@ -1583,15 +1604,74 @@
     },
     {
       "source": "linkedin",
-      "evidence_type": "error",
-      "value": "Errore API Apify: 403 - {\n  \"error\": {\n    \"type\": \"full-permission-actor-not-approved\",\n    \"message\": \"This Actor requires full access to your account. You must approve its permissions before running it.\",\n    \"data\": {\n      \"approvalUrl\": \"https://console.apify.com/actors/2SyF0bVxmgGr8IVCZ?approvePermissions=true\"\n    }\n  }\n}",
-      "url": null,
-      "platform": null,
-      "username": null,
-      "title": null,
-      "description": null,
-      "confidence": 0.0,
-      "raw_data": {}
+      "evidence_type": "profile",
+      "value": "Mario Lezzi Experience & Education Monteforte Irpino, Campania, Italy [{'title': 'Università degli Studi di Salerno', 'company': '-', 'date_range': '2019 - Present', 'duration': None, 'location': None}, {'title': None, 'company': '-', 'date_range': None, 'duration': None, 'location': None}]",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": "Mario Lezzi",
+      "description": "Experience & Education",
+      "confidence": 0.95,
+      "raw_data": {
+        "mode": "profiles",
+        "id": null,
+        "name": "Mario Lezzi",
+        "headline": "Experience & Education",
+        "location": "Monteforte Irpino, Campania, Italy",
+        "location_normalized": {
+          "city": "Monteforte Irpino",
+          "region": "Campania",
+          "country": "Italy",
+          "raw": "Monteforte Irpino, Campania, Italy"
+        },
+        "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+        "current_title": "Università degli Studi di Salerno",
+        "current_company": "-",
+        "experience": [
+          {
+            "title": "Università degli Studi di Salerno",
+            "company": "-",
+            "date_range": "2019 - Present",
+            "duration": null,
+            "location": null
+          },
+          {
+            "title": null,
+            "company": "-",
+            "date_range": null,
+            "duration": null,
+            "location": null
+          }
+        ],
+        "education": [],
+        "skills": [],
+        "certifications": [],
+        "languages": [],
+        "highest_degree": null,
+        "open_to_work": null,
+        "hiring": null,
+        "connections_count": null,
+        "follower_count": 39,
+        "picture_url": "https://media.licdn.com/dms/image/v2/D4D03AQET15VnEy1KPw/profile-displayphoto-scale_200_200/B4DZgplF2RGkAc-/0/1753044247358?e=2147483647&v=beta&t=1fGdugZR4kJS627TxoexJaZo6GKv-X69fctgFu2bM-U",
+        "premium": false,
+        "verified": false,
+        "influencer": false,
+        "recommendations": null,
+        "current_job_started_on": null,
+        "current_job_duration_months": null,
+        "current_job_still_working": null,
+        "projects": null,
+        "volunteering": null,
+        "featured": null,
+        "honors_and_awards": null,
+        "courses": null,
+        "publications": null,
+        "email": null,
+        "email_source": null,
+        "scraped_at": "2026-05-28T19:09:23.825Z",
+        "company_website": null,
+        "_dataSource": "direct_html"
+      }
     },
     {
       "source": "linkedin",
@@ -1600,39 +1680,11 @@
       "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
       "platform": "linkedin",
       "username": "mario-lezzi-3b69a2262",
-      "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-      "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-      "confidence": 0.79,
+      "title": "Mario Lezzi",
+      "description": null,
+      "confidence": 0.95,
       "raw_data": {
-        "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "linkedin",
-      "evidence_type": "location",
-      "value": "Salerno",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-      "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-      "confidence": 0.79,
-      "raw_data": {
-        "derived_from": "linkedin_snippet"
-      }
-    },
-    {
-      "source": "linkedin",
-      "evidence_type": "organization",
-      "value": "Università degli Studi di Salerno",
-      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
-      "platform": "linkedin",
-      "username": "mario-lezzi-3b69a2262",
-      "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-      "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-      "confidence": 0.79,
-      "raw_data": {
-        "derived_from": "linkedin_snippet"
+        "derived_from": "linkedin_apify_profile"
       }
     },
     {
@@ -1643,7 +1695,7 @@
       "platform": "linkedin",
       "username": "mario-lezzi-8590393b5",
       "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+      "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
       "confidence": 0.6,
       "raw_data": {
         "derived_from": "linkedin_snippet"
@@ -1678,45 +1730,31 @@
       }
     },
     {
-      "source": "web",
-      "evidence_type": "public_link",
-      "value": "Mario Lezzi (@mariolezzi)",
-      "url": "https://www.instagram.com/mariolezzi",
-      "platform": "instagram",
-      "username": "mariolezzi",
-      "title": "Mario Lezzi (@mariolezzi)",
-      "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
-      "confidence": 0.48,
+      "source": "linkedin",
+      "evidence_type": "location",
+      "value": "Salerno",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
       "raw_data": {
-        "query": "\"Mario Lezzi\" Instagram",
-        "phase": "social_contextual_web_search",
-        "result_class": "social_profile_candidate",
-        "platform": "instagram",
-        "username": "mariolezzi",
-        "title": "Mario Lezzi (@mariolezzi)",
-        "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
-        "url": "https://www.instagram.com/mariolezzi"
+        "derived_from": "linkedin_snippet"
       }
     },
     {
-      "source": "web",
-      "evidence_type": "public_link",
-      "value": "Mario Lezzi (@mario.lezzi.9) - Photos",
-      "url": "https://www.facebook.com/mario.lezzi.9/photos",
-      "platform": "facebook",
-      "username": "mario.lezzi.9",
-      "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
-      "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
-      "confidence": 0.48,
+      "source": "linkedin",
+      "evidence_type": "organization",
+      "value": "Università degli Studi di Salerno",
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "username": "mario-lezzi-3b69a2262",
+      "title": null,
+      "description": null,
+      "confidence": 1.0,
       "raw_data": {
-        "query": "\"Mario Lezzi\" Facebook",
-        "phase": "social_contextual_web_search",
-        "result_class": "social_profile_candidate",
-        "platform": "facebook",
-        "username": "mario.lezzi.9",
-        "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
-        "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
-        "url": "https://www.facebook.com/mario.lezzi.9/photos"
+        "derived_from": "linkedin_snippet"
       }
     },
     {
@@ -1795,18 +1833,44 @@
     },
     {
       "source": "web",
-      "evidence_type": "location",
-      "value": "Campania",
-      "url": "https://www.ilrievocatore.it/upload/periodico/pdf/Rievocatore12019.pdf",
-      "platform": "web",
-      "username": "upload",
-      "title": null,
-      "description": null,
-      "confidence": 0.5700000000000001,
+      "evidence_type": "public_link",
+      "value": "Mario Lezzi (@mariolezzi)",
+      "url": "https://www.instagram.com/mariolezzi",
+      "platform": "instagram",
+      "username": "mariolezzi",
+      "title": "Mario Lezzi (@mariolezzi)",
+      "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
+      "confidence": 0.48,
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Campania\" Facebook",
+        "query": "\"Mario Lezzi\" Instagram",
         "phase": "social_contextual_web_search",
-        "source_url": "https://www.ilrievocatore.it/upload/periodico/pdf/Rievocatore12019.pdf"
+        "result_class": "social_profile_candidate",
+        "platform": "instagram",
+        "username": "mariolezzi",
+        "title": "Mario Lezzi (@mariolezzi)",
+        "description": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
+        "url": "https://www.instagram.com/mariolezzi"
+      }
+    },
+    {
+      "source": "web",
+      "evidence_type": "public_link",
+      "value": "Mario Lezzi (@mario.lezzi.9) - Photos",
+      "url": "https://www.facebook.com/mario.lezzi.9/photos",
+      "platform": "facebook",
+      "username": "mario.lezzi.9",
+      "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
+      "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
+      "confidence": 0.48,
+      "raw_data": {
+        "query": "\"Mario Lezzi\" Facebook",
+        "phase": "social_contextual_web_search",
+        "result_class": "social_profile_candidate",
+        "platform": "facebook",
+        "username": "mario.lezzi.9",
+        "title": "Mario Lezzi (@mario.lezzi.9) - Photos",
+        "description": "Mario Lezzi. Mario lezzi. 󱞴 Digital creator. 󱙶. Follow · Mario Lezzi's Photos · Mobile uploads · Photos · Profile pictures · Cover photos · Untitled album.",
+        "url": "https://www.facebook.com/mario.lezzi.9/photos"
       }
     },
     {
@@ -1884,9 +1948,9 @@
           "name": "Mario Lezzi",
           "profile_id": "100001145140673",
           "url": "https://www.facebook.com/mario.lezzi.9",
-          "image": "https://scontent.fmar3-1.fna.fbcdn.net/v/t39.30808-1/241837159_4312029875511808_411755694697934001_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=1d2534&_nc_ohc=eRjtu-46WI8Q7kNvwFhPTbp&_nc_oc=AdoX3PzQPhGxw3agFU9pHRLfp1ZE-XK5CkusO1A5ikUlP_abu13ycVhD_HM8wdGAKGo&_nc_zt=24&_nc_ht=scontent.fmar3-1.fna&_nc_gid=gjYGbVjrEbJ1aBBkxwnBDw&_nc_ss=7f289&oh=00_Af6p3uQP_-LggpxLLcEta2PWV37slGSDrBNylASiwGYDDg&oe=6A1E61A4",
+          "image": "https://scontent.fedi1-1.fna.fbcdn.net/v/t39.30808-1/241837159_4312029875511808_411755694697934001_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=1d2534&_nc_ohc=eRjtu-46WI8Q7kNvwHzBlMo&_nc_oc=Adq6WxG84pwS1yUBf4zPVzsXgCpwc5EPjnqDpbW0GJummtv0D7g8J2UzsF90L7eznkhBJCfj67MrorQrt7VXsWse&_nc_zt=24&_nc_ht=scontent.fedi1-1.fna&_nc_gid=cRgIU-HJcwJ_ZuDX6BHXSA&_nc_ss=7f289&oh=00_Af6LS8ibnxtwpHq7AqrdyvlTWc8mubBNA-aBTcpyafoTBg&oe=6A1E61A4",
           "intro": "Mario lezzi",
-          "cover_image": "https://scontent.fmar3-1.fna.fbcdn.net/v/t39.30808-6/514089589_24467363262869721_5238559056065849019_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=pjCfyBWyP90Q7kNvwHY1GJy&_nc_oc=Ado_gsEJ-_wBD1z-52dnP7c8TqBW7NgxyVlm782p2LEasuQgrvDQhnVBqiSA9_B52fE&_nc_zt=23&_nc_ht=scontent.fmar3-1.fna&_nc_gid=gjYGbVjrEbJ1aBBkxwnBDw&_nc_ss=7f289&oh=00_Af4Zy0vo4RfsWhF33lZ-C8fXDSQfVI9IQL7ACnzEzc0VSw&oe=6A1E4A98",
+          "cover_image": "https://scontent.fedi1-1.fna.fbcdn.net/v/t39.30808-6/514089589_24467363262869721_5238559056065849019_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=pjCfyBWyP90Q7kNvwGmL0Pp&_nc_oc=AdquqCaBZKDikndIS7a3OwcJkFzGaN8YHw1c5kWW4W7_UZGOsdaiK8n312sEIBekYLjb6hhIMTw-MKiP2C1yZiyr&_nc_zt=23&_nc_ht=scontent.fedi1-1.fna&_nc_gid=cRgIU-HJcwJ_ZuDX6BHXSA&_nc_ss=7f289&oh=00_Af7AhJtNsgb98iGzDtKn_Bw3PbKGuEyFg_H6WrsrIJ1bWw&oe=6A1E4A98",
           "gender": "MALE",
           "about": {},
           "about_public": [
@@ -1954,9 +2018,9 @@
           "name": "Mario Lezzi",
           "profile_id": "100002133213015",
           "url": "https://www.facebook.com/mario.lezzi.16",
-          "image": "https://scontent-cgk2-2.xx.fbcdn.net/v/t1.6435-1/43614993_1926732524074503_2315283742467293184_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=V65eYXB2_v0Q7kNvwH1Rbjx&_nc_oc=AdpzlVAEdt69GZWIolLKANV6uhEEfXOn9eKRPxbQ8RH3BlkhV4DueJRRpqpXDCSzV7U&_nc_zt=24&_nc_ht=scontent-cgk2-2.xx&_nc_gid=lCKRWjXusWgLOXrSY1kvuQ&_nc_ss=7f289&oh=00_Af7iB24h9-fDslfXHOHlru2QxPr1BYzskkatm-J8nmUbSg&oe=6A4009F8",
+          "image": "https://scontent.fgyd3-1.fna.fbcdn.net/v/t1.6435-1/43614993_1926732524074503_2315283742467293184_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=e99d92&_nc_ohc=V65eYXB2_v0Q7kNvwEDpuHo&_nc_oc=Adp_u57dgG920M6nm41fDzETuEmWL_rcBT8or64n0CkDrc7XYgLtMl3ul3N8VNIZews&_nc_zt=24&_nc_ht=scontent.fgyd3-1.fna&_nc_gid=goZpA-839sW8H6Vi4QmGsg&_nc_ss=7f289&oh=00_Af420pakc-mSi9bCuTLjLVw-nXHvBCHfQexAoONAyVWbyw&oe=6A4009F8",
           "intro": null,
-          "cover_image": "https://scontent-cgk2-2.xx.fbcdn.net/v/t1.6435-9/46521476_1988726697875085_4714190124525551616_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=Z9WjKCqpMvIQ7kNvwG5QUGy&_nc_oc=AdrSYApq6uZT7BlKpS6tFpK4uL333jTlP5suV9X0PN4T3jpsnrCAFgzvfH8ksR_6VLE&_nc_zt=23&_nc_ht=scontent-cgk2-2.xx&_nc_gid=lCKRWjXusWgLOXrSY1kvuQ&_nc_ss=7f289&oh=00_Af4VQ_kIhBa46e32Zu-CN2X-c4RB3LH8NvPD61wX0UdD8A&oe=6A3FFD38",
+          "cover_image": "https://scontent.fgyd3-1.fna.fbcdn.net/v/t1.6435-9/46521476_1988726697875085_4714190124525551616_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=Z9WjKCqpMvIQ7kNvwFpJKh0&_nc_oc=AdrEm1s4sUdcBn4lnAkSr0IRBLLpR-IlXNigOFZtx_GcTFs0kjib_ErkB3goufYBnfk&_nc_zt=23&_nc_ht=scontent.fgyd3-1.fna&_nc_gid=goZpA-839sW8H6Vi4QmGsg&_nc_ss=7f289&oh=00_Af4ZqGuw050-ct6rIJGfJavL-DZYUClR0xmUuc4xmy7S4w&oe=6A3FFD38",
           "gender": "MALE",
           "about": {
             "work": "No workplaces to show",
@@ -2007,9 +2071,9 @@
           "name": "Mario Lezzi",
           "profile_id": "100092437395094",
           "url": "https://www.facebook.com/people/Mario-Lezzi/pfbid0237YUe3eMwADyM5xwPBqWEjMmzhM6kf5nWs4iK36Tq8UvbvQGCW4F5V4LwmmkKwV1l/",
-          "image": "https://scontent.fpei2-2.fna.fbcdn.net/v/t39.30808-1/345230336_646071100674310_4863846496263810854_n.jpg?stp=c102.0.408.408a_dst-jpg_s408x408_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=uyItAKPEh0YQ7kNvwEOwN-Q&_nc_oc=AdoFAqvcxGUt29eJ9QfJEE2pEe95DTcAUUHIDxEhHyVblRN-9voaRWvOHDWTuu0lG0I&_nc_zt=24&_nc_ht=scontent.fpei2-2.fna&_nc_gid=A-DVxIl43YU_y4eyPHZOZg&_nc_ss=7f289&oh=00_Af6cJYxdtwiMUWnN4l9Eu__RbZbzIfK8LMyAxlMwfQhSkw&oe=6A1E45AD",
+          "image": "https://scontent.fgye4-1.fna.fbcdn.net/v/t39.30808-1/345230336_646071100674310_4863846496263810854_n.jpg?stp=c102.0.408.408a_dst-jpg_s408x408_tt6&_nc_cat=101&ccb=1-7&_nc_sid=e99d92&_nc_ohc=uyItAKPEh0YQ7kNvwHfV391&_nc_oc=AdqpXfTNBHP1PEikEiCcUAxvuIkg0bVL1RS1ISNEfMrbrRzPKPOCEeeNzAv16S08-CY&_nc_zt=24&_nc_ht=scontent.fgye4-1.fna&_nc_gid=v__KCrxSCIq4u1vg_lUXEg&_nc_ss=7f289&oh=00_Af7wixnonqjvKNRIaq5WVKhpBgYbIk9t-MQ41xfuIjaWGg&oe=6A1E7DED",
           "intro": null,
-          "cover_image": "https://scontent.fpei2-2.fna.fbcdn.net/v/t39.30808-6/469875363_501744769583432_1018857423550983263_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=_pdQj4gaLg4Q7kNvwG_3Jt4&_nc_oc=Adq4diiezhB8lGJykO1fperVeGOuapScEY3BP5stVqEJEYEOpifNTKbhXnND2Njt5lQ&_nc_zt=23&_nc_ht=scontent.fpei2-2.fna&_nc_gid=A-DVxIl43YU_y4eyPHZOZg&_nc_ss=7f289&oh=00_Af5q8Pw2_Or84YvBUPlvVUH-L0GbqcqUJcuXqZrwNodJ4w&oe=6A1E6B94",
+          "cover_image": "https://scontent.fgye4-1.fna.fbcdn.net/v/t39.30808-6/469875363_501744769583432_1018857423550983263_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=_pdQj4gaLg4Q7kNvwEjMrrJ&_nc_oc=Ados8zu0JFgsLRi8ll8tUPoefz92KPZ9FkCgDS8F6tPxDIdgyXxiJlS8bjFKhrpBJ9Q&_nc_zt=23&_nc_ht=scontent.fgye4-1.fna&_nc_gid=v__KCrxSCIq4u1vg_lUXEg&_nc_ss=7f289&oh=00_Af428l0wjU9AHVbOAKd7UGae0bD3n6VCl1YbKmgzMkN3RQ&oe=6A1E6B94",
           "gender": "MALE",
           "about": {
             "work": "No workplaces to show",
@@ -2049,7 +2113,7 @@
       "source": "facebook",
       "evidence_type": "profile",
       "value": "Mario Lezzi No workplaces to show No schools/universities to show Went to diploma superiore",
-      "url": "https://web.facebook.com/mario.lezzi.100",
+      "url": "https://facebook.com/mario.lezzi.100",
       "platform": "facebook",
       "username": "mario.lezzi.100",
       "title": "Mario Lezzi",
@@ -2059,10 +2123,10 @@
         "profile": {
           "name": "Mario Lezzi",
           "profile_id": "100039266410849",
-          "url": "https://web.facebook.com/mario.lezzi.100",
-          "image": "https://scontent.fsof8-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=dst-png_s480x480&_nc_cat=1&ccb=1-7&_nc_sid=136b72&_nc_ohc=zk6OvUuTAGEQ7kNvwFdzDDb&_nc_oc=Adpq1ILlIEq86BIMeSIGuPkelUKQTTtzsD5bPvPJXaGQfgtLHq2tZ-RlQvG9ayV4-JA&_nc_zt=24&_nc_ht=scontent.fsof8-1.fna&_nc_ss=7f289&oh=00_Af5X-qGO2c-SCgKuyD0s2AWFbkMx3slf7nuys8iATEvVAg&oe=6A40003A",
+          "url": "https://www.facebook.com/mario.lezzi.100",
+          "image": "https://scontent.febl5-1.fna.fbcdn.net/v/t1.30497-1/453178253_471506465671661_2781666950760530985_n.png?stp=dst-png_s480x480&_nc_cat=110&ccb=1-7&_nc_sid=136b72&_nc_ohc=zk6OvUuTAGEQ7kNvwENqUSf&_nc_oc=AdrYTSP83zM9gaFafkzb-mY_79eSifb_vlKPuhRdFZTsxZAszL3q61h1dr3ccqMZdLM&_nc_zt=24&_nc_ht=scontent.febl5-1.fna&_nc_ss=7f289&oh=00_Af5PL7axXIOSI-jCO8t38fhZ_g-hWHmmNuSFAmTFM9cefw&oe=6A40003A",
           "intro": null,
-          "cover_image": "https://scontent.fsof11-1.fna.fbcdn.net/v/t1.6435-9/66778725_104654860853394_236774554821722112_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=wvFaJK78ADcQ7kNvwGJJfCu&_nc_oc=AdqM_O3eiZh91FPzT5cCfCBeM1jSrWPlDgYelc8KiOVpwBGPEViA3J1aSp-igIoHFkY&_nc_zt=23&_nc_ht=scontent.fsof11-1.fna&_nc_gid=8nlA8mfPcW0zVSin2TkpUw&_nc_ss=7f289&oh=00_Af6LeC7ZBqBqGZyQ5NybfhtwyjgnKizITEoYSOuytH3_zw&oe=6A4006F9",
+          "cover_image": "https://scontent.febl5-2.fna.fbcdn.net/v/t1.6435-9/66778725_104654860853394_236774554821722112_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=wvFaJK78ADcQ7kNvwFJGdGZ&_nc_oc=Ado7cGfkbdaqrDBeEiyEVtKn4XKL5X3Aw4bl9MW1_4W95OAE5n8FV8f-jfWU2NRWHxw&_nc_zt=23&_nc_ht=scontent.febl5-2.fna&_nc_gid=0_E95-3oqg72n3DdBbjayQ&_nc_ss=7f289&oh=00_Af4XFkL4KMkUd96jRqcNIRpi4D7THvas_c44YMr5os5pWg&oe=6A4006F9",
           "gender": "MALE",
           "about": {
             "work": "No workplaces to show",
@@ -2088,7 +2152,7 @@
       "source": "facebook",
       "evidence_type": "identity",
       "value": "Mario Lezzi",
-      "url": "https://web.facebook.com/mario.lezzi.100",
+      "url": "https://facebook.com/mario.lezzi.100",
       "platform": "facebook",
       "username": "mario.lezzi.100",
       "title": null,
@@ -2096,20 +2160,6 @@
       "confidence": 0.9,
       "raw_data": {
         "derived_from": "facebook_apify_profile"
-      }
-    },
-    {
-      "source": "facebook",
-      "evidence_type": "identity",
-      "value": "Mario Lezzi",
-      "url": "https://facebook.com/mario.lezzi.100",
-      "platform": "facebook",
-      "username": "mario.lezzi.100",
-      "title": "Mario Lezzi",
-      "description": null,
-      "confidence": 0.45,
-      "raw_data": {
-        "derived_from": "facebook_snippet"
       }
     },
     {
@@ -2166,8 +2216,8 @@
         "businessCategoryName": null,
         "private": true,
         "verified": false,
-        "profilePicUrl": "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gHkaYpOvLaGm_Ki_uSX89ktxMSCeKqySVyJ-2wjk1XoQvhVVgsNx2K9aJoPZ6PckUE&_nc_ohc=tZhxNLVoiCcQ7kNvwFhi7Zk&_nc_gid=TV4f_5BQ8bG_nvLeYyUw0Q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4VNhhYukRdA2ZnHUpA351_4Mr79QdoyVKQNF0jl6lbJA&oe=6A1E5228&_nc_sid=8b3546",
-        "profilePicUrlHD": "https://scontent-lax3-1.cdninstagram.com/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lax3-1.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gHkaYpOvLaGm_Ki_uSX89ktxMSCeKqySVyJ-2wjk1XoQvhVVgsNx2K9aJoPZ6PckUE&_nc_ohc=tZhxNLVoiCcQ7kNvwFhi7Zk&_nc_gid=TV4f_5BQ8bG_nvLeYyUw0Q&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6wUjotJ7dBstGqB5-DOVOHGWJCGgA5Gvzzs3hYJJteiA&oe=6A1E5228&_nc_sid=8b3546",
+        "profilePicUrl": "https://instagram.fluk1-1.fna.fbcdn.net/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fluk1-1.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2gHR9GpX1fjWlYtIAQaLQsDRtLF81f9qdu0qprtqforEwGeSU-faBezlsyp7FD35k7g&_nc_ohc=tZhxNLVoiCcQ7kNvwFahIBN&_nc_gid=hCGIb-USgzhnOgyshODzjg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af5UB7XyVr3nzINpy3NnJcKy3at-915b8OlHgOcpK8hX0Q&oe=6A1E5228&_nc_sid=8b3546",
+        "profilePicUrlHD": "https://instagram.fluk1-1.fna.fbcdn.net/v/t51.82787-19/543752345_18502347709067806_5647119308059379279_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fluk1-1.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2gHR9GpX1fjWlYtIAQaLQsDRtLF81f9qdu0qprtqforEwGeSU-faBezlsyp7FD35k7g&_nc_ohc=tZhxNLVoiCcQ7kNvwFahIBN&_nc_gid=hCGIb-USgzhnOgyshODzjg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af5rmVj5Nftd6nEjcRadUPY2oZAA7VqUFD_fcc80VEVYsw&oe=6A1E5228&_nc_sid=8b3546",
         "igtvVideoCount": 0,
         "relatedProfiles": [],
         "latestIgtvVideos": [],
@@ -2202,8 +2252,8 @@
         "businessCategoryName": null,
         "private": false,
         "verified": false,
-        "profilePicUrl": "https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=5voHFt1edzUQ7kNvwF6XgLh&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6ntysNJUw6XW6KIsAB0g-44XAPtAGd4F2gsQU2q_n7uw&oe=6A1E6DB2&_nc_sid=8b3546",
-        "profilePicUrlHD": "https://scontent-iad3-2.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=5voHFt1edzUQ7kNvwF6XgLh&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af73gsBqnDd67xtw8J-Mfeco5nfIZgtYuJMYNaqPyqJM8w&oe=6A1E6DB2&_nc_sid=8b3546",
+        "profilePicUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_e0_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=5voHFt1edzUQ7kNvwEf9S82&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af403Ik9Jmb7AR-1xvThLqYIi6qDu9Mc20z1wkLdS-_wEw&oe=6A1E6DB2&_nc_sid=8b3546",
+        "profilePicUrlHD": "https://scontent-dfw6-1.cdninstagram.com/v/t51.2885-19/241739896_176353197849567_1554747331387752187_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=5voHFt1edzUQ7kNvwEf9S82&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4jjb7Vh8gBCCmjLuQp6mQ4xt-THxTW0jV77GcVQMXkCQ&oe=6A1E6DB2&_nc_sid=8b3546",
         "igtvVideoCount": 0,
         "relatedProfiles": [],
         "latestIgtvVideos": [],
@@ -2220,9 +2270,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1333,
             "dimensionsWidth": 750,
-            "displayUrl": "https://scontent-iad6-1.cdninstagram.com/v/t15.5256-10/618973760_896323622843606_4264243156242648881_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=DoJAqcA4baEQ7kNvwGaANJL&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4xxXLyF83kXO1aBCt3CE_VnACTwBjFhu85KeO7LMfQBA&oe=6A1E4986&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t15.5256-10/618973760_896323622843606_4264243156242648881_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=DoJAqcA4baEQ7kNvwGuVBGo&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af5VSeHbtyPFsQLV7xnNzI87dPT5QSeuVSUEVP60pGPDSw&oe=6A1E81C6&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad6-1.cdninstagram.com/o1/v/t2/f2/m412/AQOxVVsiu_4AZcdpDD0G-l9ObGVJKj_rmbUeIMXEEhbyGLSJ4r0z632CJI2TcVIAssmiMmzRjGNhAw_tvQ4bD4CZiITu-2rHx2WFRKDYHA.mp4?_nc_cat=102&_nc_sid=8bf8fe&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_ohc=TrnxgICjFbMQ7kNvwFdkcQe&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIxMjI0NzQyNzAyNDczMywiYXNzZXRfYWdlX2RheXMiOjEyNywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4eeDHqC_kmlqzPbMRBamF1TPmA0GUEzw_KDPYgv-D9sQ&oe=6A1E4024",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m412/AQOxVVsiu_4AZcdpDD0G-l9ObGVJKj_rmbUeIMXEEhbyGLSJ4r0z632CJI2TcVIAssmiMmzRjGNhAw_tvQ4bD4CZiITu-2rHx2WFRKDYHA.mp4?_nc_cat=102&_nc_sid=8bf8fe&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=TrnxgICjFbMQ7kNvwHHCQR_&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTIxMjI0NzQyNzAyNDczMywiYXNzZXRfYWdlX2RheXMiOjEyOCwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6m7JdFYE90WzJSCE5a3DC_ORG5z-3lioVijpBmjKaTlQ&oe=6A1E7864",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 25,
@@ -2252,9 +2302,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1136,
             "dimensionsWidth": 640,
-            "displayUrl": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/610698355_885171937801612_4546412015876072766_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=dkfCxR8mh_IQ7kNvwG4XEEO&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4L3dooqWVMuqVKidCl4imgf6sC8yr7981W7gLukPByfw&oe=6A1E55BD&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t51.71878-15/610698355_885171937801612_4546412015876072766_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=dkfCxR8mh_IQ7kNvwGCNLnr&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4TJGr53qXxk7QNOwBTS861ITkU1Z1bxN49Ag_nHhn4UA&oe=6A1E55BD&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad6-1.cdninstagram.com/o1/v/t2/f2/m86/AQPN7SHEIj45fmwlxhjF3Z0fRapRwM59MyY32xAqqsfV-qpgdyiVC-jeIGSBNUP67UFpFgyG7A2I6o1rLId9rhXIsHgshL567biYrig.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_ohc=_UjKfLGAhG0Q7kNvwELY1dw&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTIyNjk1NjEzMjcxODUzOSwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=ef21db5b6c8a6cfa&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNzQ0OEFFOEY5REM4ODg0RUJCMzUyRkI3MzE5MjJCOF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xNjA0MzA5OTI3MjkyMjE4XzI3Nzc0NTA1MjE2MjY1NzQxNjgubXA0FQICyAESACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJpbfkMef-q0EFQIoAkMzLBdAFCHKwIMSbxgSZGFzaF9iYXNlbGluZV8zX3YxEQB1_gdl5p0BAA&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af401xwo0_upA8Hs3sBsxkn2URp8aPl8TitTHKh8Chze5w&oe=6A1A5F0F",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m86/AQPN7SHEIj45fmwlxhjF3Z0fRapRwM59MyY32xAqqsfV-qpgdyiVC-jeIGSBNUP67UFpFgyG7A2I6o1rLId9rhXIsHgshL567biYrig.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=_UjKfLGAhG0Q7kNvwFQ69B4&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTIyNjk1NjEzMjcxODUzOSwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=ef21db5b6c8a6cfa&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zNzQ0OEFFOEY5REM4ODg0RUJCMzUyRkI3MzE5MjJCOF92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYR2lnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xNjA0MzA5OTI3MjkyMjE4XzI3Nzc0NTA1MjE2MjY1NzQxNjgubXA0FQICyAESACgAGAAbAogHdXNlX29pbAExEnByb2dyZXNzaXZlX3JlY2lwZQExFQAAJpbfkMef-q0EFQIoAkMzLBdAFCHKwIMSbxgSZGFzaF9iYXNlbGluZV8zX3YxEQB1_gdl5p0BAA&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4LlTSCZF08CUEvCotB31dqquDv6p3oJhNTA1ut-x2F8g&oe=6A1A5F0F",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 51,
@@ -2284,9 +2334,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 480,
             "dimensionsWidth": 640,
-            "displayUrl": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/609942379_904937021973317_8270147545093367431_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=UvWUIDHCqIYQ7kNvwFGGtXK&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6BDM0pMImlGYCooX_BwN9OYlPcLZ4xlwomsxDmLbNN3A&oe=6A1E648D&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-1.cdninstagram.com/v/t51.71878-15/609942379_904937021973317_8270147545093367431_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=UvWUIDHCqIYQ7kNvwGW-tyV&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6CFi9KqNxa1-ndsyNJCGoBJqHkAkjJ5eg_ZjX1DVqw6g&oe=6A1E648D&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-1.cdninstagram.com/o1/v/t2/f2/m86/AQMEio7nhNkpSdMNAZVxrWu67cw1UvZjkcdHp9iz2Ktj6ZkliY2dYxhrRAnbrcNeHl5csfT9-waHw-rlRG0gJDAL8MjAocmX685pees.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=V3kM5NN5TkwQ7kNvwFQxwhV&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNDgwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTM5NTk0NjQ3MjAyNDAxNywiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=46e50a0d212f3ada&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zRDRBQTc1MkYxOUUwNThEQUJBOUREMERENTMyM0RBRV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84NzQ0NTY2OTE2NTg2NjRfNDU2MTcxNDk4ODIwMDcyODI2Mi5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmop-52ePm-gQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_zt=28&_nc_ss=7a3ba&oh=00_Af505B9BZCrzhqbLc0WIMsf7g35fFESLLCOvLePcA4fliA&oe=6A1A5597",
+            "videoUrl": "https://scontent-dfw5-1.cdninstagram.com/o1/v/t2/f2/m86/AQMEio7nhNkpSdMNAZVxrWu67cw1UvZjkcdHp9iz2Ktj6ZkliY2dYxhrRAnbrcNeHl5csfT9-waHw-rlRG0gJDAL8MjAocmX685pees.mp4?_nc_cat=110&_nc_sid=5e9851&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_ohc=V3kM5NN5TkwQ7kNvwE3ttFC&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuNDgwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTM5NTk0NjQ3MjAyNDAxNywiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=46e50a0d212f3ada&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8zRDRBQTc1MkYxOUUwNThEQUJBOUREMERENTMyM0RBRV92aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC84NzQ0NTY2OTE2NTg2NjRfNDU2MTcxNDk4ODIwMDcyODI2Mi5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAmop-52ePm-gQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af5z2lNU53GBCWoPLEPgyiL1Axx8msjN9VA4KZPYV8mHcA&oe=6A1A5597",
             "alt": null,
             "likesCount": 6,
             "videoViewCount": 59,
@@ -2316,9 +2366,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1136,
             "dimensionsWidth": 640,
-            "displayUrl": "https://scontent-iad3-2.cdninstagram.com/v/t51.71878-15/610298747_4129303364049641_5640965055239775319_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=5UNKJ4EGYHcQ7kNvwGiCFyd&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6p6DiXrKY4yWZEHAzPlIlyjZJ1c5_t-7wBgCzfj-PEhg&oe=6A1E4BF3&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-1.cdninstagram.com/v/t51.71878-15/610298747_4129303364049641_5640965055239775319_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=5UNKJ4EGYHcQ7kNvwFL5266&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af4VFGnRhye0guG14w3fyTOULWijpA0BRH2NN81WyYGEFg&oe=6A1E4BF3&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-2.cdninstagram.com/o1/v/t2/f2/m86/AQOtuhmJfL1IjAmW-GcUkQuWTH3CkxfC1ocGKrEdRKVFyHhMsGfkulqQSFOV89kDHtTEWHo62zeWW4DYYVixQFnj4WFB0Kw4M0hJ-F4.mp4?_nc_cat=103&_nc_sid=5e9851&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_ohc=NtOKyHPSPTgQ7kNvwEQWETz&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTE4MzIzMjA4NzI2OTc0NCwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=2819c791aa6bb1f5&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83NTQ5REU4MEJFMkRDMzM1OTY3QUZCMzE5NEZFMTc4Q192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xMjI0Njk5NzAyOTA5MTY0XzE3MzA2NjE4MjgxMzAyMjc5OC5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAm4IX9g5aJmgQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af56Ip52aBV5nYHBh_xcHJBvQNFxXWHlE8mxXFqwYks-ag&oe=6A1A7998",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m86/AQOtuhmJfL1IjAmW-GcUkQuWTH3CkxfC1ocGKrEdRKVFyHhMsGfkulqQSFOV89kDHtTEWHo62zeWW4DYYVixQFnj4WFB0Kw4M0hJ-F4.mp4?_nc_cat=103&_nc_sid=5e9851&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=NtOKyHPSPTgQ7kNvwGuCCuM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLmRhc2hfYmFzZWxpbmVfM192MSIsInhwdl9hc3NldF9pZCI6MTE4MzIzMjA4NzI2OTc0NCwiYXNzZXRfYWdlX2RheXMiOjE0NSwidmlfdXNlY2FzZV9pZCI6MTAwOTksImR1cmF0aW9uX3MiOjUsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=2819c791aa6bb1f5&_nc_vs=HBksFQIYUmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC83NTQ5REU4MEJFMkRDMzM1OTY3QUZCMzE5NEZFMTc4Q192aWRlb19kYXNoaW5pdC5tcDQVAALIARIAFQIYRmlnX3hwdl9yZWVsc19wZXJtYW5lbnRfc3JfcHJvZC8xMjI0Njk5NzAyOTA5MTY0XzE3MzA2NjE4MjgxMzAyMjc5OC5tcDQVAgLIARIAKAAYABsCiAd1c2Vfb2lsATEScHJvZ3Jlc3NpdmVfcmVjaXBlATEVAAAm4IX9g5aJmgQVAigCQzMsF0AUIcrAgxJvGBJkYXNoX2Jhc2VsaW5lXzNfdjERAHX-B2XmnQEA&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af5eampIoDEd86l0ev_bVfG8Io865VARZvHJxFvPEH__ag&oe=6A1A7998",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 31,
@@ -2348,9 +2398,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1333,
             "dimensionsWidth": 750,
-            "displayUrl": "https://scontent-iad3-1.cdninstagram.com/v/t15.5256-10/602694677_1933126637615960_1565157942796713958_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=hJyVzUv7mBUQ7kNvwFcRRzo&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af7v-ZCmNrmFI8XCBsu0jC8utFW5b4Mv_yyDc1V4ehZCHg&oe=6A1E6CD9&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t15.5256-10/602694677_1933126637615960_1565157942796713958_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=hJyVzUv7mBUQ7kNvwHV8kjl&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af7u_RFXrFs5yttCO-EY1itbKCdA5_-emQIyiY9cmndvMQ&oe=6A1E6CD9&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad6-1.cdninstagram.com/o1/v/t2/f2/m412/AQOy7cp71raHRhAWEbeqp0MGJic8ZDw5x2F54WvbR71eOgDdnXyqeP2xvwbY34VFfsreEN_Ob6AUJjbdWXxSkpq90I35_976LY1Ryxia4g.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_ohc=eOIWg9x3ZgsQ7kNvwGOiaA_&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mzc4NTk5NjUxMTUzMjU3MiwiYXNzZXRfYWdlX2RheXMiOjE1NiwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjUxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af49Kfcg3wcG7ACzbpmOrUfbiisee9f9g6Gkj9lbKoydsQ&oe=6A1E6EC5",
+            "videoUrl": "https://scontent-dfw5-1.cdninstagram.com/o1/v/t2/f2/m412/AQOy7cp71raHRhAWEbeqp0MGJic8ZDw5x2F54WvbR71eOgDdnXyqeP2xvwbY34VFfsreEN_Ob6AUJjbdWXxSkpq90I35_976LY1Ryxia4g.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_ohc=eOIWg9x3ZgsQ7kNvwFmf2kU&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mzc4NTk5NjUxMTUzMjU3MiwiYXNzZXRfYWdlX2RheXMiOjE1NywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjUxLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4MrgYMw7QBSrFPfwILZKOhMjLVDPxuuzxkSUSwGwlEFA&oe=6A1E6EC5",
             "alt": null,
             "likesCount": 1,
             "videoViewCount": 34,
@@ -2380,9 +2430,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1333,
             "dimensionsWidth": 750,
-            "displayUrl": "https://scontent-iad3-2.cdninstagram.com/v/t15.5256-10/594354771_1006835814990651_4736092376250602158_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=XuGhW81tVNgQ7kNvwHJyzaZ&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4mio-dywM5uFEMj3S1ERKAPrgcF8uoxBYVlwmsQGDG_g&oe=6A1E6711&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t15.5256-10/594354771_1006835814990651_4736092376250602158_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=XuGhW81tVNgQ7kNvwEcDJBh&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6Ms4vfPMSgudLB5_V7yIE6KLrlB3pO4l4jSDB99AL2FQ&oe=6A1E6711&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-1.cdninstagram.com/o1/v/t2/f2/m412/AQNYgj0Y584oZimadzNoGFP_hV8FV3KPKXNOxFeMdfvGqDwIG6BpZOh0d53u-MtmQ4EP-FHs-hh60H8oKGui_2pgz9YWPmZfOr9T_G74ug.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=j3lmDv7sqPsQ7kNvwGkR-zt&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NzEzMTc4MjI0NzkwMDU3LCJhc3NldF9hZ2VfZGF5cyI6MTY5LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6NjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7TAaJd2G6nGBzcr6hMW6VgMhKL1rRLQLsQ7g6fBNr0Vg&oe=6A1E3775",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m412/AQNYgj0Y584oZimadzNoGFP_hV8FV3KPKXNOxFeMdfvGqDwIG6BpZOh0d53u-MtmQ4EP-FHs-hh60H8oKGui_2pgz9YWPmZfOr9T_G74ug.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=j3lmDv7sqPsQ7kNvwFHqAf2&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6NzEzMTc4MjI0NzkwMDU3LCJhc3NldF9hZ2VfZGF5cyI6MTY5LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6NjgsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7w6yze9hNXY4zgeZQJIZHacfiWOTtki58-7sRnv2735g&oe=6A1E6FB5",
             "alt": null,
             "likesCount": 1,
             "videoViewCount": 7,
@@ -2412,9 +2462,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1333,
             "dimensionsWidth": 750,
-            "displayUrl": "https://scontent-iad3-2.cdninstagram.com/v/t15.5256-10/591966719_1367514241427175_569114338998422493_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=HPPJy3EL3ZoQ7kNvwGS3re9&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af7BwP0vHrTRbuZvcgtnMekadyVVGK1EmUsBD9xMo6DRog&oe=6A1E6646&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t15.5256-10/591966719_1367514241427175_569114338998422493_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=HPPJy3EL3ZoQ7kNvwGmChyV&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af7uFbAiOZTcUnUChUPBKZCAKDSa3xyUlDOcmR2YTsDF8Q&oe=6A1E6646&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-1.cdninstagram.com/o1/v/t2/f2/m412/AQM2huzFuLeEv1XGW991j1VTk-7cAzyQaawFy0mekYgLfV2zlrwz_Ek09OeTLr-6p6PDoivAN16HblbDRXzz4vXmW_j9bqXdk98ZjP3ReA.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=SanSzmpfdtUQ7kNvwGmz0gl&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI2ODM4NDAwOTk5MDQ1MywiYXNzZXRfYWdlX2RheXMiOjE3NywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjI4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6ipZVY1nXVK9xZSZVwK-fPyTEh1s6QOpJWuAc65RK7fA&oe=6A1E5EA5",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m412/AQM2huzFuLeEv1XGW991j1VTk-7cAzyQaawFy0mekYgLfV2zlrwz_Ek09OeTLr-6p6PDoivAN16HblbDRXzz4vXmW_j9bqXdk98ZjP3ReA.mp4?_nc_cat=101&_nc_sid=8bf8fe&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=SanSzmpfdtUQ7kNvwEKVK0E&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MzI2ODM4NDAwOTk5MDQ1MywiYXNzZXRfYWdlX2RheXMiOjE3NywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjI4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4osSst_5tH-xLILjw81ddOvFcI-dXe5bPZ1guW77KgsQ&oe=6A1E5EA5",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 34,
@@ -2444,9 +2494,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1333,
             "dimensionsWidth": 750,
-            "displayUrl": "https://scontent-iad3-1.cdninstagram.com/v/t15.5256-10/568278910_2060461847822821_1760428618369856426_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=mR9CSpVEfRMQ7kNvwHpy8hZ&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6b-WHCL7IsxO1cvSnd7Y9z8DocH6SAQmfrhBbZkvjMyA&oe=6A1E4CC9&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t15.5256-10/568278910_2060461847822821_1760428618369856426_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=mR9CSpVEfRMQ7kNvwHEiRuK&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4tGpE-hlxA5Ur0dUMronNTi0hP8T2qNkahTIL4QKe0cA&oe=6A1E4CC9&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad6-1.cdninstagram.com/o1/v/t2/f2/m412/AQNShrOlxDMzE_SeFdZMGMb_FGK3nDTUM7MJkuEFlvB3Y6d7qoDnfzKoHE2lbtAwgpFj1j2AlOQ87sS5rDAOj4x8GTn_ZFgVVO0SL9xQ3w.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_ohc=mf5_AU64eWAQ7kNvwFSMItp&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI2OTc5OTk1MzQ0OTIwNSwiYXNzZXRfYWdlX2RheXMiOjIwOSwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af5edS9I0cHsdXm7lZ3VXccFX_2SPdLn16LsZ0JHVUozVA&oe=6A1E4FAD",
+            "videoUrl": "https://scontent-dfw5-1.cdninstagram.com/o1/v/t2/f2/m412/AQNShrOlxDMzE_SeFdZMGMb_FGK3nDTUM7MJkuEFlvB3Y6d7qoDnfzKoHE2lbtAwgpFj1j2AlOQ87sS5rDAOj4x8GTn_ZFgVVO0SL9xQ3w.mp4?_nc_cat=109&_nc_sid=8bf8fe&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_ohc=mf5_AU64eWAQ7kNvwEjcaNT&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI2OTc5OTk1MzQ0OTIwNSwiYXNzZXRfYWdlX2RheXMiOjIwOSwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjYwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af5WF0kaGISTwd4AOtIbpjskvi0DJrtqaQLzQ-44ZgODhQ&oe=6A1E4FAD",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 24,
@@ -2476,9 +2526,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1920,
             "dimensionsWidth": 1080,
-            "displayUrl": "https://scontent-iad3-2.cdninstagram.com/v/t15.5256-10/568283249_1349309696788661_1261835161999065743_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=WODapHCzC4YQ7kNvwEaU-l8&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4hb0Hp7QwsMx-usUAtnt4zWAe8hKmmSKg6yXVvj4CENA&oe=6A1E520F&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-1.cdninstagram.com/v/t15.5256-10/568283249_1349309696788661_1261835161999065743_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=WODapHCzC4YQ7kNvwHVSADO&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6Gq3M20KzGjC-Cdg0qkgVcsFQDKJTFVnaNq3LV_svK7g&oe=6A1E520F&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-1.cdninstagram.com/o1/v/t2/f2/m412/AQNUEqnCz7Qz7GKlYOATKN9U0vkiBUpz0QsZ_O0J55GkmsyE8KOB8ZmXTZVsumgdEtbL5CuzWFpTEOZHXhnV2XqfhXMvyoMWE7TDwGa4jg.mp4?_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=KQMisIvV2eIQ7kNvwHQGy9-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI0MjM0Mzc5OTU5NjY1NywiYXNzZXRfYWdlX2RheXMiOjIxMCwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjU0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7UG0UG1ucuwsClyOoGHswY2Czq0ZmFLkBBGFAUo4zUoQ&oe=6A1E4C40",
+            "videoUrl": "https://scontent-dfw5-1.cdninstagram.com/o1/v/t2/f2/m412/AQNUEqnCz7Qz7GKlYOATKN9U0vkiBUpz0QsZ_O0J55GkmsyE8KOB8ZmXTZVsumgdEtbL5CuzWFpTEOZHXhnV2XqfhXMvyoMWE7TDwGa4jg.mp4?_nc_cat=110&_nc_sid=8bf8fe&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_ohc=KQMisIvV2eIQ7kNvwGBBuQk&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MjI0MjM0Mzc5OTU5NjY1NywiYXNzZXRfYWdlX2RheXMiOjIxMCwidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjU0LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6_UN3wE18QUSgbhq-87v3wARonZC9y5VFuJNwoJc7_oQ&oe=6A1E4C40",
             "alt": null,
             "likesCount": 1,
             "videoViewCount": 28,
@@ -2508,9 +2558,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1920,
             "dimensionsWidth": 1080,
-            "displayUrl": "https://scontent-iad6-1.cdninstagram.com/v/t15.5256-10/567899326_1497940441358508_4126989510328026858_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=YbKrzXY5F5cQ7kNvwF6_kJv&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6ofYrI7-WhbmkKx8gzvmOEDjNh52G9WbE6Gm72jcwGow&oe=6A1E6C6F&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t15.5256-10/567899326_1497940441358508_4126989510328026858_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=YbKrzXY5F5cQ7kNvwFR0r0A&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af6oNyWwG-K0xsseLo5z5dJ8VZH18QSQTnqeWvjJONA8ow&oe=6A1E6C6F&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-1.cdninstagram.com/o1/v/t2/f2/m412/AQPy1Sr-oa3JLRyMt5Cn3Hj8mNOZYM64GnMWbjJRyCaJXlayAYA5LxMl9R5yIIqN-9afl6MV6B2NNSvngyHFcI7gLoWJ8WacZG-IVTXpCA.mp4?_nc_cat=104&_nc_sid=8bf8fe&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_ohc=SlYVbzjnURAQ7kNvwGXX4mt&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mjk1Mzc2NzMxMTQ5ODExMSwiYXNzZXRfYWdlX2RheXMiOjIxMywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af5c7dBiI4qiYCTxoECmgvGUadDSb5J7kbP8HdKX7IuTjQ&oe=6A1E60B6",
+            "videoUrl": "https://scontent-dfw5-2.cdninstagram.com/o1/v/t2/f2/m412/AQPy1Sr-oa3JLRyMt5Cn3Hj8mNOZYM64GnMWbjJRyCaJXlayAYA5LxMl9R5yIIqN-9afl6MV6B2NNSvngyHFcI7gLoWJ8WacZG-IVTXpCA.mp4?_nc_cat=104&_nc_sid=8bf8fe&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_ohc=9hacw6xaz60Q7kNvwE_-Jm9&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6Mjk1Mzc2NzMxMTQ5ODExMSwiYXNzZXRfYWdlX2RheXMiOjIxMywidmlfdXNlY2FzZV9pZCI6MTAxMjMsImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af7ah32V0AMvxDDdG4ozGe0Hgyw4KYzy0gxSeYqRVShBkQ&oe=6A1E60B6",
             "alt": null,
             "likesCount": 2,
             "videoViewCount": 22,
@@ -2540,9 +2590,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1920,
             "dimensionsWidth": 1080,
-            "displayUrl": "https://scontent-iad3-1.cdninstagram.com/v/t15.5256-10/563082639_4341321659526736_8628506789245614850_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad3-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=lnOrcmoBAQgQ7kNvwG06c3r&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4thHMH_8-dPpU2o-F0ualtFxODtuJjnrLcEQ-ZesINBQ&oe=6A1E5851&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw5-2.cdninstagram.com/v/t15.5256-10/563082639_4341321659526736_8628506789245614850_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=lnOrcmoBAQgQ7kNvwHTgzlB&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af4VeiMz-u7I3DTHoR4szWDzV2sxa0iW7NttLuxo2p9q7g&oe=6A1E5851&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad6-1.cdninstagram.com/o1/v/t2/f2/m412/AQOxRjWF1-6j97E1Se42U6OqU1v4LeWU8sFJg7las5cn6mUg0rtXQWMuO6Y9kjStNM74KuHn9ytxydoRZct_9fodeJ7ZDvmCsgPpVXzC-w.mp4?_nc_cat=107&_nc_sid=8bf8fe&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_ohc=BCYaVjN9h-oQ7kNvwEDLyDH&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODIxMzExMzYzNjE4ODU5LCJhc3NldF9hZ2VfZGF5cyI6MjI3LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6MzYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af4vAh88GbDs126Ctb2XpgO4rBwYRc1HPCsdYwR_CWkEXg&oe=6A1E61B3",
+            "videoUrl": "https://scontent-dfw5-2.cdninstagram.com/o1/v/t2/f2/m412/AQOxRjWF1-6j97E1Se42U6OqU1v4LeWU8sFJg7las5cn6mUg0rtXQWMuO6Y9kjStNM74KuHn9ytxydoRZct_9fodeJ7ZDvmCsgPpVXzC-w.mp4?_nc_cat=107&_nc_sid=8bf8fe&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_ohc=BCYaVjN9h-oQ7kNvwG9udln&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6ODIxMzExMzYzNjE4ODU5LCJhc3NldF9hZ2VfZGF5cyI6MjI3LCJ2aV91c2VjYXNlX2lkIjoxMDEyMywiZHVyYXRpb25fcyI6MzYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af60WXF4jsNSRSbG4woHQl6BcqOnARlu_auc4d50kkUveg&oe=6A1E61B3",
             "alt": null,
             "likesCount": 5,
             "videoViewCount": 25,
@@ -2572,9 +2622,9 @@
             "commentsCount": 0,
             "dimensionsHeight": 1920,
             "dimensionsWidth": 1080,
-            "displayUrl": "https://scontent-iad6-1.cdninstagram.com/v/t15.5256-10/543883415_1133113665344202_51983119836078526_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-iad6-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gEhMEYHsZQmDaIQrlZrLTPYDNUFZ8ZlCUdrno7OdsJUMbbxuYGwBIqgBELL6D-rfPU&_nc_ohc=qBV6ZVJ5SmAQ7kNvwEaMA6e&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af5Jx1QY7Wz60rfWnaL_Huz0c8TfUIXuCad1bUACuzn-bw&oe=6A1E4B44&_nc_sid=8b3546",
+            "displayUrl": "https://scontent-dfw6-1.cdninstagram.com/v/t15.5256-10/543883415_1133113665344202_51983119836078526_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gFjNbUTb4M1X9pcpuRRsQqCfyp5Zm-BCAWknnFcGLcm14N76226M_OUzKwEdXBfsyY&_nc_ohc=qBV6ZVJ5SmAQ7kNvwHmMu2A&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&edm=AOQ1c0wAAAAA&ccb=7-5&oh=00_Af59rroclefhDLxkeYZmlVyTWq9U7D0br9uYPqmteGvSvQ&oe=6A1E4B44&_nc_sid=8b3546",
             "images": [],
-            "videoUrl": "https://scontent-iad3-2.cdninstagram.com/o1/v/t2/f2/m366/AQOrpgDH43Q6nqKBFLWjOOlELoS3vaa7d3gkQVZLdwo0HaWgpGv9iS3gR5ljFOYFDZ4cwb2K8eda06i-BsOOUwlg4miCZpxwfHBkuu-gZQ.mp4?_nc_cat=103&_nc_sid=8bf8fe&_nc_ht=scontent-iad3-2.cdninstagram.com&_nc_ohc=int7h2SbaQMQ7kNvwGGCpp0&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA5Nzg5MzQyMjU0OTMyMiwiYXNzZXRfYWdlX2RheXMiOjI2MiwidmlfdXNlY2FzZV9pZCI6MTAxMjAsImR1cmF0aW9uX3MiOjc4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=dFlZk5MPssA7k4AU9gnUTQ&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6CbuwVBjQ6O4f6ytLih110WrZ8CXukUKw8JeYg2NIaqw&oe=6A1E457B",
+            "videoUrl": "https://scontent-dfw6-1.cdninstagram.com/o1/v/t2/f2/m366/AQOrpgDH43Q6nqKBFLWjOOlELoS3vaa7d3gkQVZLdwo0HaWgpGv9iS3gR5ljFOYFDZ4cwb2K8eda06i-BsOOUwlg4miCZpxwfHBkuu-gZQ.mp4?_nc_cat=103&_nc_sid=8bf8fe&_nc_ht=scontent-dfw6-1.cdninstagram.com&_nc_ohc=int7h2SbaQMQ7kNvwHgLfJ5&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5JTlNUQUdSQU0uQ0xJUFMuQzMuMzYwLnN2ZV9zZCIsInhwdl9hc3NldF9pZCI6MTA5Nzg5MzQyMjU0OTMyMiwiYXNzZXRfYWdlX2RheXMiOjI2MiwidmlfdXNlY2FzZV9pZCI6MTAxMjAsImR1cmF0aW9uX3MiOjc4LCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&_nc_gid=xiQWUNusZJ8r1sObjhSn9A&_nc_ss=7a3ba&_nc_zt=28&oh=00_Af6DMkQflgWDmOkIw8DAXo7hKSBA1H4wld9pHjIZeTpcww&oe=6A1E7DBB",
             "alt": null,
             "likesCount": 4,
             "videoViewCount": 29,
@@ -2709,17 +2759,17 @@
       "confidence": 1.0,
       "matched_context": [
         "Mario Lezzi",
+        "Laureato in Informatica",
+        "Informatica",
         "Salerno",
         "Monteforte Irpino",
         "Campania",
         "Università degli Studi di Salerno",
-        "Laureato in Informatica",
         "Studente magistrale di Cyber Security",
-        "Informatica",
         "Cyber Security"
       ],
       "raw_data": {
-        "query": "\"Mario Lezzi\" \"Università degli Studi di Salerno\" Facebook",
+        "query": "\"Mario Lezzi\" Facebook",
         "phase": "social_contextual_web_search",
         "result_class": "professional_profile",
         "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
@@ -2732,16 +2782,16 @@
           "platform": "linkedin",
           "username": "mario-lezzi-3b69a2262",
           "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-          "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
-          "confidence": 0.79,
+          "description": "... Irpino · 39 collegamenti su LinkedIn. Vedi il profilo di Mario Lezzi su LinkedIn, una community professionale di 1 miliardo di utenti.",
+          "confidence": 0.55,
           "raw_data": {
-            "query": "\"Mario Lezzi\" site:linkedin.com/in",
+            "query": "\"Mario Lezzi\" LinkedIn",
             "phase": "base_web_search",
             "result_class": "professional_profile",
             "platform": "linkedin",
             "username": "mario-lezzi-3b69a2262",
             "title": "Mario Lezzi - Laureato in informatica, studente magistrale ...",
-            "description": "Mario Lezzi. Laureato in informatica, studente magistrale di Cyber Security. Università degli Studi di Salerno. Monteforte Irpino, Campania, Italia.",
+            "description": "... Irpino · 39 collegamenti su LinkedIn. Vedi il profilo di Mario Lezzi su LinkedIn, una community professionale di 1 miliardo di utenti.",
             "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262"
           }
         }
@@ -2758,11 +2808,11 @@
         "Crotone"
       ],
       "raw_data": {
-        "query": "\"Mario Lezzi\" LinkedIn",
+        "query": "\"Mario Lezzi\" site:linkedin.com/in",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
+        "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
         "source_evidence": {
           "source": "web",
           "evidence_type": "profile",
@@ -2771,16 +2821,16 @@
           "platform": "linkedin",
           "username": "mario-lezzi-8590393b5",
           "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-          "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+          "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
           "confidence": 0.55,
           "raw_data": {
-            "query": "\"Mario Lezzi\" site:linkedin.com/in",
+            "query": "\"Mario Lezzi\" LinkedIn",
             "phase": "base_web_search",
             "result_class": "professional_profile",
             "platform": "linkedin",
             "username": "mario-lezzi-8590393b5",
             "title": "Mario Lezzi - Responsabile vendite al dettaglio presso BERSHKA",
-            "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community ...",
+            "description": "Responsabile vendite al dettaglio presso BERSHKA · Esperienza: BERSHKA · Località: Crotone. Vedi il profilo di Mario Lezzi su LinkedIn, una community",
             "url": "https://it.linkedin.com/in/mario-lezzi-8590393b5"
           }
         }
@@ -2794,11 +2844,11 @@
       "confidence": 0.51,
       "matched_context": [
         "Salerno",
-        "Università degli Studi di Salerno",
-        "Informatica"
+        "Informatica",
+        "Università degli Studi di Salerno"
       ],
       "raw_data": {
-        "query": "\"Mario Lezzi\" GitHub",
+        "query": "\"Mario Lezzi\" \"Salerno\" site:linkedin.com/in",
         "phase": "base_web_search",
         "result_class": "professional_profile",
         "title": "Carmine Calabrese - Università degli Studi di Salerno",
@@ -2815,7 +2865,7 @@
         "Mario Lezzi"
       ],
       "raw_data": {
-        "query": "\"Mario Lezzi\" site:facebook.com",
+        "query": "\"Mario Lezzi\" Facebook",
         "phase": "social_contextual_web_search",
         "result_class": "social_profile_candidate",
         "title": "Mario Lezzi",

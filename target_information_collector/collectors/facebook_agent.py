@@ -485,7 +485,9 @@ class FacebookAgent(BaseAgent):
         scheme = parsed.scheme or "https"
         netloc = parsed.netloc.lower()
 
-        if netloc.startswith("www."):
+        if netloc in {"www.facebook.com", "web.facebook.com", "m.facebook.com", "mbasic.facebook.com"}:
+            netloc = "facebook.com"
+        elif netloc.startswith("www."):
             netloc = netloc[4:]
 
         path = parsed.path

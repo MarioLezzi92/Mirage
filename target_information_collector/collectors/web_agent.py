@@ -247,7 +247,7 @@ class WebAgent(BaseAgent):
             queries.append(f'"{name}" "{term}"')
             queries.append(f'"{name}" "{term}" LinkedIn')
             queries.append(f'"{name}" "{term}" site:linkedin.com/in')
-        return store.unique(queries)[:25]
+        return store.unique(queries)[:10]
 
     def _build_social_contextual_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
@@ -269,7 +269,7 @@ class WebAgent(BaseAgent):
                 queries.append(f'"{candidate.username}" site:facebook.com')
                 queries.append(f'"{candidate.username}" site:instagram.com')
 
-        return store.unique(queries)[:40]
+        return store.unique(queries)[:12]
 
     def _score_result(self, store: EvidenceStore, text: str, result_class: str) -> float:
         lower = text.lower()
