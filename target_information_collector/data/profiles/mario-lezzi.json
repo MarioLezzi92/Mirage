@@ -1,0 +1,55 @@
+{
+  "name": "Mario Lezzi",
+  "gender": "Male",
+  "birth_date": null,
+  "position": "Informatica",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "Salerno",
+    "Monteforte Irpino",
+    "Campania",
+    "Avellino, Italy"
+  ],
+  "education": [
+    "Università degli Studi di Salerno",
+    "Laureato in Informatica",
+    "Studente magistrale di Cyber Security",
+    "Informatica",
+    "Cyber Security"
+  ],
+  "contacts": [
+    "mario.lezzi9212@gmail.com"
+  ],
+  "public_links": [
+    {
+      "url": "https://it.linkedin.com/in/mario-lezzi-3b69a2262",
+      "platform": "linkedin",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": []
+    },
+    {
+      "url": "https://github.com/MarioLezzi92",
+      "platform": "github",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": []
+    },
+    {
+      "url": "https://www.mondodigitale.org/notizie/come-agenti-speciali-rete",
+      "platform": "institutional",
+      "status": "mention",
+      "context": "Come agenti speciali in rete",
+      "matched_context": []
+    }
+  ],
+  "tech_stack": [
+    "Machine Learning",
+    "Jupyter Notebook",
+    "Cyber Security",
+    "JavaScript",
+    "penetration-testing-ethical-hacking-vulnhub",
+    "HTML",
+    "Penetration Testing"
+  ]
+}
