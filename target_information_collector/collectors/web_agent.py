@@ -1,19 +1,29 @@
 import requests
+
 from target_information_collector.collectors.base_agent import BaseAgent
 from target_information_collector.evidence.evidence_normalizer import EvidenceNormalizer
 from target_information_collector.evidence.evidence_store import EvidenceStore
 from target_information_collector.shared.config import settings
 from target_information_collector.shared.models import EvidenceSource, EvidenceType
 
+
 class WebAgent(BaseAgent):
     BASE_URL = "https://api.apify.com/v2"
+
+    BASE_QUERY_LIMIT = 10
+    DORKING_QUERY_LIMIT = 3
+    SOCIAL_QUERY_LIMIT = 12
+    RESULTS_PER_QUERY = 8
 
     def __init__(self):
         self.normalizer = EvidenceNormalizer()
 
     def collect_base(self, store: EvidenceStore) -> None:
-        queries = self._build_base_queries(store)
-        self._run_and_store(store=store, queries=queries, phase="base_web_search")
+        base_queries = self._build_base_queries(store)
+        self._run_and_store(store=store, queries=base_queries, phase="base_web_search")
+
+        dorking_queries = self._build_dorking_queries(store)
+        self._run_and_store(store=store, queries=dorking_queries, phase="document_dorking")
 
     def collect_social_contextual(self, store: EvidenceStore) -> None:
         queries = self._build_social_contextual_queries(store)
@@ -31,13 +41,6 @@ class WebAgent(BaseAgent):
             return
 
         if not queries:
-            store.add_evidence(
-                source=EvidenceSource.WEB,
-                evidence_type=EvidenceType.ERROR,
-                value="No web search queries generated",
-                confidence=0.0,
-                raw_data={"phase": phase},
-            )
             return
 
         items = self._run_google_search_actor(queries)
@@ -65,7 +68,7 @@ class WebAgent(BaseAgent):
         payload = {
             "queries": "\n".join(queries),
             "maxPagesPerQuery": 1,
-            "resultsPerPage": 10,
+            "resultsPerPage": self.RESULTS_PER_QUERY,
             "countryCode": "it",
             "languageCode": "it",
             "geminiSearch": {"enableGemini": False},
@@ -91,6 +94,7 @@ class WebAgent(BaseAgent):
                 }]
 
             data = response.json()
+
             if not isinstance(data, list):
                 return [{
                     "collector_error": True,
@@ -103,12 +107,24 @@ class WebAgent(BaseAgent):
             return data
 
         except requests.exceptions.RequestException as exc:
-            return [{"collector_error": True, "error": str(exc), "actor_id": actor_id, "payload": payload}]
+            return [{
+                "collector_error": True,
+                "error": str(exc),
+                "actor_id": actor_id,
+                "payload": payload,
+            }]
+
         except ValueError as exc:
-            return [{"collector_error": True, "error": f"Invalid JSON response: {str(exc)}", "actor_id": actor_id, "payload": payload}]
+            return [{
+                "collector_error": True,
+                "error": f"Invalid JSON response: {str(exc)}",
+                "actor_id": actor_id,
+                "payload": payload,
+            }]
 
     def _extract_search_results(self, item: dict) -> list[dict]:
         results = []
+
         for result in item.get("organicResults", []):
             results.append({
                 "title": result.get("title"),
@@ -117,12 +133,14 @@ class WebAgent(BaseAgent):
             })
 
         direct_url = item.get("url") or item.get("link")
+
         if direct_url:
             results.append({
                 "title": item.get("title"),
                 "description": item.get("description") or item.get("snippet"),
                 "url": direct_url,
             })
+
         return results
 
     def _store_result(self, store: EvidenceStore, query: str, result: dict, phase: str) -> None:
@@ -131,6 +149,7 @@ class WebAgent(BaseAgent):
         raw_url = result.get("url")
 
         url = self.normalizer.normalize_url(raw_url)
+
         if not url or self.normalizer.is_blocked_url(url):
             return
 
@@ -139,7 +158,7 @@ class WebAgent(BaseAgent):
         result_class = self.normalizer.classify_url(url)
 
         text = f"{title} {description} {url}"
-        confidence = self._score_result(store, text, result_class)
+        confidence = self._score_result(store, text, result_class, phase)
 
         if confidence < 0.35:
             return
@@ -168,6 +187,49 @@ class WebAgent(BaseAgent):
             },
         )
 
+        self._extract_extra_evidence(
+            store=store,
+            query=query,
+            phase=phase,
+            text=text,
+            url=url,
+            platform=platform,
+            username=username,
+            title=title,
+            description=description,
+            confidence=confidence,
+        )
+
+        if result_class in {"professional_profile", "technical_profile", "social_profile_candidate"}:
+            store.add_candidate(
+                platform=platform or "web",
+                url=url,
+                username=username,
+                display_name=title,
+                confidence=confidence,
+                matched_context=self.matched_context(store, text),
+                raw_data={
+                    "query": query,
+                    "phase": phase,
+                    "result_class": result_class,
+                    "title": title,
+                    "description": description,
+                },
+            )
+
+    def _extract_extra_evidence(
+        self,
+        store: EvidenceStore,
+        query: str,
+        phase: str,
+        text: str,
+        url: str,
+        platform: str | None,
+        username: str | None,
+        title: str,
+        description: str,
+        confidence: float,
+    ) -> None:
         for email in self.normalizer.extract_emails(text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
@@ -218,60 +280,67 @@ class WebAgent(BaseAgent):
                 raw_data={"query": query, "phase": phase, "source_url": url},
             )
 
-        if result_class in {"professional_profile", "technical_profile", "social_profile_candidate"}:
-            store.add_candidate(
-                platform=platform or "web",
-                url=url,
-                username=username,
-                display_name=title,
-                confidence=confidence,
-                matched_context=self.matched_context(store, text),
-                raw_data={
-                    "query": query,
-                    "phase": phase,
-                    "result_class": result_class,
-                    "title": title,
-                    "description": description,
-                },
-            )
-
     def _build_base_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
+
         queries = [
-            f'"{name}"', f'"{name}" LinkedIn', f'"{name}" GitHub',
-            f'"{name}" site:linkedin.com/in', f'"{name}" site:github.com', f'"{name}" email'
+            f'"{name}"',
+            f'"{name}" LinkedIn',
+            f'"{name}" GitHub',
+            f'"{name}" site:linkedin.com/in',
+            f'"{name}" site:github.com',
+            f'"{name}" email',
         ]
+
         for term in store.get_context_terms():
             if term == name:
                 continue
+
             queries.append(f'"{name}" "{term}"')
             queries.append(f'"{name}" "{term}" LinkedIn')
             queries.append(f'"{name}" "{term}" site:linkedin.com/in')
-        return store.unique(queries)[:10]
+
+        return store.unique(queries)[:self.BASE_QUERY_LIMIT]
+
+    def _build_dorking_queries(self, store: EvidenceStore) -> list[str]:
+        name = store.target.full_name.strip()
+        queries = []
+        
+        strong_terms = store.get_strong_context_terms()
+
+        for term in strong_terms:
+            queries.append(f'"{name}" "{term}" filetype:pdf')
+
+        if store.target.email_domain:
+            queries.append(f'"{name}" site:{store.target.email_domain}')
+            queries.append(f'"{name}" "{store.target.email_domain}" filetype:pdf')
+
+        return store.unique(queries)[:self.DORKING_QUERY_LIMIT]
 
     def _build_social_contextual_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
+
         queries = [
-            f'"{name}" Facebook', f'"{name}" Instagram',
-            f'"{name}" site:facebook.com', f'"{name}" site:instagram.com'
+            f'"{name}" Facebook',
+            f'"{name}" Instagram',
+            f'"{name}" site:facebook.com',
+            f'"{name}" site:instagram.com',
         ]
 
-        high_value_terms = store.get_strong_context_terms()
-        for term in high_value_terms:
+        for term in store.get_strong_context_terms():
             queries.append(f'"{name}" "{term}" Facebook')
             queries.append(f'"{name}" "{term}" site:facebook.com')
             queries.append(f'"{name}" "{term}" Instagram')
             queries.append(f'"{name}" "{term}" site:instagram.com')
-        
+
         for candidate in store.candidates:
             if candidate.username:
-                # Usa gli username scoperti altrove (es. GitHub) per cercare su FB e IG
                 queries.append(f'"{candidate.username}" site:facebook.com')
                 queries.append(f'"{candidate.username}" site:instagram.com')
 
-        return store.unique(queries)[:12]
+        return store.unique(queries)[:self.SOCIAL_QUERY_LIMIT]
 
-    def _score_result(self, store: EvidenceStore, text: str, result_class: str) -> float:
+    def _score_result(self, store: EvidenceStore, text: str, result_class: str, phase: str) -> float:
         lower = text.lower()
         score = 0.0
         name = store.target.full_name.lower()
@@ -294,16 +363,26 @@ class WebAgent(BaseAgent):
             "social_contextual_mention": -0.10,
             "web_mention": 0.00,
         }
+
         score += bonus.get(result_class, 0.0)
+
+        if phase == "document_dorking":
+            score += 0.05
+
         return round(max(0.0, min(score, 1.0)), 3)
 
     def _map_result_class_to_evidence_type(self, result_class: str) -> EvidenceType:
         if result_class in {"professional_profile", "technical_profile"}:
             return EvidenceType.PROFILE
+
         if result_class == "social_profile_candidate":
             return EvidenceType.PUBLIC_LINK
-        if result_class == "institutional_reference":
-            return EvidenceType.WEB_MENTION
+
         if result_class == "social_contextual_mention":
             return EvidenceType.SOCIAL_HINT
+
         return EvidenceType.WEB_MENTION
+
+    def _looks_like_domain_or_org(self, value: str) -> bool:
+        value = value.lower().strip()
+        return "." in value and " " not in value

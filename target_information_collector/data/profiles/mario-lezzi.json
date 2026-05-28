@@ -11,10 +11,10 @@
     "Avellino, Italy"
   ],
   "education": [
-    "Laureato in Informatica",
-    "Informatica",
     "Università degli Studi di Salerno",
+    "Laureato in Informatica",
     "Studente magistrale di Cyber Security",
+    "Informatica",
     "Cyber Security"
   ],
   "contacts": [
@@ -78,12 +78,12 @@
     }
   ],
   "tech_stack": [
-    "JavaScript",
-    "Penetration Testing",
-    "HTML",
     "penetration-testing-ethical-hacking-vulnhub",
-    "Cyber Security",
+    "JavaScript",
+    "HTML",
     "Machine Learning",
+    "Cyber Security",
+    "Penetration Testing",
     "Jupyter Notebook"
   ]
 }

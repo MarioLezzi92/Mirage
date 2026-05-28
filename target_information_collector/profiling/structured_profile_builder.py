@@ -144,10 +144,13 @@ class StructuredProfileBuilder:
             status = status_by_url.get(key, CandidateStatus.CANDIDATE)
 
             if status in {
-                CandidateStatus.REJECTED, "REJECTED",
-                CandidateStatus.CANDIDATE, "CANDIDATE",
-                "rejected", "candidate",
-                }:
+                CandidateStatus.REJECTED,
+                "REJECTED",
+                CandidateStatus.CANDIDATE,
+                "CANDIDATE",
+                "rejected",
+                "candidate",
+            }:
                 continue
 
             links.append(
@@ -169,6 +172,9 @@ class StructuredProfileBuilder:
             if self._is_bad_social_url(ev.url):
                 continue
 
+            if self._is_document_dorking(ev):
+                continue
+
             links.append(
                 StructuredPublicLink(
                     url=ev.url,
@@ -183,6 +189,10 @@ class StructuredProfileBuilder:
 
     def _tech_stack(self, raw_stack: list[str]) -> list[str]:
         return self._unique([item.strip() for item in raw_stack if item])
+
+    def _is_document_dorking(self, evidence) -> bool:
+        raw_data = evidence.raw_data or {}
+        return raw_data.get("phase") == "document_dorking"
 
     def _is_bad_social_url(self, url: str) -> bool:
         if not url:
@@ -257,7 +267,14 @@ class StructuredProfileBuilder:
         scheme = parsed.scheme or "https"
         netloc = parsed.netloc.lower()
 
-        if netloc.startswith("www."):
+        if netloc in {
+            "www.facebook.com",
+            "web.facebook.com",
+            "m.facebook.com",
+            "mbasic.facebook.com",
+        }:
+            netloc = "facebook.com"
+        elif netloc.startswith("www."):
             netloc = netloc[4:]
 
         path = parsed.path

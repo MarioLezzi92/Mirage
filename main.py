@@ -28,18 +28,18 @@ def collect_target_information(target: TargetInput):
         # ========================================================
         # 🟢 OPZIONE 1: CRAWLER LIVE (Scommenta per usare internet)
         # ========================================================
-        print("Avvio raccolta dati dal vivo...")
-        raw_data = pb.collect_raw(target)
-        raw_filename = jw.save(target.full_name, raw_data)
+        #print("Avvio raccolta dati dal vivo...")
+        #raw_data = pb.collect_raw(target)
+        #raw_filename = jw.save(target.full_name, raw_data)
 
         # ========================================================
         # 🛑 OPZIONE 2: MOCK ATTIVO (Scommenta per test offline)
         # ========================================================
-        #raw_filename = "mario-lezzi-raw-1.json"
-        #print(f"🛠️ MODALITÀ TEST: Caricamento dati locali da {raw_filename}...")
-        #file_path = Path(r"C:\Users\mario\OneDrive\Desktop\SocialEng\target_information_collector\data\raw") / raw_filename
-        #with open(file_path, "r", encoding="utf-8") as f:
-        #    raw_data = json.load(f)
+        raw_filename = "mario-lezzi-raw-1.json"
+        print(f"🛠️ MODALITÀ TEST: Caricamento dati locali da {raw_filename}...")
+        file_path = Path(r"C:\Users\mario\OneDrive\Desktop\SocialEng\target_information_collector\data\raw") / raw_filename
+        with open(file_path, "r", encoding="utf-8") as f:
+            raw_data = json.load(f)
         # ========================================================
 
         # Estrazione unificata valida per entrambe le opzioni
