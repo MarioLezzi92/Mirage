@@ -54,6 +54,43 @@ class EvidenceNormalizer:
         "dokumen.pub/",
     ]
 
+    TECH_TERMS = {
+        "cybersecurity": "Cybersecurity",
+        "cyber security": "Cyber Security",
+        "information security": "Information Security",
+        "penetration testing": "Penetration Testing",
+        "ethical hacking": "Ethical Hacking",
+        "vulnhub": "VulnHub",
+        "tryhackme": "TryHackMe",
+        "hackthebox": "Hack The Box",
+        "machine learning": "Machine Learning",
+        "deep learning": "Deep Learning",
+        "artificial intelligence": "Artificial Intelligence",
+        "python": "Python",
+        "java": "Java",
+        "javascript": "JavaScript",
+        "typescript": "TypeScript",
+        "html": "HTML",
+        "css": "CSS",
+        "php": "PHP",
+        "spring": "Spring",
+        "spring boot": "Spring Boot",
+        "flutter": "Flutter",
+        "dart": "Dart",
+        "react": "React",
+        "angular": "Angular",
+        "vue": "Vue",
+        "sql": "SQL",
+        "postgresql": "PostgreSQL",
+        "mysql": "MySQL",
+        "docker": "Docker",
+        "kubernetes": "Kubernetes",
+        "azure": "Azure",
+        "aws": "AWS",
+        "linux": "Linux",
+        "jupyter notebook": "Jupyter Notebook",
+    }
+
     def normalize_url(self, url: str | None) -> str | None:
         if not url:
             return None
@@ -62,21 +99,25 @@ class EvidenceNormalizer:
 
         scheme = parsed.scheme or "https"
         netloc = parsed.netloc.lower()
+
+        if netloc in {
+            "www.facebook.com",
+            "web.facebook.com",
+            "m.facebook.com",
+            "mbasic.facebook.com",
+        }:
+            netloc = "facebook.com"
+        elif netloc.startswith("www."):
+            netloc = netloc[4:]
+
         path = parsed.path
 
         if path != "/" and path.endswith("/"):
             path = path[:-1]
 
-        return urlunparse(
-            (
-                scheme,
-                netloc,
-                path,
-                "",
-                parsed.query,
-                "",
-            )
-        )
+        query = parsed.query if path.lower().endswith("profile.php") else ""
+
+        return urlunparse((scheme, netloc, path, "", query, ""))
 
     def is_blocked_url(self, url: str | None) -> bool:
         if not url:
@@ -190,9 +231,10 @@ class EvidenceNormalizer:
             for marker in [
                 ".edu",
                 ".ac.",
+                ".gov",
+                ".org",
                 "universit",
-                "unisa.it",
-                "mondodigitale.org",
+                "university",
             ]
         )
 
@@ -215,56 +257,6 @@ class EvidenceNormalizer:
 
         return self.unique(cleaned)
 
-    def extract_known_locations(self, text: str) -> list[str]:
-        if not text:
-            return []
-
-        lower = text.lower()
-        values = []
-
-        known_locations = [
-            "Monteforte Irpino",
-            "Avellino",
-            "Avellino, Italy",
-            "Salerno",
-            "Campania",
-            "Crotone",
-            "Calimera",
-        ]
-
-        for location in known_locations:
-            if location.lower() in lower:
-                values.append(location)
-
-        return self.unique(values)
-
-    def extract_known_education(self, text: str) -> list[str]:
-        if not text:
-            return []
-
-        lower = text.lower()
-        values = []
-
-        known_items = [
-            "Università degli Studi di Salerno",
-            "University of Salerno",
-            "Laureato in Informatica",
-            "Studente magistrale di Cyber Security",
-            "Studente magistrale in Cyber Security",
-            "Cybersecurity student",
-            "Informatica",
-            "Cyber Security",
-            "Liceo Mancini",
-            "Liceo P.S. Mancini",
-            "P.S. Mancini",
-        ]
-
-        for item in known_items:
-            if item.lower() in lower:
-                values.append(item)
-
-        return self.unique(values)
-
     def extract_tech_stack_terms(self, text: str) -> list[str]:
         if not text:
             return []
@@ -272,20 +264,7 @@ class EvidenceNormalizer:
         lower = text.lower()
         values = []
 
-        terms = {
-            "cybersecurity": "Cybersecurity",
-            "cyber security": "Cyber Security",
-            "penetration testing": "Penetration Testing",
-            "ethical hacking": "Ethical Hacking",
-            "vulnhub": "VulnHub",
-            "machine learning": "Machine Learning",
-            "javascript": "JavaScript",
-            "html": "HTML",
-            "jupyter notebook": "Jupyter Notebook",
-            "python": "Python",
-        }
-
-        for key, value in terms.items():
+        for key, value in self.TECH_TERMS.items():
             if key in lower:
                 values.append(value)
 

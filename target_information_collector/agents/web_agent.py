@@ -1,6 +1,6 @@
 import requests
 
-from target_information_collector.collectors.base_agent import BaseAgent
+from target_information_collector.agents.base_agent import BaseAgent
 from target_information_collector.evidence.evidence_normalizer import EvidenceNormalizer
 from target_information_collector.evidence.evidence_store import EvidenceStore
 from target_information_collector.shared.config import settings
@@ -19,15 +19,24 @@ class WebAgent(BaseAgent):
         self.normalizer = EvidenceNormalizer()
 
     def collect_base(self, store: EvidenceStore) -> None:
-        base_queries = self._build_base_queries(store)
-        self._run_and_store(store=store, queries=base_queries, phase="base_web_search")
+        self._run_and_store(
+            store=store,
+            queries=self._build_base_queries(store),
+            phase="base_web_search",
+        )
 
-        dorking_queries = self._build_dorking_queries(store)
-        self._run_and_store(store=store, queries=dorking_queries, phase="document_dorking")
+        self._run_and_store(
+            store=store,
+            queries=self._build_dorking_queries(store),
+            phase="document_dorking",
+        )
 
     def collect_social_contextual(self, store: EvidenceStore) -> None:
-        queries = self._build_social_contextual_queries(store)
-        self._run_and_store(store=store, queries=queries, phase="social_contextual_web_search")
+        self._run_and_store(
+            store=store,
+            queries=self._build_social_contextual_queries(store),
+            phase="social_contextual_web_search",
+        )
 
     def _run_and_store(self, store: EvidenceStore, queries: list[str], phase: str) -> None:
         if not settings.apify_token:
@@ -163,11 +172,9 @@ class WebAgent(BaseAgent):
         if confidence < 0.35:
             return
 
-        evidence_type = self._map_result_class_to_evidence_type(result_class)
-
         store.add_evidence(
             source=EvidenceSource.WEB,
-            evidence_type=evidence_type,
+            evidence_type=self._map_result_class_to_evidence_type(result_class),
             value=title or url,
             url=url,
             platform=platform,
@@ -230,6 +237,23 @@ class WebAgent(BaseAgent):
         description: str,
         confidence: float,
     ) -> None:
+        self._add_email_evidence(store, query, phase, text, url, platform, username, title, description, confidence)
+        self._add_target_context_evidence(store, query, phase, text, url, platform, username, confidence)
+        self._add_tech_stack_evidence(store, query, phase, text, url, platform, username, confidence)
+
+    def _add_email_evidence(
+        self,
+        store: EvidenceStore,
+        query: str,
+        phase: str,
+        text: str,
+        url: str,
+        platform: str | None,
+        username: str | None,
+        title: str,
+        description: str,
+        confidence: float,
+    ) -> None:
         for email in self.normalizer.extract_emails(text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
@@ -244,7 +268,18 @@ class WebAgent(BaseAgent):
                 raw_data={"query": query, "phase": phase, "source_url": url},
             )
 
-        for location in self.normalizer.extract_known_locations(text):
+    def _add_target_context_evidence(
+        self,
+        store: EvidenceStore,
+        query: str,
+        phase: str,
+        text: str,
+        url: str,
+        platform: str | None,
+        username: str | None,
+        confidence: float,
+    ) -> None:
+        for location in self._matched_target_locations(store, text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
                 evidence_type=EvidenceType.LOCATION,
@@ -256,7 +291,19 @@ class WebAgent(BaseAgent):
                 raw_data={"query": query, "phase": phase, "source_url": url},
             )
 
-        for education in self.normalizer.extract_known_education(text):
+        for organization in self._matched_target_organizations(store, text):
+            store.add_evidence(
+                source=EvidenceSource.WEB,
+                evidence_type=EvidenceType.ORGANIZATION,
+                value=organization,
+                url=url,
+                platform=platform,
+                username=username,
+                confidence=min(confidence + 0.05, 1.0),
+                raw_data={"query": query, "phase": phase, "source_url": url},
+            )
+
+        for education in self._matched_target_education(store, text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
                 evidence_type=EvidenceType.EDUCATION,
@@ -268,6 +315,17 @@ class WebAgent(BaseAgent):
                 raw_data={"query": query, "phase": phase, "source_url": url},
             )
 
+    def _add_tech_stack_evidence(
+        self,
+        store: EvidenceStore,
+        query: str,
+        phase: str,
+        text: str,
+        url: str,
+        platform: str | None,
+        username: str | None,
+        confidence: float,
+    ) -> None:
         for tech_term in self.normalizer.extract_tech_stack_terms(text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
@@ -279,6 +337,42 @@ class WebAgent(BaseAgent):
                 confidence=min(confidence + 0.05, 1.0),
                 raw_data={"query": query, "phase": phase, "source_url": url},
             )
+
+    def _matched_target_locations(self, store: EvidenceStore, text: str) -> list[str]:
+        values = []
+
+        if store.target.location:
+            values.append(store.target.location)
+
+        values.extend(store.target.cities)
+
+        return self._matched_values(text, values)
+
+    def _matched_target_organizations(self, store: EvidenceStore, text: str) -> list[str]:
+        values = []
+
+        if store.target.company:
+            values.append(store.target.company)
+
+        if store.target.department:
+            values.append(store.target.department)
+
+        values.extend(store.target.aliases)
+
+        return self._matched_values(text, values)
+
+    def _matched_target_education(self, store: EvidenceStore, text: str) -> list[str]:
+        return self._matched_values(text, store.target.education)
+
+    def _matched_values(self, text: str, values: list[str]) -> list[str]:
+        lower = text.lower()
+        matches = []
+
+        for value in values:
+            if value and value.lower() in lower:
+                matches.append(value)
+
+        return self.normalizer.unique(matches)
 
     def _build_base_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
@@ -305,10 +399,8 @@ class WebAgent(BaseAgent):
     def _build_dorking_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
         queries = []
-        
-        strong_terms = store.get_strong_context_terms()
 
-        for term in strong_terms:
+        for term in store.get_strong_context_terms():
             queries.append(f'"{name}" "{term}" filetype:pdf')
 
         if store.target.email_domain:
@@ -355,16 +447,14 @@ class WebAgent(BaseAgent):
         if store.target.email_domain and store.target.email_domain.lower() in lower:
             score += 0.10
 
-        bonus = {
+        score += {
             "professional_profile": 0.15,
             "technical_profile": 0.15,
             "social_profile_candidate": 0.08,
             "institutional_reference": 0.08,
             "social_contextual_mention": -0.10,
             "web_mention": 0.00,
-        }
-
-        score += bonus.get(result_class, 0.0)
+        }.get(result_class, 0.0)
 
         if phase == "document_dorking":
             score += 0.05
@@ -382,7 +472,3 @@ class WebAgent(BaseAgent):
             return EvidenceType.SOCIAL_HINT
 
         return EvidenceType.WEB_MENTION
-
-    def _looks_like_domain_or_org(self, value: str) -> bool:
-        value = value.lower().strip()
-        return "." in value and " " not in value

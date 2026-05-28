@@ -1,5 +1,4 @@
-from urllib.parse import urlparse, urlunparse
-
+from target_information_collector.evidence.evidence_normalizer import EvidenceNormalizer
 from target_information_collector.shared.models import (
     CandidateProfile,
     Evidence,
@@ -12,6 +11,7 @@ from target_information_collector.shared.models import (
 class EvidenceStore:
     def __init__(self, target: TargetInput):
         self.target = target
+        self.normalizer = EvidenceNormalizer()
         self.evidence: list[Evidence] = []
         self.candidates: list[CandidateProfile] = []
 
@@ -90,9 +90,9 @@ class EvidenceStore:
             )
 
         for link in self.target.public_links:
-            normalized_url = self.normalize_url(link)
-            platform = self.detect_platform(normalized_url)
-            username = self.extract_username(normalized_url)
+            normalized_url = self.normalizer.normalize_url(link)
+            platform = self.normalizer.detect_platform(normalized_url)
+            username = self.normalizer.extract_username(normalized_url)
 
             self.add_evidence(
                 source=EvidenceSource.INPUT,
@@ -118,7 +118,7 @@ class EvidenceStore:
         self,
         source: EvidenceSource | str,
         evidence_type: EvidenceType | str,
-        value: str,
+        value: str | None,
         url: str | None = None,
         platform: str | None = None,
         username: str | None = None,
@@ -127,7 +127,7 @@ class EvidenceStore:
         confidence: float = 0.0,
         raw_data: dict | None = None,
     ) -> Evidence:
-        normalized_url = self.normalize_url(url) if url else None
+        normalized_url = self.normalizer.normalize_url(url) if url else None
 
         evidence = Evidence(
             source=source,
@@ -157,7 +157,7 @@ class EvidenceStore:
         matched_context: list[str] | None = None,
         raw_data: dict | None = None,
     ) -> CandidateProfile:
-        normalized_url = self.normalize_url(url)
+        normalized_url = self.normalizer.normalize_url(url)
 
         candidate = CandidateProfile(
             platform=platform,
@@ -193,7 +193,7 @@ class EvidenceStore:
         return candidate
 
     def get_evidence_by_url(self, url: str) -> list[Evidence]:
-        normalized_url = self.normalize_url(url)
+        normalized_url = self.normalizer.normalize_url(url)
 
         return [
             item
@@ -216,9 +216,7 @@ class EvidenceStore:
         ]
 
     def get_context_terms(self) -> list[str]:
-        values = []
-
-        values.append(self.target.full_name)
+        values = [self.target.full_name]
 
         for evidence_type in [
             EvidenceType.LOCATION,
@@ -258,11 +256,9 @@ class EvidenceStore:
 
     def get_social_search_terms(self) -> list[str]:
         name = self.target.full_name
-        context_terms = self.get_strong_context_terms()
-
         queries = []
 
-        for term in context_terms:
+        for term in self.get_strong_context_terms():
             queries.append(f'"{name}" "{term}"')
             queries.append(f'"{name}" "{term}" Facebook')
             queries.append(f'"{name}" "{term}" Instagram')
@@ -306,80 +302,6 @@ class EvidenceStore:
                 return candidate
 
         return None
-
-    @staticmethod
-    def normalize_url(url: str) -> str:
-        if not url:
-            return url
-
-        parsed = urlparse(url.strip())
-
-        scheme = parsed.scheme or "https"
-        netloc = parsed.netloc.lower()
-        path = parsed.path
-
-        if path != "/" and path.endswith("/"):
-            path = path[:-1]
-
-        return urlunparse(
-            (
-                scheme,
-                netloc,
-                path,
-                "",
-                parsed.query,
-                "",
-            )
-        )
-
-    @staticmethod
-    def detect_platform(url: str | None) -> str | None:
-        if not url:
-            return None
-
-        domain = urlparse(url).netloc.lower()
-
-        if "github.com" in domain:
-            return "github"
-
-        if "linkedin.com" in domain:
-            return "linkedin"
-
-        if "facebook.com" in domain:
-            return "facebook"
-
-        if "instagram.com" in domain:
-            return "instagram"
-
-        return "web"
-
-    @staticmethod
-    def extract_username(url: str | None) -> str | None:
-        if not url:
-            return None
-
-        parsed = urlparse(url)
-        domain = parsed.netloc.lower()
-        parts = [part for part in parsed.path.split("/") if part.strip()]
-
-        if not parts:
-            return None
-
-        if "linkedin.com" in domain:
-            if len(parts) >= 2 and parts[0].lower() == "in":
-                return parts[1]
-            return None
-
-        if "facebook.com" in domain and parts[0].lower() == "profile.php":
-            query_parts = parsed.query.split("&")
-
-            for part in query_parts:
-                if part.startswith("id="):
-                    return part.replace("id=", "", 1)
-
-            return None
-
-        return parts[0]
 
     @staticmethod
     def unique(values: list[str]) -> list[str]:

@@ -1,6 +1,7 @@
 import requests
 
-from target_information_collector.collectors.base_agent import BaseAgent
+from target_information_collector.agents.base_agent import BaseAgent
+from target_information_collector.evidence.evidence_normalizer import EvidenceNormalizer
 from target_information_collector.evidence.evidence_store import EvidenceStore
 from target_information_collector.shared.config import settings
 from target_information_collector.shared.models import EvidenceSource, EvidenceType
@@ -12,11 +13,14 @@ class LinkedInAgent(BaseAgent):
 
     MIN_SCRAPE_CONFIDENCE = 0.75
 
+    def __init__(self):
+        self.normalizer = EvidenceNormalizer()
+
     def collect(self, store: EvidenceStore) -> None:
         self._promote_input_linkedin(store)
         self._promote_web_linkedin_candidates(store)
 
-        if settings.apify_token and getattr(settings, "apify_linkedin_profile_actor_id", None):
+        if settings.apify_token and settings.apify_linkedin_profile_actor_id:
             self._collect_via_apify(store)
 
         self._extract_linkedin_context(store)
@@ -25,8 +29,11 @@ class LinkedInAgent(BaseAgent):
         if not store.target.linkedin_url:
             return
 
-        url = store.normalize_url(store.target.linkedin_url)
-        username = store.extract_username(url)
+        url = self.normalizer.normalize_url(store.target.linkedin_url)
+        username = self.normalizer.extract_username(url)
+
+        if not url:
+            return
 
         store.add_evidence(
             source=EvidenceSource.INPUT,
@@ -49,9 +56,7 @@ class LinkedInAgent(BaseAgent):
             display_name=store.target.full_name,
             confidence=1.0,
             matched_context=store.get_context_terms(),
-            raw_data={
-                "seeded_from_input": True,
-            },
+            raw_data={"seeded_from_input": True},
         )
 
     def _promote_web_linkedin_candidates(self, store: EvidenceStore) -> None:
@@ -92,28 +97,11 @@ class LinkedInAgent(BaseAgent):
                 display_name=title,
                 confidence=confidence,
                 matched_context=self.matched_context(store, text),
-                raw_data={
-                    "source_evidence": evidence.model_dump(mode="json"),
-                },
+                raw_data={"source_evidence": evidence.model_dump(mode="json")},
             )
 
     def _collect_via_apify(self, store: EvidenceStore) -> None:
-        urls_to_scrape = []
-
-        for candidate in store.candidates:
-            if candidate.platform != self.PLATFORM or not candidate.url:
-                continue
-
-            raw_data = candidate.raw_data or {}
-            is_seeded = raw_data.get("seeded_from_input") is True
-            is_strong = candidate.confidence >= self.MIN_SCRAPE_CONFIDENCE
-
-            if not (is_seeded or is_strong):
-                continue
-
-            urls_to_scrape.append(candidate.url)
-
-        urls_to_scrape = list(dict.fromkeys(urls_to_scrape))
+        urls_to_scrape = self._urls_to_scrape(store)
 
         if not urls_to_scrape:
             return
@@ -130,14 +118,13 @@ class LinkedInAgent(BaseAgent):
             "includeAbout": False,
             "includePosts": False,
             "includeEngagement": False,
-            "discoverEmails": True,
-            "enrichEmployeeLocation": True,
+            "discoverEmails": False,
+            "enrichEmployeeLocation": False,
             "forceRefresh": False,
             "validateSlugs": True,
-            "streamDataset": False,
             "dryRun": False,
         }
-        
+
         headers = {"Content-Type": "application/json"}
 
         try:
@@ -145,14 +132,18 @@ class LinkedInAgent(BaseAgent):
             print(f"[DEBUG] Actor: {settings.apify_linkedin_profile_actor_id}")
             print(f"[DEBUG] Payload: {payload}")
 
-            response = requests.post(sync_url, json=payload, headers=headers, timeout=180)
+            response = requests.post(
+                sync_url,
+                json=payload,
+                headers=headers,
+                timeout=180,
+            )
 
             if response.status_code not in (200, 201):
-                store.add_evidence(
-                    source=self.SOURCE,
-                    evidence_type=EvidenceType.ERROR,
-                    value=f"Errore API Apify: {response.status_code} - {response.text}",
-                    confidence=0.0,
+                self._add_error(
+                    store=store,
+                    message=f"Errore API Apify: {response.status_code} - {response.text}",
+                    raw_data={"payload": payload},
                 )
                 return
 
@@ -163,57 +154,93 @@ class LinkedInAgent(BaseAgent):
                 self._store_apify_profile(store, item)
 
         except Exception as exc:
-            store.add_evidence(
-                source=self.SOURCE,
-                evidence_type=EvidenceType.ERROR,
-                value=f"Errore durante lo scraping attivo di LinkedIn: {str(exc)}",
-                confidence=0.0,
+            self._add_error(
+                store=store,
+                message=f"Errore durante lo scraping attivo di LinkedIn: {str(exc)}",
+                raw_data={"payload": payload},
             )
 
+    def _urls_to_scrape(self, store: EvidenceStore) -> list[str]:
+        urls = []
+
+        for candidate in store.candidates:
+            if candidate.platform != self.PLATFORM or not candidate.url:
+                continue
+
+            raw_data = candidate.raw_data or {}
+            is_seeded = raw_data.get("seeded_from_input") is True
+            is_strong = candidate.confidence >= self.MIN_SCRAPE_CONFIDENCE
+
+            if not (is_seeded or is_strong):
+                continue
+
+            url = self.normalizer.normalize_url(candidate.url)
+
+            if url:
+                urls.append(url)
+
+        return list(dict.fromkeys(urls))
+
     def _store_apify_profile(self, store: EvidenceStore, item: dict) -> None:
-        profile_url = (
-            item.get("url")
-            or item.get("profileUrl")
-            or item.get("linkedinUrl")
-            or item.get("linkedInUrl")
+        profile_url = self._extract_profile_url(item)
+
+        if not profile_url:
+            return
+
+        username = (
+            item.get("username")
+            or self.normalizer.extract_username(profile_url)
         )
 
-        username = item.get("username") or (
-            store.extract_username(profile_url) if profile_url else None
+        name = self._first_present(
+            item,
+            "name",
+            "fullName",
+            "full_name",
+            "title",
         )
 
-        name = (
-            item.get("name")
-            or item.get("fullName")
-            or item.get("full_name")
-            or item.get("title")
-            or ""
+        headline = self._first_present(
+            item,
+            "headline",
+            "occupation",
         )
 
-        headline = item.get("headline") or item.get("occupation") or ""
-        summary = item.get("summary") or item.get("about") or item.get("description") or ""
-        location = item.get("location") or item.get("address") or ""
-        company = item.get("company") or item.get("currentCompany") or ""
+        summary = self._first_present(
+            item,
+            "summary",
+            "about",
+            "description",
+        )
+
+        location = self._first_present(
+            item,
+            "location",
+            "address",
+        )
+
+        company = self._first_present(
+            item,
+            "company",
+            "currentCompany",
+        )
+
         education = item.get("education") or item.get("educations") or ""
         positions = item.get("positions") or item.get("experience") or item.get("experiences") or ""
         skills = item.get("skills") or ""
 
-        combined_text = " ".join(
-            str(value)
-            for value in [
-                name,
-                headline,
-                summary,
-                location,
-                company,
-                education,
-                positions,
-                skills,
-            ]
-            if value
+        combined_text = self._join_text(
+            name,
+            headline,
+            summary,
+            location,
+            company,
+            education,
+            positions,
+            skills,
         )
 
-        if not combined_text.strip():
+        if not combined_text:
             return
 
         store.add_evidence(
@@ -257,10 +284,43 @@ class LinkedInAgent(BaseAgent):
             confidence = max(evidence.confidence, 0.6)
 
             self.extract_common_context(
-                store,
-                evidence,
-                text,
-                confidence,
-                self.PLATFORM,
-                self.SOURCE,
+                store=store,
+                evidence=evidence,
+                text=text,
+                confidence=confidence,
+                platform=self.PLATFORM,
+                source=self.SOURCE,
             )
+
+    def _extract_profile_url(self, item: dict) -> str | None:
+        raw_url = self._first_present(
+            item,
+            "url",
+            "profileUrl",
+            "linkedinUrl",
+            "linkedInUrl",
+        )
+
+        return self.normalizer.normalize_url(raw_url)
+
+    def _first_present(self, data: dict, *keys: str):
+        for key in keys:
+            value = data.get(key)
+
+            if value:
+                return value
+
+        return ""
+
+    def _join_text(self, *values) -> str:
+        return " ".join(str(value) for value in values if value).strip()
+
+    def _add_error(self, store: EvidenceStore, message: str, raw_data: dict | None = None) -> None:
+        store.add_evidence(
+            source=self.SOURCE,
+            evidence_type=EvidenceType.ERROR,
+            value=message,
+            platform=self.PLATFORM,
+            confidence=0.0,
+            raw_data=raw_data or {},
+        )

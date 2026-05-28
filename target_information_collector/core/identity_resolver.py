@@ -1,5 +1,4 @@
-from urllib.parse import urlparse, urlunparse
-
+from target_information_collector.evidence.evidence_normalizer import EvidenceNormalizer
 from target_information_collector.shared.models import (
     CandidateStatus,
     EvidenceType,
@@ -10,6 +9,9 @@ from target_information_collector.shared.models import (
 
 
 class IdentityResolver:
+    def __init__(self):
+        self.normalizer = EvidenceNormalizer()
+
     def resolve(
         self,
         target: TargetInput,
@@ -317,25 +319,7 @@ class IdentityResolver:
         return False
 
     def _canonical_url(self, url: str | None) -> str:
-        if not url:
-            return ""
-
-        parsed = urlparse(url.strip())
-
-        scheme = parsed.scheme or "https"
-        netloc = parsed.netloc.lower()
-
-        if netloc.startswith("www."):
-            netloc = netloc[4:]
-
-        path = parsed.path
-
-        if path != "/" and path.endswith("/"):
-            path = path[:-1]
-
-        query = parsed.query if path.lower().endswith("profile.php") else ""
-
-        return urlunparse((scheme, netloc, path, "", query, ""))
+        return self.normalizer.normalize_url(url) or ""
 
     def _normalize(self, value: str) -> str:
         return "".join(ch.lower() for ch in str(value) if ch.isalnum())

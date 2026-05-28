@@ -1,17 +1,17 @@
-from target_information_collector.collectors.facebook_agent import FacebookAgent
-from target_information_collector.collectors.github_agent import GitHubAgent
-from target_information_collector.collectors.instagram_agent import InstagramAgent
-from target_information_collector.collectors.linkedin_agent import LinkedInAgent
-from target_information_collector.collectors.web_agent import WebAgent
+from target_information_collector.agents.facebook_agent import FacebookAgent
+from target_information_collector.agents.github_agent import GitHubAgent
+from target_information_collector.agents.instagram_agent import InstagramAgent
+from target_information_collector.agents.linkedin_agent import LinkedInAgent
+from target_information_collector.agents.web_agent import WebAgent
 from target_information_collector.evidence.evidence_store import EvidenceStore
 from target_information_collector.shared.models import TargetInput
 
 
-class ProfileBuilder:
+class CollectorPipeline:
     """
     Orchestratore della raccolta raw.
 
-    Gli agenti raccolgono dati ed evidenze.
+    Gli agenti raccolgono evidenze pubbliche.
     La risoluzione identitaria viene fatta dopo da IdentityResolver.
     """
 

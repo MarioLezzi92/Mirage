@@ -6,17 +6,9 @@
   "organization": "Università degli Studi di Salerno",
   "cities": [
     "Salerno",
-    "Monteforte Irpino",
-    "Campania",
     "Avellino, Italy"
   ],
-  "education": [
-    "Università degli Studi di Salerno",
-    "Laureato in Informatica",
-    "Studente magistrale di Cyber Security",
-    "Informatica",
-    "Cyber Security"
-  ],
+  "education": [],
   "contacts": [
     "mario.lezzi9212@gmail.com"
   ],
@@ -34,7 +26,7 @@
       ]
     },
     {
-      "url": "https://www.instagram.com/mario_lezzi_",
+      "url": "https://instagram.com/mario_lezzi_",
       "platform": "instagram",
       "status": "confirmed",
       "context": null,
@@ -70,7 +62,7 @@
       ]
     },
     {
-      "url": "https://www.mondodigitale.org/notizie/come-agenti-speciali-rete",
+      "url": "https://mondodigitale.org/notizie/come-agenti-speciali-rete",
       "platform": "institutional",
       "status": "mention",
       "context": "Come agenti speciali in rete",
@@ -78,12 +70,12 @@
     }
   ],
   "tech_stack": [
-    "penetration-testing-ethical-hacking-vulnhub",
-    "JavaScript",
-    "HTML",
-    "Machine Learning",
     "Cyber Security",
+    "HTML",
+    "JavaScript",
+    "Jupyter Notebook",
+    "Machine Learning",
     "Penetration Testing",
-    "Jupyter Notebook"
+    "penetration-testing-ethical-hacking-vulnhub"
   ]
 }
