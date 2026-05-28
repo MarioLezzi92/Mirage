@@ -1,4 +1,3 @@
-from datetime import datetime
 from enum import Enum
 from typing import Any, Optional, List
 from pydantic import BaseModel, Field
@@ -37,6 +36,7 @@ class EvidenceType(str, Enum):
 class CandidateStatus(str, Enum):
     UNVERIFIED = "unverified"
     CANDIDATE = "candidate"
+    PROBABLE = "probable"
     CONFIRMED = "confirmed"
     REJECTED = "rejected"
 
@@ -48,7 +48,9 @@ class TargetInput(BaseModel):
     cities: List[str] = Field(default_factory=list)
     education: List[str] = Field(default_factory=list)
     contacts: List[str] = Field(default_factory=list)
-    public_links: List[str] = Field(default_factory=list)  # <-- CAMPO AGGIUNTO QUI
+    public_links: List[str] = Field(default_factory=list)
+    aliases: List[str] = Field(default_factory=list)
+
     location: Optional[str] = None
     company: Optional[str] = None
     role: Optional[str] = None
@@ -98,8 +100,14 @@ class IdentityCandidate(BaseModel):
     company: Optional[str] = None
     role: Optional[str] = None
     location: Optional[str] = None
+
     matched_fields: List[str] = Field(default_factory=list)
     confidence: float = 0.0
+    status: CandidateStatus | str = CandidateStatus.UNVERIFIED
+    positive_evidence: List[str] = Field(default_factory=list)
+    negative_evidence: List[str] = Field(default_factory=list)
+    reason: Optional[str] = None
+
     evidence: List[Evidence] = Field(default_factory=list)
 
 

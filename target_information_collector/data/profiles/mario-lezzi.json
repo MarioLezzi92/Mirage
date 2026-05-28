@@ -2,7 +2,7 @@
   "name": "Mario Lezzi",
   "gender": "Male",
   "birth_date": null,
-  "position": "Informatica",
+  "position": null,
   "organization": "Università degli Studi di Salerno",
   "cities": [
     "Salerno",
@@ -26,14 +26,48 @@
       "platform": "linkedin",
       "status": "confirmed",
       "context": null,
-      "matched_context": []
+      "matched_context": [
+        "name",
+        "username",
+        "location",
+        "organization"
+      ]
+    },
+    {
+      "url": "https://www.instagram.com/mario_lezzi_",
+      "platform": "instagram",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "location",
+        "alias"
+      ]
     },
     {
       "url": "https://github.com/MarioLezzi92",
       "platform": "github",
       "status": "confirmed",
       "context": null,
-      "matched_context": []
+      "matched_context": [
+        "name",
+        "username",
+        "location",
+        "alias"
+      ]
+    },
+    {
+      "url": "https://facebook.com/mario.lezzi.16",
+      "platform": "facebook",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "location",
+        "organization"
+      ]
     },
     {
       "url": "https://www.mondodigitale.org/notizie/come-agenti-speciali-rete",
@@ -44,12 +78,12 @@
     }
   ],
   "tech_stack": [
-    "Jupyter Notebook",
-    "penetration-testing-ethical-hacking-vulnhub",
-    "JavaScript",
-    "Penetration Testing",
-    "Machine Learning",
     "Cyber Security",
-    "HTML"
+    "HTML",
+    "Jupyter Notebook",
+    "JavaScript",
+    "penetration-testing-ethical-hacking-vulnhub",
+    "Penetration Testing",
+    "Machine Learning"
   ]
 }

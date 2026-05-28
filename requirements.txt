@@ -9,3 +9,4 @@ httpx
 beautifulsoup4
 rapidfuzz
 gender-guesser
+selenium

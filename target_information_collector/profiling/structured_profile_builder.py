@@ -1,10 +1,12 @@
 import json
-import re
 from pathlib import Path
 from typing import Any, Dict
+from urllib.parse import urlparse, urlunparse
+
 import gender_guesser.detector as gender
 
 from target_information_collector.shared.models import (
+    CandidateStatus,
     StructuredProfile,
     StructuredPublicLink,
     TargetProfile,
@@ -34,50 +36,50 @@ class StructuredProfileBuilder:
         return filename
 
     def build(self, raw_profile: TargetProfile) -> StructuredProfile:
-        confirmed_urls = self._confirmed_profile_urls(raw_profile)
+        usable_urls = self._usable_urls(raw_profile)
 
         return StructuredProfile(
             name=raw_profile.target.full_name,
             gender=self._infer_gender(raw_profile),
             birth_date=raw_profile.target.birth_date,
-            position=self._position(raw_profile, confirmed_urls),
-            organization=self._organization(raw_profile, confirmed_urls),
-            cities=self._cities(raw_profile, confirmed_urls),
-            education=self._education(raw_profile, confirmed_urls),
+            position=self._position(raw_profile, usable_urls),
+            organization=self._organization(raw_profile, usable_urls),
+            cities=self._cities(raw_profile, usable_urls),
+            education=self._education(raw_profile, usable_urls),
             contacts=self._contacts(raw_profile),
-            public_links=self._public_links(raw_profile, confirmed_urls), # Passiamo i confermati qui
+            public_links=self._public_links(raw_profile),
             tech_stack=self._tech_stack(raw_profile.tech_stack),
         )
 
-    def _confirmed_profile_urls(self, raw_profile: TargetProfile) -> set[str]:
-        urls = set()
+    def _usable_urls(self, raw_profile: TargetProfile) -> set[str]:
+        usable_statuses = {
+            CandidateStatus.CONFIRMED,
+            CandidateStatus.PROBABLE,
+            "confirmed",
+            "probable",
+        }
 
-        # Sfruttiamo il lavoro dell'IdentityResolver guardando gli identity_candidates
+        return {
+            self._canonical_url(candidate.profile_url)
+            for candidate in raw_profile.identity_candidates
+            if candidate.status in usable_statuses
+        }
+
+    def _position(self, raw_profile: TargetProfile, usable_urls: set[str]) -> str | None:
         for candidate in raw_profile.identity_candidates:
-            # SOGLIA DI CONFERMA GENERALE: Se il resolver è sicuro al 70% o più, il profilo è confermato
-            if candidate.confidence >= 0.70:
-                urls.add(candidate.profile_url)
-            # Teniamo una tolleranza più elastica per GitHub se storicamente affidabile
-            elif candidate.platform == "github" and candidate.confidence >= 0.55:
-                urls.add(candidate.profile_url)
-
-        return urls
-
-    def _position(self, raw_profile: TargetProfile, confirmed_urls: set[str]) -> str | None:
-        for candidate in raw_profile.identity_candidates:
-            if candidate.profile_url in confirmed_urls and candidate.role:
+            if self._canonical_url(candidate.profile_url) in usable_urls and candidate.role:
                 return candidate.role.strip()
 
         return raw_profile.target.role
 
-    def _organization(self, raw_profile: TargetProfile, confirmed_urls: set[str]) -> str | None:
+    def _organization(self, raw_profile: TargetProfile, usable_urls: set[str]) -> str | None:
         for candidate in raw_profile.identity_candidates:
-            if candidate.profile_url in confirmed_urls and candidate.company:
+            if self._canonical_url(candidate.profile_url) in usable_urls and candidate.company:
                 return candidate.company.strip()
 
         return raw_profile.target.company
 
-    def _cities(self, raw_profile: TargetProfile, confirmed_urls: set[str]) -> list[str]:
+    def _cities(self, raw_profile: TargetProfile, usable_urls: set[str]) -> list[str]:
         values = []
 
         if raw_profile.target.location:
@@ -86,11 +88,11 @@ class StructuredProfileBuilder:
         values.extend(raw_profile.target.cities)
 
         for candidate in raw_profile.identity_candidates:
-            if candidate.profile_url in confirmed_urls and candidate.location:
+            if self._canonical_url(candidate.profile_url) in usable_urls and candidate.location:
                 values.append(candidate.location)
 
         for ev in raw_profile.evidence:
-            if ev.url not in confirmed_urls:
+            if not ev.url or self._canonical_url(ev.url) not in usable_urls:
                 continue
 
             if str(ev.evidence_type) == "location" and ev.value:
@@ -98,13 +100,11 @@ class StructuredProfileBuilder:
 
         return self._unique(values)
 
-    def _education(self, raw_profile: TargetProfile, confirmed_urls: set[str]) -> list[str]:
-        values = []
-
-        values.extend(raw_profile.target.education)
+    def _education(self, raw_profile: TargetProfile, usable_urls: set[str]) -> list[str]:
+        values = list(raw_profile.target.education)
 
         for ev in raw_profile.evidence:
-            if ev.url not in confirmed_urls:
+            if not ev.url or self._canonical_url(ev.url) not in usable_urls:
                 continue
 
             if str(ev.evidence_type) == "education" and ev.value:
@@ -113,9 +113,7 @@ class StructuredProfileBuilder:
         return self._unique(values)
 
     def _contacts(self, raw_profile: TargetProfile) -> list[str]:
-        values = []
-
-        values.extend(raw_profile.target.contacts)
+        values = list(raw_profile.target.contacts)
 
         if raw_profile.target.email:
             values.append(raw_profile.target.email)
@@ -125,22 +123,39 @@ class StructuredProfileBuilder:
 
         return self._unique(values)
 
-    def _public_links(self, raw_profile: TargetProfile, confirmed_urls: set[str]) -> list[StructuredPublicLink]:
+    def _public_links(self, raw_profile: TargetProfile) -> list[StructuredPublicLink]:
         links = []
+
+        status_by_url = {
+            self._canonical_url(candidate.profile_url): candidate.status
+            for candidate in raw_profile.identity_candidates
+        }
+
+        context_by_url = {
+            self._canonical_url(candidate.profile_url): candidate.positive_evidence
+            for candidate in raw_profile.identity_candidates
+        }
 
         for profile in raw_profile.public_profiles:
             if self._is_bad_social_url(profile.url):
                 continue
 
-            # Lo status ora dipende dinamicamente dal fatto che l'URL sia tra i confermati
-            status = "confirmed" if profile.url in confirmed_urls else "candidate"
+            key = self._canonical_url(profile.url)
+            status = status_by_url.get(key, CandidateStatus.CANDIDATE)
+
+            if status in {
+                CandidateStatus.REJECTED, "REJECTED",
+                CandidateStatus.CANDIDATE, "CANDIDATE",
+                "rejected", "candidate",
+                }:
+                continue
 
             links.append(
                 StructuredPublicLink(
                     url=profile.url,
                     platform=profile.platform,
                     status=status,
-                    matched_context=[],
+                    matched_context=context_by_url.get(key, []),
                 )
             )
 
@@ -148,18 +163,16 @@ class StructuredProfileBuilder:
             if str(ev.evidence_type) != "web_mention":
                 continue
 
-            if ev.confidence <= 0.55:
+            if ev.confidence <= 0.55 or not ev.url:
                 continue
 
-            platform = "web"
-
-            if ev.raw_data and ev.raw_data.get("platform"):
-                platform = ev.raw_data.get("platform")
+            if self._is_bad_social_url(ev.url):
+                continue
 
             links.append(
                 StructuredPublicLink(
                     url=ev.url,
-                    platform=platform,
+                    platform=(ev.raw_data or {}).get("platform") or ev.platform or "web",
                     status="mention",
                     context=ev.value,
                     matched_context=[],
@@ -169,43 +182,47 @@ class StructuredProfileBuilder:
         return self._deduplicate_links(links)
 
     def _tech_stack(self, raw_stack: list[str]) -> list[str]:
-        values = []
-
-        for item in raw_stack:
-            if not item:
-                continue
-
-            cleaned = item.strip()
-            values.append(cleaned)
-
-        return self._unique(values)
+        return self._unique([item.strip() for item in raw_stack if item])
 
     def _is_bad_social_url(self, url: str) -> bool:
         if not url:
             return False
-            
-        lower = url.lower()
 
-        bad_fragments = [
-            "/photos/",
-            "/photo/",
-            "/posts/",
-            "/videos/",
-            "/watch/",
-            "/reel/",
-            "/reels/",
-            "/p/",
-            "/stories/",
-        ]
+        parsed = urlparse(url.lower())
+        domain = parsed.netloc.lower()
+        parts = [part for part in parsed.path.split("/") if part]
 
-        return any(fragment in lower for fragment in bad_fragments)
+        if not parts:
+            return False
+
+        bad_parts = {
+            "photos",
+            "photo",
+            "posts",
+            "post",
+            "videos",
+            "watch",
+            "reel",
+            "reels",
+            "p",
+            "stories",
+            "story",
+            "groups",
+            "pages",
+            "events",
+        }
+
+        if "facebook.com" in domain or "instagram.com" in domain:
+            return any(part in bad_parts for part in parts)
+
+        return False
 
     def _deduplicate_links(self, links: list[StructuredPublicLink]) -> list[StructuredPublicLink]:
         seen = set()
         output = []
 
         for link in links:
-            key = (link.url, link.platform)
+            key = (self._canonical_url(link.url), link.platform)
 
             if key in seen:
                 continue
@@ -216,25 +233,41 @@ class StructuredProfileBuilder:
         return output
 
     def _infer_gender(self, raw_profile: TargetProfile) -> str | None:
-        # Se c'è già nel raw input, usiamo quello
         if raw_profile.target.gender:
             return raw_profile.target.gender
-            
-        # Estraiamo il primo nome (es. "Mario" da "Mario Lezzi")
+
         first_name = raw_profile.target.full_name.split()[0]
-        
-        # Chiediamo alla libreria di indovinare
         guessed = self.gender_detector.get_gender(first_name)
-        
-        # Mappiamo i risultati della libreria in un formato pulito
+
         mapping = {
             "male": "Male",
             "mostly_male": "Male",
             "female": "Female",
-            "mostly_female": "Female"
+            "mostly_female": "Female",
         }
-        
-        return mapping.get(guessed, None)
+
+        return mapping.get(guessed)
+
+    def _canonical_url(self, url: str | None) -> str:
+        if not url:
+            return ""
+
+        parsed = urlparse(url.strip())
+
+        scheme = parsed.scheme or "https"
+        netloc = parsed.netloc.lower()
+
+        if netloc.startswith("www."):
+            netloc = netloc[4:]
+
+        path = parsed.path
+
+        if path != "/" and path.endswith("/"):
+            path = path[:-1]
+
+        query = parsed.query if path.lower().endswith("profile.php") else ""
+
+        return urlunparse((scheme, netloc, path, "", query, ""))
 
     def _unique(self, values: list[str]) -> list[str]:
         seen = set()
