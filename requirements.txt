@@ -10,3 +10,5 @@ beautifulsoup4
 rapidfuzz
 gender-guesser
 selenium
+python-multipart
+pydantic-settings

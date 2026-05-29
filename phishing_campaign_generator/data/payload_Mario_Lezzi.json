@@ -1,0 +1,14 @@
+{
+    "target_name": "Mario Lezzi",
+    "template_id": "SIM-DEV-01",
+    "scenario_type": "developer_platform",
+    "score_achieved": 175,
+    "safety_constraints": [
+        "authorized_simulation_only",
+        "no_real_tokens",
+        "no_real_credentials",
+        "awareness_landing_page_only"
+    ],
+    "subject": "[Simulazione] Avviso di sicurezza per attività tecnica rilevata",
+    "body": "Ciao {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta un possibile avviso tecnico collegato ad attività di sviluppo, repository, token o piattaforme usate in ambito professionale o accademico.\n\nContesto rilevato: {tech_stack}.\nOrganizzazione associata: {organization}.\n\nL'obiettivo del test è valutare la capacità di riconoscere comunicazioni sospette relative ad accessi tecnici, strumenti di sviluppo e richieste di verifica non attese.\n\nNon devono essere inseriti token, password o credenziali reali."
+}

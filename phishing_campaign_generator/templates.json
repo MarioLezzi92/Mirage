@@ -1,0 +1,500 @@
+[
+  {
+    "template_id": "SIM-SEC-01",
+    "scenario_type": "password_reset",
+    "category": "security",
+    "description": "Simulazione generica di richiesta di verifica o reimpostazione password.",
+    "trigger_keywords": [
+      "account",
+      "login",
+      "password",
+      "security",
+      "sicurezza",
+      "credenziali",
+      "accesso"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "email"
+    ],
+    "base_score": 30,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_credentials",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Verifica di sicurezza richiesta per il tuo account {organization}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nIl messaggio rappresenta un possibile avviso di verifica account collegato a {organization}. Lo scenario serve a valutare la capacità dell'utente di riconoscere richieste sospette relative a password, accessi e sicurezza dell'account.\n\nNon inserire credenziali reali. L'eventuale pagina collegata deve essere usata solo per finalità di awareness e formazione.\n\nCordiali saluti,\nTeam Simulazione Sicurezza"
+  },
+  {
+    "template_id": "SIM-SEC-02",
+    "scenario_type": "mfa_verification",
+    "category": "security",
+    "description": "Simulazione basata su verifica MFA o controllo accessi.",
+    "trigger_keywords": [
+      "mfa",
+      "2fa",
+      "otp",
+      "authenticator",
+      "sicurezza",
+      "accesso",
+      "account",
+      "login"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "email"
+    ],
+    "base_score": 35,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_otp",
+      "no_real_credentials",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Controllo configurazione MFA per {organization}",
+    "base_body": "Ciao {name},\n\nQuesta comunicazione rientra in una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta un possibile avviso relativo alla configurazione dell'autenticazione a più fattori per un account associato a {organization}. L'obiettivo è valutare se l'utente riconosce correttamente comunicazioni che richiedono attenzione su MFA, OTP o accessi anomali.\n\nNon devono essere raccolti codici reali, password o dati personali sensibili.\n\nTeam Simulazione Sicurezza"
+  },
+  {
+    "template_id": "SIM-DEV-01",
+    "scenario_type": "developer_platform",
+    "category": "technical",
+    "description": "Simulazione per profili tecnici, sviluppatori, repository, token o piattaforme di sviluppo.",
+    "trigger_keywords": [
+      "python",
+      "java",
+      "javascript",
+      "typescript",
+      "html",
+      "css",
+      "github",
+      "gitlab",
+      "docker",
+      "kubernetes",
+      "aws",
+      "azure",
+      "gcp",
+      "api",
+      "token",
+      "repository",
+      "cyber security",
+      "penetration testing",
+      "machine learning",
+      "jupyter notebook"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "tech_stack",
+      "platform"
+    ],
+    "base_score": 55,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_tokens",
+      "no_real_credentials",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Avviso di sicurezza per attività tecnica rilevata",
+    "base_body": "Ciao {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta un possibile avviso tecnico collegato ad attività di sviluppo, repository, token o piattaforme usate in ambito professionale o accademico.\n\nContesto rilevato: {tech_stack}.\nOrganizzazione associata: {organization}.\n\nL'obiettivo del test è valutare la capacità di riconoscere comunicazioni sospette relative ad accessi tecnici, strumenti di sviluppo e richieste di verifica non attese.\n\nNon devono essere inseriti token, password o credenziali reali."
+  },
+  {
+    "template_id": "SIM-DEV-02",
+    "scenario_type": "repository_access_review",
+    "category": "technical",
+    "description": "Simulazione di revisione accessi a repository o ambienti di sviluppo.",
+    "trigger_keywords": [
+      "github",
+      "gitlab",
+      "repository",
+      "repo",
+      "commit",
+      "pull request",
+      "developer",
+      "software",
+      "docker",
+      "pipeline",
+      "ci/cd",
+      "devops"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "platform",
+      "tech_stack"
+    ],
+    "base_score": 50,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_repository_access",
+      "no_real_credentials",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Revisione accessi repository per {organization}",
+    "base_body": "Ciao {name},\n\nQuesta è una simulazione autorizzata di sicurezza.\n\nIl messaggio rappresenta un possibile controllo periodico sugli accessi a repository o strumenti di sviluppo collegati a {organization}.\n\nElementi tecnici rilevati nel profilo: {tech_stack}.\n\nLo scopo è verificare se l'utente riconosce richieste sospette relative ad autorizzazioni, repository e strumenti di sviluppo.\n\nLa simulazione non deve richiedere credenziali reali né modifiche effettive agli account."
+  },
+  {
+    "template_id": "SIM-PRO-01",
+    "scenario_type": "professional_opportunity",
+    "category": "professional",
+    "description": "Simulazione basata su opportunità professionali, recruiting o networking.",
+    "trigger_keywords": [
+      "linkedin",
+      "lavoro",
+      "recruiting",
+      "career",
+      "hr",
+      "human resources",
+      "job",
+      "developer",
+      "engineer",
+      "consultant",
+      "manager",
+      "tirocinio",
+      "stage"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "position",
+      "city",
+      "platform"
+    ],
+    "base_score": 45,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_sensitive_personal_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Comunicazione professionale per {name}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione è parte di una simulazione autorizzata di social engineering awareness.\n\nLo scenario rappresenta una possibile comunicazione professionale basata su informazioni pubbliche, come ruolo, organizzazione o presenza su piattaforme di networking.\n\nOrganizzazione rilevata: {organization}.\nPosizione rilevata: {position}.\nArea geografica rilevata: {city}.\n\nL'obiettivo è valutare la capacità dell'utente di riconoscere comunicazioni inattese che sfruttano informazioni professionali pubbliche.\n\nNon devono essere raccolti documenti personali, dati sensibili o credenziali."
+  },
+  {
+    "template_id": "SIM-HR-01",
+    "scenario_type": "hr_benefits",
+    "category": "hr",
+    "description": "Simulazione su welfare, benefit aziendali, comunicazioni HR o aggiornamenti interni.",
+    "trigger_keywords": [
+      "hr",
+      "risorse umane",
+      "human resources",
+      "welfare",
+      "benefit",
+      "dipendente",
+      "personale",
+      "amministrazione",
+      "contratto",
+      "busta paga"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "position"
+    ],
+    "base_score": 35,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_documents",
+      "no_sensitive_personal_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Aggiornamento comunicazioni interne per {organization}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata.\n\nLo scenario rappresenta una possibile comunicazione interna relativa a benefit, welfare, procedure HR o aggiornamenti amministrativi collegati a {organization}.\n\nL'obiettivo è valutare se l'utente riconosce comunicazioni inattese che fanno leva su temi lavorativi e amministrativi.\n\nLa simulazione non deve richiedere documenti reali, dati fiscali, dati sanitari o credenziali."
+  },
+  {
+    "template_id": "SIM-FIN-01",
+    "scenario_type": "fake_invoice",
+    "category": "finance",
+    "description": "Simulazione di comunicazione amministrativa o fattura, adatta a profili finance o amministrativi.",
+    "trigger_keywords": [
+      "finance",
+      "billing",
+      "fattura",
+      "fatturazione",
+      "contabilità",
+      "amministrazione",
+      "economia",
+      "excel",
+      "invoice",
+      "pagamento",
+      "accounting"
+    ],
+    "required_placeholders": [
+      "organization"
+    ],
+    "optional_placeholders": [
+      "name",
+      "position"
+    ],
+    "base_score": 50,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_payments",
+      "no_bank_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Comunicazione amministrativa per {organization}",
+    "base_body": "Spettabile referente,\n\nQuesta comunicazione è parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta una possibile comunicazione amministrativa o di fatturazione indirizzata a un'organizzazione o a un reparto interno.\n\nOrganizzazione associata: {organization}.\n\nL'obiettivo è valutare la capacità di riconoscere messaggi sospetti legati a fatture, pagamenti, scadenze o servizi.\n\nLa simulazione non deve richiedere pagamenti reali, coordinate bancarie, documenti fiscali o credenziali."
+  },
+  {
+    "template_id": "SIM-EXEC-01",
+    "scenario_type": "executive_impersonation",
+    "category": "organizational",
+    "description": "Simulazione di impersonificazione interna o richiesta urgente da figura apicale.",
+    "trigger_keywords": [
+      "management",
+      "manager",
+      "direzione",
+      "ceo",
+      "cto",
+      "cfo",
+      "responsabile",
+      "segreteria",
+      "assistente",
+      "coordinatore",
+      "team lead"
+    ],
+    "required_placeholders": [
+      "name",
+      "organization"
+    ],
+    "optional_placeholders": [
+      "position"
+    ],
+    "base_score": 45,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_sensitive_data_request",
+      "no_real_payment_request",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Comunicazione interna urgente per {organization}",
+    "base_body": "Ciao {name},\n\nQuesta comunicazione rientra in una simulazione autorizzata di social engineering awareness.\n\nLo scenario rappresenta una possibile richiesta interna urgente apparentemente proveniente da una figura organizzativa o da un referente di {organization}.\n\nL'obiettivo è valutare la capacità dell'utente di riconoscere richieste anomale, pressioni temporali e comunicazioni non verificate.\n\nLa simulazione non deve richiedere pagamenti, dati riservati reali, documenti aziendali autentici o credenziali."
+  },
+  {
+    "template_id": "SIM-UNI-01",
+    "scenario_type": "university_account_notice",
+    "category": "academic",
+    "description": "Simulazione per profili accademici, studenti, università, dipartimenti o servizi online universitari.",
+    "trigger_keywords": [
+      "università",
+      "university",
+      "student",
+      "studente",
+      "studentessa",
+      "docente",
+      "professor",
+      "dipartimento",
+      "campus",
+      "esame",
+      "lezione",
+      "moodle",
+      "esse3",
+      "segreteria",
+      "matricola"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "email",
+      "city"
+    ],
+    "base_score": 45,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_student_credentials",
+      "no_real_personal_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Avviso servizi online per {organization}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta un possibile avviso relativo a servizi online accademici, account istituzionali o comunicazioni di segreteria collegate a {organization}.\n\nL'obiettivo è valutare la capacità di riconoscere comunicazioni sospette che sfruttano contesti universitari o accademici.\n\nLa simulazione non deve richiedere credenziali reali, dati di carriera, documenti personali o informazioni riservate."
+  },
+  {
+    "template_id": "SIM-CLOUD-01",
+    "scenario_type": "cloud_service_notice",
+    "category": "technical",
+    "description": "Simulazione legata a servizi cloud, licenze, console o piattaforme SaaS.",
+    "trigger_keywords": [
+      "aws",
+      "azure",
+      "gcp",
+      "cloud",
+      "docker",
+      "kubernetes",
+      "devops",
+      "server",
+      "database",
+      "sql",
+      "api",
+      "saas",
+      "licenze"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "tech_stack",
+      "service"
+    ],
+    "base_score": 50,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_cloud_credentials",
+      "no_real_payment_data",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Notifica servizio cloud associato a {organization}",
+    "base_body": "Ciao {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata.\n\nLo scenario rappresenta una possibile notifica relativa a servizi cloud, licenze, console o ambienti tecnici associati a {organization}.\n\nTecnologie o servizi rilevati: {tech_stack}.\n\nL'obiettivo è valutare la capacità dell'utente di riconoscere comunicazioni sospette riguardanti piattaforme cloud e strumenti tecnici.\n\nLa simulazione non deve richiedere credenziali reali, dati di pagamento o accessi effettivi."
+  },
+  {
+    "template_id": "SIM-EVENT-01",
+    "scenario_type": "event_invitation",
+    "category": "social",
+    "description": "Simulazione basata su invito a evento, webinar, conferenza o iniziativa pubblica.",
+    "trigger_keywords": [
+      "evento",
+      "webinar",
+      "conference",
+      "conferenza",
+      "seminario",
+      "workshop",
+      "formazione",
+      "training",
+      "community",
+      "meetup",
+      "cyber security",
+      "machine learning",
+      "università"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "city",
+      "tech_stack",
+      "event_name"
+    ],
+    "base_score": 35,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_payment_request",
+      "no_sensitive_personal_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Invito a iniziativa formativa per {name}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione è parte di una simulazione autorizzata di awareness.\n\nLo scenario rappresenta un possibile invito a un evento, webinar o iniziativa formativa coerente con informazioni pubbliche del profilo.\n\nOrganizzazione associata: {organization}.\nInteressi o competenze rilevate: {tech_stack}.\nArea geografica rilevata: {city}.\n\nL'obiettivo è valutare se l'utente riconosce comunicazioni inattese che sfruttano interessi professionali, accademici o tecnici.\n\nLa simulazione non deve richiedere pagamenti, documenti personali o credenziali reali."
+  },
+  {
+    "template_id": "SIM-SOC-01",
+    "scenario_type": "social_media_notice",
+    "category": "social",
+    "description": "Simulazione basata su piattaforme social o profili pubblici.",
+    "trigger_keywords": [
+      "instagram",
+      "facebook",
+      "linkedin",
+      "twitter",
+      "x",
+      "social",
+      "profile",
+      "profilo",
+      "account",
+      "community",
+      "creator"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "platform",
+      "organization"
+    ],
+    "base_score": 30,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_social_credentials",
+      "no_account_takeover",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Comunicazione relativa al profilo pubblico di {name}",
+    "base_body": "Ciao {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta una possibile comunicazione collegata alla presenza pubblica dell'utente su piattaforme social o professionali.\n\nPiattaforma o contesto rilevato: {platform}.\n\nL'obiettivo è valutare la capacità di riconoscere messaggi sospetti che sfruttano informazioni pubblicamente disponibili.\n\nLa simulazione non deve richiedere password reali, codici di accesso o modifiche effettive agli account."
+  },
+  {
+    "template_id": "SIM-DOC-01",
+    "scenario_type": "document_review",
+    "category": "document",
+    "description": "Simulazione basata su richiesta di revisione documento, allegato o file condiviso.",
+    "trigger_keywords": [
+      "documento",
+      "document",
+      "pdf",
+      "word",
+      "excel",
+      "drive",
+      "sharepoint",
+      "onedrive",
+      "google drive",
+      "allegato",
+      "file",
+      "revisione",
+      "report"
+    ],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "position"
+    ],
+    "base_score": 40,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_malicious_attachments",
+      "no_real_document_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Richiesta revisione documento per {organization}",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione è parte di una simulazione autorizzata.\n\nLo scenario rappresenta una possibile richiesta di revisione documento o file condiviso collegata a un contesto professionale, accademico o organizzativo.\n\nOrganizzazione associata: {organization}.\n\nL'obiettivo è valutare se l'utente riconosce richieste sospette relative ad allegati, file condivisi o documenti inattesi.\n\nLa simulazione non deve contenere allegati malevoli né richiedere il caricamento di documenti reali."
+  },
+  {
+    "template_id": "SIM-GEN-01",
+    "scenario_type": "generic_awareness_notice",
+    "category": "fallback",
+    "description": "Template fallback usato quando il profilo contiene pochi dati utili.",
+    "trigger_keywords": [],
+    "required_placeholders": [
+      "name"
+    ],
+    "optional_placeholders": [
+      "organization",
+      "email"
+    ],
+    "base_score": 10,
+    "safety_constraints": [
+      "authorized_simulation_only",
+      "no_real_credentials",
+      "no_sensitive_personal_data_collection",
+      "awareness_landing_page_only"
+    ],
+    "base_subject": "[Simulazione] Comunicazione di awareness sulla sicurezza",
+    "base_body": "Gentile {name},\n\nQuesta comunicazione fa parte di una simulazione autorizzata di sicurezza.\n\nLo scenario rappresenta un messaggio generico di awareness pensato per profili con poche informazioni pubbliche disponibili.\n\nL'obiettivo è valutare la capacità dell'utente di riconoscere comunicazioni inattese e verificarne l'autenticità tramite canali ufficiali.\n\nNon devono essere raccolti dati sensibili, password, codici OTP o documenti personali."
+  }
+]

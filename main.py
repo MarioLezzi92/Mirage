@@ -1,8 +1,9 @@
-from fastapi import FastAPI, HTTPException
-
+from fastapi import FastAPI, HTTPException, UploadFile, File    
+import json
 from target_information_collector.core.target_information_service import TargetInformationService
 from target_information_collector.shared.models import TargetInput
-
+from phishing_campaign_generator.models import TargetProfile
+from phishing_campaign_generator.service import CampaignGeneratorService
 
 app = FastAPI(title="SocialEng", version="0.5.0")
 
@@ -25,5 +26,24 @@ def startup_event():
 def collect_target_information(target: TargetInput):
     try:
         return service.collect(target)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+
+campaign_service = CampaignGeneratorService()
+
+@app.post("/phishing-campaign-generator/generate")
+async def generate_campaign(file: UploadFile = File(...)):
+    try:
+        content = await file.read()
+        data = json.loads(content)
+        target = TargetProfile(**data)
+        
+        # Ora il service si occupa sia di generare che di salvare il file!
+        return campaign_service.generate_payload(target)
+        
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=400, detail="Il file caricato non è un JSON valido.")
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
