@@ -1,3 +1,5 @@
+import re
+
 import requests
 
 from target_information_collector.agents.base_agent import BaseAgent
@@ -10,10 +12,38 @@ from target_information_collector.shared.models import EvidenceSource, EvidenceT
 class WebAgent(BaseAgent):
     BASE_URL = "https://api.apify.com/v2"
 
-    BASE_QUERY_LIMIT = 10
+    BASE_QUERY_LIMIT = 14
     DORKING_QUERY_LIMIT = 3
     SOCIAL_QUERY_LIMIT = 12
     RESULTS_PER_QUERY = 8
+
+    CONTEXT_STOPWORDS = {
+        "di",
+        "del",
+        "della",
+        "delle",
+        "degli",
+        "dei",
+        "da",
+        "dal",
+        "dallo",
+        "dalla",
+        "of",
+        "the",
+        "and",
+        "for",
+        "at",
+        "in",
+        "studi",
+        "studies",
+        "universita",
+        "università",
+        "university",
+        "college",
+        "school",
+        "istituto",
+        "institute",
+    }
 
     def __init__(self):
         self.normalizer = EvidenceNormalizer()
@@ -51,6 +81,9 @@ class WebAgent(BaseAgent):
 
         if not queries:
             return
+
+        print(f"[DEBUG][web] Phase: {phase}")
+        print(f"[DEBUG][web] Queries: {queries}")
 
         items = self._run_google_search_actor(queries)
 
@@ -326,6 +359,9 @@ class WebAgent(BaseAgent):
         username: str | None,
         confidence: float,
     ) -> None:
+        if platform not in {"github", "linkedin"}:
+            return
+
         for tech_term in self.normalizer.extract_tech_stack_terms(text):
             store.add_evidence(
                 source=EvidenceSource.WEB,
@@ -345,6 +381,7 @@ class WebAgent(BaseAgent):
             values.append(store.target.location)
 
         values.extend(store.target.cities)
+        values.extend(self._context_keywords(store))
 
         return self._matched_values(text, values)
 
@@ -376,20 +413,28 @@ class WebAgent(BaseAgent):
 
     def _build_base_queries(self, store: EvidenceStore) -> list[str]:
         name = store.target.full_name.strip()
+        context_terms = [term for term in store.get_context_terms() if term and term != name]
+        keywords = self._context_keywords(store)
 
         queries = [
             f'"{name}"',
+        ]
+
+        if store.target.company:
+            queries.append(f'"{name}" "{store.target.company}"')
+
+        for keyword in keywords:
+            queries.append(f'"{name}" "{keyword}"')
+
+        queries.extend([
             f'"{name}" LinkedIn',
             f'"{name}" GitHub',
             f'"{name}" site:linkedin.com/in',
             f'"{name}" site:github.com',
             f'"{name}" email',
-        ]
+        ])
 
-        for term in store.get_context_terms():
-            if term == name:
-                continue
-
+        for term in context_terms:
             queries.append(f'"{name}" "{term}"')
             queries.append(f'"{name}" "{term}" LinkedIn')
             queries.append(f'"{name}" "{term}" site:linkedin.com/in')
@@ -425,6 +470,10 @@ class WebAgent(BaseAgent):
             queries.append(f'"{name}" "{term}" Instagram')
             queries.append(f'"{name}" "{term}" site:instagram.com')
 
+        for keyword in self._context_keywords(store):
+            queries.append(f'"{name}" "{keyword}" Facebook')
+            queries.append(f'"{name}" "{keyword}" Instagram')
+
         for candidate in store.candidates:
             if candidate.username:
                 queries.append(f'"{candidate.username}" site:facebook.com')
@@ -444,6 +493,10 @@ class WebAgent(BaseAgent):
             if term.lower() in lower:
                 score += 0.12
 
+        for keyword in self._context_keywords(store):
+            if keyword.lower() in lower:
+                score += 0.08
+
         if store.target.email_domain and store.target.email_domain.lower() in lower:
             score += 0.10
 
@@ -451,7 +504,7 @@ class WebAgent(BaseAgent):
             "professional_profile": 0.15,
             "technical_profile": 0.15,
             "social_profile_candidate": 0.08,
-            "institutional_reference": 0.08,
+            "institutional_reference": 0.12,
             "social_contextual_mention": -0.10,
             "web_mention": 0.00,
         }.get(result_class, 0.0)
@@ -472,3 +525,56 @@ class WebAgent(BaseAgent):
             return EvidenceType.SOCIAL_HINT
 
         return EvidenceType.WEB_MENTION
+
+    def _context_keywords(self, store: EvidenceStore) -> list[str]:
+        values = []
+
+        raw_sources = [
+            store.target.company,
+            store.target.department,
+            store.target.location,
+            *store.target.cities,
+            *store.target.education,
+            *store.target.aliases,
+        ]
+
+        for source in raw_sources:
+            values.extend(self._significant_tokens(source))
+
+        return self.normalizer.unique(values)
+
+    def _significant_tokens(self, value: str | None) -> list[str]:
+        if not value:
+            return []
+
+        normalized = self._normalize_text(value)
+        tokens = re.split(r"[^a-z0-9]+", normalized)
+
+        output = []
+
+        for token in tokens:
+            if len(token) <= 2:
+                continue
+
+            if token in self.CONTEXT_STOPWORDS:
+                continue
+
+            output.append(token)
+
+        return output
+
+    def _normalize_text(self, value: str) -> str:
+        normalized = str(value).lower()
+        replacements = {
+            "à": "a",
+            "è": "e",
+            "é": "e",
+            "ì": "i",
+            "ò": "o",
+            "ù": "u",
+        }
+
+        for old, new in replacements.items():
+            normalized = normalized.replace(old, new)
+
+        return normalized

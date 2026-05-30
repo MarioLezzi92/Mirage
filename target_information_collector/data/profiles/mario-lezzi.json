@@ -2,13 +2,21 @@
   "name": "Mario Lezzi",
   "gender": "Male",
   "birth_date": null,
-  "position": null,
+  "position": "Cybersecurity student at the University of Salerno",
   "organization": "Università degli Studi di Salerno",
   "cities": [
-    "Salerno",
-    "Avellino, Italy"
+    "salerno",
+    "Avellino, Italy",
+    "Monteforte Irpino, Campania, Italia",
+    "Monteforte Irpino",
+    "Campania",
+    "Italia"
   ],
-  "education": [],
+  "education": [
+    "Università degli Studi di Salerno",
+    "Studied at Università degli Studi di Salerno",
+    "Went to Scuola Media Enrico Cocchia"
+  ],
   "contacts": [
     "mario.lezzi9212@gmail.com"
   ],
@@ -21,8 +29,8 @@
       "matched_context": [
         "name",
         "username",
-        "location",
-        "organization"
+        "organization",
+        "education"
       ]
     },
     {
@@ -33,8 +41,8 @@
       "matched_context": [
         "name",
         "username",
-        "location",
-        "alias"
+        "organization",
+        "education"
       ]
     },
     {
@@ -45,8 +53,8 @@
       "matched_context": [
         "name",
         "username",
-        "location",
-        "alias"
+        "organization",
+        "education"
       ]
     },
     {
@@ -57,25 +65,27 @@
       "matched_context": [
         "name",
         "username",
-        "location",
-        "organization"
+        "organization",
+        "education"
       ]
     },
     {
       "url": "https://mondodigitale.org/notizie/come-agenti-speciali-rete",
       "platform": "institutional",
-      "status": "mention",
+      "status": "confirmed",
       "context": "Come agenti speciali in rete",
-      "matched_context": []
+      "matched_context": [
+        "institutional_reference"
+      ]
     }
   ],
   "tech_stack": [
     "Cyber Security",
-    "HTML",
     "JavaScript",
     "Jupyter Notebook",
-    "Machine Learning",
+    "HTML",
+    "penetration-testing-ethical-hacking-vulnhub",
     "Penetration Testing",
-    "penetration-testing-ethical-hacking-vulnhub"
+    "Machine Learning"
   ]
 }

@@ -1,11 +1,12 @@
 import json
 import os
+from typing import Any
 
-from .models import CampaignPayload, CampaignSpec, CampaignTarget, TargetProfile
+from .models import CampaignPayload, CampaignSection, CampaignTarget, ConfirmedSource, TargetProfile
 
 
 class CampaignGeneratorService:
-    FALLBACK_TEMPLATE_ID = "SIM-GEN-01"
+    DEFAULT_TEMPLATE_ID = "SIM-GEN-01"
 
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -18,90 +19,116 @@ class CampaignGeneratorService:
             self.templates = json.load(file)
 
     def generate_payload(self, target: TargetProfile) -> CampaignPayload:
-        template = self._select_template(target)
+        best_template = self._select_template(target)
+        campaign_target = self._build_campaign_target(target)
 
         payload = CampaignPayload(
-            target=self._build_target(target),
-            campaign=CampaignSpec(
-                template_id=template["template_id"],
-                scenario_type=template["scenario_type"],
-                category=template.get("category", "unknown"),
-                subject_template=template["base_subject"],
-                body_template=template["base_body"],
-                safety_constraints=template.get("safety_constraints", []),
+            target=campaign_target,
+            campaign=CampaignSection(
+                template_id=best_template.get("template_id", self.DEFAULT_TEMPLATE_ID),
+                scenario_type=best_template.get("scenario_type", "generic"),
+                category=best_template.get("category", "generic"),
+                subject_template=self._template_subject(best_template),
+                body_template=self._template_body(best_template),
+                safety_constraints=best_template.get("safety_constraints", []),
             ),
         )
 
         self._save_payload(payload)
-
         return payload
 
-    def _select_template(self, target: TargetProfile) -> dict:
-        keywords = self._profile_keywords(target)
+    def _select_template(self, target: TargetProfile) -> dict[str, Any]:
+        keywords = self._target_keywords(target)
 
         best_template = None
         best_score = -1
 
         for template in self.templates:
-            if not self._required_data_available(target, template):
+            if self._missing_required_fields(target, template):
                 continue
 
             score = template.get("base_score", 0)
 
             for trigger in template.get("trigger_keywords", []):
-                trigger = trigger.lower()
+                trigger = str(trigger).lower().strip()
 
-                if any(trigger in keyword for keyword in keywords):
+                if trigger and any(trigger in keyword for keyword in keywords):
                     score += 15
 
             if score > best_score:
                 best_score = score
                 best_template = template
 
-        return best_template or self._fallback_template()
+        if best_template:
+            return best_template
 
-    def _required_data_available(self, target: TargetProfile, template: dict) -> bool:
-        for field in template.get("required_placeholders", []):
-            if field == "name" and not target.name:
-                return False
+        return next(
+            (template for template in self.templates if template.get("template_id") == self.DEFAULT_TEMPLATE_ID),
+            self.templates[-1],
+        )
 
-            if field == "organization" and not target.organization:
-                return False
+    def _build_campaign_target(self, target: TargetProfile) -> CampaignTarget:
+        confirmed_sources = self._confirmed_sources(target)
+        institutional_sources = [
+            source
+            for source in confirmed_sources
+            if source.platform == "institutional"
+        ]
 
-            if field == "position" and not target.position:
-                return False
-
-            if field == "city" and not target.cities:
-                return False
-
-            if field == "email" and not target.contacts:
-                return False
-
-            if field == "tech_stack" and not target.tech_stack:
-                return False
-
-            if field == "platform" and not target.public_links:
-                return False
-
-        return True
-
-    def _build_target(self, target: TargetProfile) -> CampaignTarget:
         return CampaignTarget(
             name=target.name or "Utente",
             organization=target.organization,
             position=target.position,
-            city=self._first(target.cities),
-            email=self._first(target.contacts),
-            tech_stack=self._unique(target.tech_stack),
-            platforms=self._confirmed_platforms(target),
+            city=target.cities[0] if target.cities else None,
+            cities=target.cities,
+            email=self._first_email(target.contacts),
+            tech_stack=target.tech_stack,
+            platforms=self._platforms(confirmed_sources),
+            confirmed_sources=confirmed_sources,
+            institutional_sources=institutional_sources,
         )
 
-    def _profile_keywords(self, target: TargetProfile) -> list[str]:
+    def _confirmed_sources(self, target: TargetProfile) -> list[ConfirmedSource]:
+        sources = []
+
+        for link in target.public_links:
+            url = link.get("url")
+            platform = link.get("platform")
+            status = link.get("status", "confirmed")
+
+            if not url or not platform:
+                continue
+
+            if status != "confirmed":
+                continue
+
+            sources.append(
+                ConfirmedSource(
+                    platform=str(platform),
+                    url=str(url),
+                    status="confirmed",
+                    context=link.get("context"),
+                )
+            )
+
+        return sources
+
+    def _platforms(self, sources: list[ConfirmedSource]) -> list[str]:
+        return self._unique([source.platform for source in sources])
+
+    def _first_email(self, contacts: list[str]) -> str | None:
+        for contact in contacts:
+            if "@" in contact:
+                return contact
+
+        return None
+
+    def _target_keywords(self, target: TargetProfile) -> list[str]:
         values = []
 
         values.extend(target.tech_stack)
         values.extend(target.cities)
-        values.extend(target.contacts)
+        values.extend(target.education)
 
         if target.name:
             values.append(target.name)
@@ -113,53 +140,62 @@ class CampaignGeneratorService:
             values.append(target.position)
 
         for link in target.public_links:
-            values.extend([
-                link.url or "",
-                link.platform or "",
-                link.status or "",
-                link.context or "",
-            ])
-            values.extend(link.matched_context)
+            values.append(link.get("platform"))
+            values.append(link.get("url"))
+            values.append(link.get("context"))
 
-        return self._unique([value.lower() for value in values if str(value).strip()])
+            for item in link.get("matched_context", []):
+                values.append(item)
 
-    def _confirmed_platforms(self, target: TargetProfile) -> list[str]:
-        platforms = [
-            link.platform
-            for link in target.public_links
-            if link.platform and link.status == "confirmed"
+        return [
+            str(value).lower().strip()
+            for value in values
+            if value
         ]
 
-        return self._unique(platforms)
+    def _missing_required_fields(self, target: TargetProfile, template: dict[str, Any]) -> bool:
+        target_dict = target.model_dump()
 
-    def _fallback_template(self) -> dict:
-        for template in self.templates:
-            if template.get("template_id") == self.FALLBACK_TEMPLATE_ID:
-                return template
+        for field in template.get("required_placeholders", []):
+            if not target_dict.get(field):
+                return True
 
-        return self.templates[-1]
+        return False
+
+    def _template_subject(self, template: dict[str, Any]) -> str:
+        return (
+            template.get("subject_template")
+            or template.get("base_subject")
+            or "Comunicazione di sicurezza"
+        )
+
+    def _template_body(self, template: dict[str, Any]) -> str:
+        return (
+            template.get("body_template")
+            or template.get("base_body")
+            or "Ciao {name},\n\nQuesta è una comunicazione relativa a una simulazione autorizzata."
+        )
 
     def _save_payload(self, payload: CampaignPayload) -> None:
-        safe_name = payload.target.name.replace(" ", "_")
-        path = os.path.join(self.data_dir, f"payload_{safe_name}.json")
+        filename = f"payload_{payload.target.name.replace(' ', '_')}.json"
+        path = os.path.join(self.data_dir, filename)
 
         with open(path, "w", encoding="utf-8") as file:
-            json.dump(payload.model_dump(), file, indent=4, ensure_ascii=False)
-
-    def _first(self, values: list[str]) -> str | None:
-        for value in values:
-            cleaned = str(value).strip()
-
-            if cleaned:
-                return cleaned
-
-        return None
+            json.dump(
+                payload.model_dump(mode="json"),
+                file,
+                indent=4,
+                ensure_ascii=False,
+            )
 
     def _unique(self, values: list[str]) -> list[str]:
         seen = set()
         output = []
 
         for value in values:
+            if not value:
+                continue
+
             cleaned = str(value).strip()
 
             if not cleaned:

@@ -1,19 +1,19 @@
-Modulo 1 - Target Information Collector
+# Modulo 1 - Target Information Collector
 
-Input:
+## Input:
 - nome e cognome
 - eventuale location
 - eventuale organizzazione
 - eventuali alias
 - eventuali link noti
 
-Output ufficiale:
+## Output ufficiale:
 - profilo strutturato JSON pulito
 
-Output di debug:
+## Output di debug:
 - raw JSON con tutte le evidenze raccolte, anche rumorose
 
-Fonti:
+## Fonti:
 - Google Search / dorking leggero
 - GitHub API
 - LinkedIn
@@ -21,7 +21,7 @@ Fonti:
 - Instagram
 - fonti web istituzionali
 
-Nota:
+### Nota:
 - Il raw non va passato direttamente ai moduli successivi.
 - Il modulo 2 deve usare solo il profilo strutturato.
 - La raccolta è limitata a informazioni pubbliche e target autorizzati.
