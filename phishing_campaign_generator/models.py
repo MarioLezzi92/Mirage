@@ -1,23 +1,46 @@
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Any
+
+
+class PublicLink(BaseModel):
+    url: str | None = None
+    platform: str | None = None
+    status: str | None = None
+    context: str | None = None
+    matched_context: list[str] = Field(default_factory=list)
+
 
 class TargetProfile(BaseModel):
-    name: Optional[str] = None
-    organization: Optional[str] = None
-    tech_stack: List[str] = Field(default_factory=list)
-    cities: List[str] = Field(default_factory=list)
-    contacts: List[str] = Field(default_factory=list)
-    public_links: List[Dict[str, Any]] = Field(default_factory=list)
-    gender: Optional[str] = None
-    birth_date: Optional[str] = None
-    position: Optional[str] = None
-    education: List[Any] = Field(default_factory=list)
+    name: str | None = None
+    gender: str | None = None
+    birth_date: str | None = None
+    position: str | None = None
+    organization: str | None = None
+    cities: list[str] = Field(default_factory=list)
+    education: list[dict | str] = Field(default_factory=list)
+    contacts: list[str] = Field(default_factory=list)
+    public_links: list[PublicLink] = Field(default_factory=list)
+    tech_stack: list[str] = Field(default_factory=list)
 
-class CampaignPayload(BaseModel):
-    target_name: str
+
+class CampaignTarget(BaseModel):
+    name: str
+    organization: str | None = None
+    position: str | None = None
+    city: str | None = None
+    email: str | None = None
+    tech_stack: list[str] = Field(default_factory=list)
+    platforms: list[str] = Field(default_factory=list)
+
+
+class CampaignSpec(BaseModel):
     template_id: str
     scenario_type: str
-    score_achieved: int
-    safety_constraints: List[str]
-    subject: str
-    body: str
+    category: str
+    subject_template: str
+    body_template: str
+    safety_constraints: list[str] = Field(default_factory=list)
+
+
+class CampaignPayload(BaseModel):
+    target: CampaignTarget
+    campaign: CampaignSpec
