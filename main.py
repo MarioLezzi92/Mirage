@@ -9,8 +9,8 @@ from target_information_collector.shared.models import TargetInput
 
 TARGET_INPUT_FILE = "target_input.json"
 
-USE_MOCK_RAW = True  # Imposta a True per testare con un file raw locale invece di raccogliere dati dal vivo
-MOCK_RAW_FILE = "mario-lezzi-raw-1.json"
+USE_MOCK_RAW = False  # Imposta a True per testare con un file raw locale invece di raccogliere dati dal vivo
+MOCK_RAW_FILE = "gerardo-leone-raw-1.json"
 
 
 def read_json(path: str | Path) -> dict:

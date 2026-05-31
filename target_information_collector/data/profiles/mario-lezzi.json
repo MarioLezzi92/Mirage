@@ -68,15 +68,16 @@
         "organization",
         "education"
       ]
-    },
+    }
+  ],
+  "public_mentions": [
     {
       "url": "https://mondodigitale.org/notizie/come-agenti-speciali-rete",
       "platform": "institutional",
-      "status": "confirmed",
+      "mention_type": "institutional_reference",
+      "confidence": 0.72,
       "context": "Come agenti speciali in rete",
-      "matched_context": [
-        "institutional_reference"
-      ]
+      "reason": "contains_target_name, contains_target_organization, source_platform:institutional"
     }
   ],
   "tech_stack": [

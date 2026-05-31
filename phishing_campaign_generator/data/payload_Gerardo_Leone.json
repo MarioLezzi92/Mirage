@@ -1,0 +1,69 @@
+{
+    "target": {
+        "name": "Gerardo Leone",
+        "organization": "Università degli Studi di Salerno",
+        "position": "Graduate in Computer Science from the University of Salerno (UNISA).\r\nMaster's degree student specializing in Cloud Computing (UNISA).",
+        "city": "salerno",
+        "cities": [
+            "salerno",
+            "Avellino",
+            "Avellino, Italy"
+        ],
+        "email": "gleone2000@gmail.com",
+        "tech_stack": [
+            "Machine Learning",
+            "Dart",
+            "Java",
+            "Python",
+            "C",
+            "JavaScript",
+            "HTML"
+        ],
+        "platforms": [
+            "github",
+            "linkedin",
+            "facebook",
+            "instagram"
+        ],
+        "confirmed_sources": [
+            {
+                "platform": "github",
+                "url": "https://github.com/GerardoLeone",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "linkedin",
+                "url": "https://it.linkedin.com/in/gerardo-leone-232534281",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "facebook",
+                "url": "https://facebook.com/gerardo.leone.00",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "instagram",
+                "url": "https://instagram.com/gerardo_leone",
+                "status": "confirmed",
+                "context": null
+            }
+        ],
+        "institutional_sources": []
+    },
+    "campaign": {
+        "template_id": "SIM-DEV-01",
+        "scenario_type": "developer_platform",
+        "category": "technical",
+        "subject_template": "Verifica attività tecnica associata al tuo profilo",
+        "body_template": "Ciao {name},\n\nè stata generata una segnalazione collegata a un profilo tecnico associato a {organization}.\n\nIl contesto rilevato include: {tech_stack}.\nPiattaforme pubbliche associate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che l’attività sia coerente con il tuo profilo pubblico.\n\nCordiali saluti,\nTeam Sicurezza",
+        "safety_constraints": [
+            "authorized_simulation_only",
+            "no_real_tokens",
+            "no_real_credentials",
+            "awareness_landing_page_only"
+        ]
+    }
+}

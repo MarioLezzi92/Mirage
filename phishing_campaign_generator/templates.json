@@ -3,105 +3,105 @@
     "template_id": "SIM-SEC-01",
     "scenario_type": "password_reset",
     "category": "security",
-    "description": "Simulazione generica di verifica sicurezza account.",
+    "description": "Scenario di verifica sicurezza account.",
     "trigger_keywords": ["account", "login", "password", "security", "sicurezza", "credenziali", "accesso"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization"],
     "base_score": 30,
     "safety_constraints": ["authorized_simulation_only", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Verifica sicurezza account per {organization}",
-    "base_body": "Ciao {name},\n\nnell’ambito di una simulazione autorizzata di awareness, è stato generato un avviso collegato alla sicurezza degli account associati a {organization}.\n\nLa comunicazione non richiede password, codici OTP o dati personali. Puoi consultare la pagina informativa della simulazione per verificare il dettaglio dell’avviso.\n\nCordiali saluti,\nTeam Sicurezza"
+    "base_subject": "Verifica impostazioni di sicurezza account",
+    "base_body": "Ciao {name},\n\nè disponibile un avviso relativo alle impostazioni di sicurezza degli account associati a {organization}.\n\nTi invitiamo a consultare il riepilogo dell’avviso e verificare che le informazioni riportate siano coerenti con il tuo profilo.\n\nLa comunicazione non richiede l’invio di password, codici temporanei o dati personali.\n\nCordiali saluti,\nTeam Sicurezza"
   },
   {
     "template_id": "SIM-SEC-02",
     "scenario_type": "mfa_verification",
     "category": "security",
-    "description": "Simulazione basata su verifica MFA o controllo accessi.",
+    "description": "Scenario basato su verifica MFA o controllo accessi.",
     "trigger_keywords": ["mfa", "2fa", "otp", "authenticator", "sicurezza", "accesso", "account", "login"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization"],
     "base_score": 35,
     "safety_constraints": ["authorized_simulation_only", "no_real_otp", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Controllo configurazione MFA per {organization}",
-    "base_body": "Ciao {name},\n\nè disponibile un avviso simulato relativo alla configurazione MFA degli account associati a {organization}.\n\nNon vengono richiesti codici OTP o credenziali reali. La pagina collegata serve solo a mostrare il dettaglio della simulazione e gli indicatori di rischio.\n\nTeam Sicurezza"
+    "base_subject": "Controllo configurazione accesso sicuro",
+    "base_body": "Ciao {name},\n\nè stato predisposto un controllo sulle impostazioni di accesso sicuro relative agli account collegati a {organization}.\n\nPuoi consultare il riepilogo per verificare lo stato della configurazione e gli eventuali indicatori rilevati.\n\nNon vengono richiesti codici OTP, password o credenziali reali.\n\nCordiali saluti,\nTeam Sicurezza"
   },
   {
     "template_id": "SIM-DEV-01",
     "scenario_type": "developer_platform",
     "category": "technical",
-    "description": "Simulazione per profili tecnici, strumenti di sviluppo e contesto accademico/professionale.",
-    "trigger_keywords": ["python", "java", "javascript", "typescript", "html", "css", "github", "gitlab", "docker", "api", "token","jupyter notebook"],
+    "description": "Scenario per profili tecnici, strumenti di sviluppo e contesto accademico/professionale.",
+    "trigger_keywords": ["python", "java", "javascript", "typescript", "html", "css", "github", "gitlab", "docker", "api", "token", "jupyter notebook"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization", "tech_stack", "platforms"],
     "base_score": 35,
     "safety_constraints": ["authorized_simulation_only", "no_real_tokens", "no_real_credentials", "awareness_landing_page_only"],
     "base_subject": "Verifica attività tecnica associata al tuo profilo",
-    "base_body": "Ciao {name},\n\nnell’ambito di una simulazione autorizzata di sicurezza, è stata generata una segnalazione collegata a un profilo tecnico associato a {organization}.\n\nIl contesto rilevato include: {tech_stack}.\nPiattaforme pubbliche associate: {platforms}.\n\nQuesta comunicazione non richiede credenziali, token o dati personali. Puoi consultare la pagina informativa della simulazione per verificare il dettaglio dell’attività.\n\nCordiali saluti,\nTeam Sicurezza"
+    "base_body": "Ciao {name},\n\nè stata generata una segnalazione collegata a un profilo tecnico associato a {organization}.\n\nIl contesto rilevato include: {tech_stack}.\nPiattaforme pubbliche associate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che l’attività sia coerente con il tuo profilo pubblico.\n\nCordiali saluti,\nTeam Sicurezza"
   },
   {
     "template_id": "SIM-DEV-02",
     "scenario_type": "repository_access_review",
     "category": "technical",
-    "description": "Simulazione di revisione accessi o attività su repository e ambienti di sviluppo.",
+    "description": "Scenario di revisione accessi o attività su repository e ambienti di sviluppo.",
     "trigger_keywords": ["github", "gitlab", "repository", "repo", "commit", "pull request", "developer", "software", "pipeline", "ci/cd", "cyber security", "penetration testing", "jupyter notebook", "machine learning"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization", "platforms", "tech_stack"],
-    "base_score": 95,
+    "base_score": 45,
     "safety_constraints": ["authorized_simulation_only", "no_real_repository_access", "no_real_tokens", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Revisione simulata attività repository",
-    "base_body": "Ciao {name},\n\nè disponibile un riepilogo simulato relativo ad attività tecniche e repository associati al profilo pubblico collegato a {organization}.\n\nSono stati rilevati elementi coerenti con: {tech_stack}.\nPiattaforme considerate: {platforms}.\n\nLa simulazione non richiede accesso a repository reali, credenziali o token. Il collegamento rimanda solo a una pagina di awareness con il dettaglio degli indicatori osservati.\n\nCordiali saluti,\nTeam Sicurezza"
+    "base_subject": "Revisione attività repository",
+    "base_body": "Ciao {name},\n\nè disponibile un riepilogo relativo ad attività tecniche e repository associati al profilo pubblico collegato a {organization}.\n\nSono stati rilevati elementi coerenti con: {tech_stack}.\nPiattaforme considerate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che le informazioni risultino coerenti con le attività previste.\n\nCordiali saluti,\nTeam Sicurezza"
   },
   {
     "template_id": "SIM-UNI-01",
     "scenario_type": "university_account_notice",
     "category": "academic",
-    "description": "Simulazione per profili universitari, studenti e servizi online accademici.",
+    "description": "Scenario per profili universitari, studenti e servizi online accademici.",
     "trigger_keywords": ["università", "university", "student", "studente", "docente", "dipartimento", "campus", "moodle", "esse3", "segreteria", "matricola"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization"],
     "base_score": 45,
     "safety_constraints": ["authorized_simulation_only", "no_real_student_credentials", "no_real_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Avviso simulato servizi online per {organization}",
-    "base_body": "Gentile {name},\n\nè disponibile un avviso simulato relativo ai servizi online collegati a {organization}.\n\nLa comunicazione serve a valutare la capacità di riconoscere messaggi inattesi in ambito accademico. Non vengono richieste credenziali universitarie o dati personali.\n\nCordiali saluti,\nServizi Online"
+    "base_subject": "Avviso servizi online per {organization}",
+    "base_body": "Gentile {name},\n\nè disponibile un avviso relativo ai servizi online collegati a {organization}.\n\nLa comunicazione riguarda account, servizi digitali o accessi associati al contesto accademico.\n\nTi invitiamo a consultare il riepilogo dell’avviso e verificare eventuali aggiornamenti attraverso i canali indicati.\n\nCordiali saluti,\nServizi Online"
   },
   {
     "template_id": "SIM-EVENT-01",
     "scenario_type": "event_invitation",
     "category": "social",
-    "description": "Simulazione basata su invito a evento, webinar, challenge o iniziativa formativa.",
+    "description": "Scenario basato su invito a evento, webinar, challenge o iniziativa formativa.",
     "trigger_keywords": ["evento", "webinar", "conference", "conferenza", "seminario", "workshop", "formazione", "training", "challenge", "cyber security", "machine learning", "università", "institutional"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["city", "organization", "tech_stack", "institutional_sources"],
     "base_score": 42,
     "safety_constraints": ["authorized_simulation_only", "no_real_payment_request", "no_sensitive_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Invito simulato a iniziativa formativa",
-    "base_body": "Gentile {name},\n\nè disponibile un invito simulato a un’iniziativa formativa coerente con il contesto pubblico associato al profilo.\n\nOrganizzazione rilevata: {organization}.\nInteressi tecnici rilevati: {tech_stack}.\nRiferimenti pubblici istituzionali: {institutional_sources}.\n\nLa comunicazione è parte di una simulazione autorizzata e non richiede pagamenti o dati personali.\n\nCordiali saluti,\nSegreteria Eventi"
+    "base_subject": "Invito a iniziativa formativa",
+    "base_body": "Gentile {name},\n\nè disponibile un invito a un’iniziativa formativa coerente con il contesto pubblico associato al tuo profilo.\n\nOrganizzazione rilevata: {organization}.\nInteressi tecnici rilevati: {tech_stack}.\nRiferimenti pubblici istituzionali: {institutional_sources}.\n\nTi invitiamo a consultare i dettagli dell’iniziativa e verificare l’eventuale interesse.\n\nCordiali saluti,\nSegreteria Eventi"
   },
   {
     "template_id": "SIM-SOC-01",
     "scenario_type": "social_media_notice",
     "category": "social",
-    "description": "Simulazione basata su piattaforme social o profili pubblici.",
+    "description": "Scenario basato su piattaforme social o profili pubblici.",
     "trigger_keywords": ["instagram", "facebook", "linkedin", "twitter", "x", "social", "profile", "profilo", "account", "community", "creator"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization", "platforms"],
     "base_score": 30,
     "safety_constraints": ["authorized_simulation_only", "no_real_social_credentials", "no_account_takeover", "awareness_landing_page_only"],
-    "base_subject": "Comunicazione simulata relativa al profilo pubblico",
-    "base_body": "Ciao {name},\n\nè disponibile una comunicazione simulata collegata alla tua presenza pubblica su piattaforme social o professionali.\n\nPiattaforme rilevate: {platforms}.\nOrganizzazione associata: {organization}.\n\nNon vengono richieste credenziali social o modifiche agli account reali.\n\nCordiali saluti,\nTeam Supporto Profili"
+    "base_subject": "Comunicazione relativa al profilo pubblico",
+    "base_body": "Ciao {name},\n\nè disponibile una comunicazione collegata alla tua presenza pubblica su piattaforme social o professionali.\n\nPiattaforme rilevate: {platforms}.\nOrganizzazione associata: {organization}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che le informazioni siano coerenti con il tuo profilo pubblico.\n\nCordiali saluti,\nTeam Supporto Profili"
   },
   {
     "template_id": "SIM-DOC-01",
     "scenario_type": "document_review",
     "category": "document",
-    "description": "Simulazione basata su richiesta di revisione documento o file condiviso.",
+    "description": "Scenario basato su richiesta di revisione documento o file condiviso.",
     "trigger_keywords": ["documento", "document", "pdf", "word", "excel", "drive", "sharepoint", "onedrive", "google drive", "allegato", "file", "revisione", "report"],
     "required_placeholders": ["name"],
     "optional_placeholders": ["organization", "position"],
     "base_score": 40,
     "safety_constraints": ["authorized_simulation_only", "no_malicious_attachments", "no_real_document_collection", "awareness_landing_page_only"],
-    "base_subject": "Richiesta simulata di revisione documento",
-    "base_body": "Gentile {name},\n\nè disponibile una richiesta simulata di revisione documento collegata a un contesto professionale o accademico.\n\nOrganizzazione associata: {organization}.\nRuolo o posizione rilevata: {position}.\n\nLa simulazione non contiene allegati malevoli e non richiede l’invio di documenti reali.\n\nCordiali saluti,\nUfficio Documentazione"
+    "base_subject": "Richiesta revisione documento",
+    "base_body": "Gentile {name},\n\nè disponibile una richiesta di revisione documento collegata a un contesto professionale o accademico.\n\nOrganizzazione associata: {organization}.\nRuolo o posizione rilevata: {position}.\n\nTi invitiamo a consultare il riepilogo della richiesta e verificare l’attendibilità del documento tramite i canali indicati.\n\nCordiali saluti,\nUfficio Documentazione"
   },
   {
     "template_id": "SIM-GEN-01",
@@ -113,7 +113,7 @@
     "optional_placeholders": [],
     "base_score": 10,
     "safety_constraints": ["authorized_simulation_only", "no_real_credentials", "no_sensitive_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Comunicazione di awareness sulla sicurezza",
-    "base_body": "Gentile {name},\n\nè disponibile una comunicazione simulata relativa alla sicurezza digitale e alla verifica dell’attendibilità dei messaggi ricevuti.\n\nTi invitiamo a consultare il contenuto e a valutare gli indicatori di rischio presenti nella comunicazione.\n\nCordiali saluti,\nTeam Sicurezza"
+    "base_subject": "Comunicazione di sicurezza digitale",
+    "base_body": "Gentile {name},\n\nè disponibile una comunicazione relativa alla sicurezza digitale e alla verifica dell’attendibilità dei messaggi ricevuti.\n\nTi invitiamo a consultare il contenuto e valutare gli indicatori presenti nella comunicazione.\n\nCordiali saluti,\nTeam Sicurezza"
   }
 ]

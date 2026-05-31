@@ -26,8 +26,7 @@
             "linkedin",
             "instagram",
             "github",
-            "facebook",
-            "institutional"
+            "facebook"
         ],
         "confirmed_sources": [
             {
@@ -53,29 +52,16 @@
                 "url": "https://facebook.com/mario.lezzi.16",
                 "status": "confirmed",
                 "context": null
-            },
-            {
-                "platform": "institutional",
-                "url": "https://mondodigitale.org/notizie/come-agenti-speciali-rete",
-                "status": "confirmed",
-                "context": "Come agenti speciali in rete"
             }
         ],
-        "institutional_sources": [
-            {
-                "platform": "institutional",
-                "url": "https://mondodigitale.org/notizie/come-agenti-speciali-rete",
-                "status": "confirmed",
-                "context": "Come agenti speciali in rete"
-            }
-        ]
+        "institutional_sources": []
     },
     "campaign": {
         "template_id": "SIM-DEV-02",
         "scenario_type": "repository_access_review",
         "category": "technical",
-        "subject_template": "Revisione simulata attività repository",
-        "body_template": "Ciao {name},\n\nè disponibile un riepilogo simulato relativo ad attività tecniche e repository associati al profilo pubblico collegato a {organization}.\n\nSono stati rilevati elementi coerenti con: {tech_stack}.\nPiattaforme considerate: {platforms}.\n\nLa simulazione non richiede accesso a repository reali, credenziali o token. Il collegamento rimanda solo a una pagina di awareness con il dettaglio degli indicatori osservati.\n\nCordiali saluti,\nTeam Sicurezza",
+        "subject_template": "Revisione attività repository",
+        "body_template": "Ciao {name},\n\nè disponibile un riepilogo relativo ad attività tecniche e repository associati al profilo pubblico collegato a {organization}.\n\nSono stati rilevati elementi coerenti con: {tech_stack}.\nPiattaforme considerate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che le informazioni risultino coerenti con le attività previste.\n\nCordiali saluti,\nTeam Sicurezza",
         "safety_constraints": [
             "authorized_simulation_only",
             "no_real_repository_access",

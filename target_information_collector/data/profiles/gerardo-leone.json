@@ -1,0 +1,97 @@
+{
+  "name": "Gerardo Leone",
+  "gender": "Male",
+  "birth_date": null,
+  "position": "Graduate in Computer Science from the University of Salerno (UNISA).\r\nMaster's degree student specializing in Cloud Computing (UNISA).",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "salerno",
+    "Avellino",
+    "Avellino, Italy"
+  ],
+  "education": [
+    "Università degli Studi di Salerno",
+    "Studied Informatica at Università degli Studi di Salerno",
+    "Went to Liceo Scientifico V. De Caprariis"
+  ],
+  "contacts": [
+    "gleone2000@gmail.com"
+  ],
+  "public_links": [
+    {
+      "url": "https://github.com/GerardoLeone",
+      "platform": "github",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "organization",
+        "education"
+      ]
+    },
+    {
+      "url": "https://it.linkedin.com/in/gerardo-leone-232534281",
+      "platform": "linkedin",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "organization",
+        "education"
+      ]
+    },
+    {
+      "url": "https://facebook.com/gerardo.leone.00",
+      "platform": "facebook",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "organization",
+        "education"
+      ]
+    },
+    {
+      "url": "https://instagram.com/gerardo_leone",
+      "platform": "instagram",
+      "status": "confirmed",
+      "context": null,
+      "matched_context": [
+        "name",
+        "username",
+        "organization",
+        "education"
+      ]
+    }
+  ],
+  "public_mentions": [
+    {
+      "url": "https://facebook.com/emminformatica",
+      "platform": "facebook",
+      "mention_type": "facebook_page_or_context",
+      "confidence": 0.8,
+      "context": "EMM | Naples",
+      "reason": "contains_target_name, contains_target_organization, source_platform:facebook"
+    },
+    {
+      "url": "https://it.linkedin.com/posts/sabato-crescenzo-9778651_grazie-ragazzi-%C3%A8-stato-bello-vedere-crescere-activity-7298338025766371330-48mU",
+      "platform": "linkedin",
+      "mention_type": "linkedin_post",
+      "confidence": 0.72,
+      "context": "Post di Sabato Crescenzo",
+      "reason": "contains_target_name, contains_target_organization, contains_technical_context, source_platform:linkedin"
+    }
+  ],
+  "tech_stack": [
+    "Machine Learning",
+    "Dart",
+    "Java",
+    "Python",
+    "C",
+    "JavaScript",
+    "HTML"
+  ]
+}

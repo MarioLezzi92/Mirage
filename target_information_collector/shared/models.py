@@ -137,6 +137,15 @@ class StructuredPublicLink(BaseModel):
     matched_context: List[str] = Field(default_factory=list)
 
 
+class StructuredPublicMention(BaseModel):
+    url: str
+    platform: str
+    mention_type: str
+    confidence: float = 0.0
+    context: Optional[str] = None
+    reason: Optional[str] = None
+
+
 class StructuredProfile(BaseModel):
     name: str
     gender: Optional[str] = None
@@ -147,4 +156,5 @@ class StructuredProfile(BaseModel):
     education: List[str] = Field(default_factory=list)
     contacts: List[str] = Field(default_factory=list)
     public_links: List[StructuredPublicLink] = Field(default_factory=list)
+    public_mentions: List[StructuredPublicMention] = Field(default_factory=list)
     tech_stack: List[str] = Field(default_factory=list)
