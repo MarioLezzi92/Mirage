@@ -1,0 +1,64 @@
+{
+    "target": {
+        "name": "Carmine Calabrese",
+        "organization": "Università degli Studi di Salerno",
+        "position": "Master's Degree Student in Computer",
+        "city": "salerno",
+        "cities": [
+            "salerno",
+            "Sant'Antonio Abate, Campania, Italia",
+            "Sant'Antonio Abate",
+            "Campania",
+            "Italia",
+            "Lives in Naples, Italy",
+            "From Castellammare di Stabia"
+        ],
+        "email": "info@cittaitalia.tv",
+        "tech_stack": [],
+        "platforms": [
+            "linkedin",
+            "github",
+            "facebook"
+        ],
+        "confirmed_sources": [
+            {
+                "platform": "linkedin",
+                "url": "https://it.linkedin.com/in/carmine-calabrese-8929bb189",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "github",
+                "url": "https://github.com/Carmineh",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "facebook",
+                "url": "https://facebook.com/carmine.calabrese.9",
+                "status": "confirmed",
+                "context": null
+            },
+            {
+                "platform": "linkedin",
+                "url": "https://it.linkedin.com/in/carmine-calabrese-b23284154",
+                "status": "confirmed",
+                "context": null
+            }
+        ],
+        "institutional_sources": []
+    },
+    "campaign": {
+        "template_id": "SIM-UNI-01",
+        "scenario_type": "university_account_notice",
+        "category": "academic",
+        "subject_template": "Avviso servizi online per {organization}",
+        "body_template": "Gentile {name},\n\nè disponibile un avviso relativo ai servizi online collegati a {organization}.\n\nLa comunicazione riguarda account, servizi digitali o accessi associati al contesto accademico.\n\nTi invitiamo a consultare il riepilogo dell’avviso e verificare eventuali aggiornamenti attraverso i canali indicati.\n\nCordiali saluti,\nServizi Online",
+        "safety_constraints": [
+            "authorized_simulation_only",
+            "no_real_student_credentials",
+            "no_real_personal_data_collection",
+            "awareness_landing_page_only"
+        ]
+    }
+}
