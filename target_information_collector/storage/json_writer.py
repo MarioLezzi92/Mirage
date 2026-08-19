@@ -2,42 +2,49 @@ import json
 import re
 from pathlib import Path
 
+from pydantic import BaseModel
 
-class JsonProfileWriter:
-    def __init__(self):
-        # Punta alla cartella raw dentro data
-        self.raw_dir = Path(__file__).resolve().parent.parent / "data" / "raw"
-        self.raw_dir.mkdir(parents=True, exist_ok=True)
 
-    def _slugify(self, name: str) -> str:
-        return name.lower().replace(" ", "-")
+class JsonWriter:
+    def __init__(self, data_dir: str | Path) -> None:
+        self.data_dir = Path(data_dir)
 
-    def _get_next_id(self, slug: str) -> int:
-        # Conta i file esistenti per calcolare il prossimo ID incrementale
-        files = list(self.raw_dir.glob(f"{slug}-raw-*.json"))
-        if not files:
-            return 1
-        
-        highest_id = 0
-        pattern = re.compile(rf"{slug}-raw-(\d+)\.json")
-        for file in files:
-            match = pattern.search(file.name)
-            if match:
-                current_id = int(match.group(1))
-                if current_id > highest_id:
-                    highest_id = current_id
-        return highest_id + 1
+    def save(
+        self,
+        name: str,
+        folder: str,
+        data: BaseModel,
+        *,
+        suffix: str | None = None,
+        omit_empty: bool = False,
+    ) -> Path:
+        directory = self.data_dir / folder
+        directory.mkdir(parents=True, exist_ok=True)
+        slug = self._slug(name)
+        suffix = suffix or folder
+        sequence = self._next_sequence(directory, slug, suffix)
+        path = directory / f"{slug}-{suffix}-{sequence}.json"
+        payload = data.model_dump(
+            mode="json",
+            exclude_none=omit_empty,
+            exclude_defaults=omit_empty,
+        )
+        path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        return path
 
-    def save(self, name: str, data: dict) -> str:
-        """Salva il dizionario di dati grezzi in data/raw."""
-        slug = self._slugify(name)
-        filename_slug = f"{slug}-raw"
-            
-        new_id = self._get_next_id(slug)
-        filename = f"{filename_slug}-{new_id}.json"
-        file_path = self.raw_dir / filename
-        
-        with open(file_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-            
-        return filename
+    @staticmethod
+    def _slug(value: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-") or "target"
+
+    @staticmethod
+    def _next_sequence(directory: Path, slug: str, kind: str) -> int:
+        pattern = re.compile(rf"^{re.escape(slug)}-{re.escape(kind)}-(\d+)\.json$")
+        numbers = [
+            int(match.group(1))
+            for path in directory.glob(f"{slug}-{kind}-*.json")
+            if (match := pattern.match(path.name))
+        ]
+        return max(numbers, default=0) + 1

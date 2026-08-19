@@ -1,0 +1,53 @@
+{
+  "name": "Mario Lezzi",
+  "summary": "Laureato in informatica, studente magistrale di Cyber Security",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "Avellino, Italy",
+    "Monteforte Irpino, Campania, Italy"
+  ],
+  "education": [
+    "Università degli Studi di Salerno",
+    "Liceo scientifico P.S. Mancini, Avellino"
+  ],
+  "emails": [
+    "mario.lezzi9212@gmail.com"
+  ],
+  "social_links": [
+    {
+      "platform": "github",
+      "url": "https://github.com/MarioLezzi92",
+      "confidence": 0.8
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/mario-lezzi-3b69a2262",
+      "confidence": 1.0
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/mario_lezzi_",
+      "confidence": 1.0
+    },
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/mario.lezzi.16",
+      "confidence": 0.9
+    }
+  ],
+  "mentions": [
+    {
+      "title": "Come agenti speciali in rete",
+      "url": "https://www.mondodigitale.org/notizie/come-agenti-speciali-rete",
+      "confidence": 0.8
+    }
+  ],
+  "tech_stack": [
+    "Jupyter Notebook",
+    "JavaScript",
+    "Python",
+    "HTML",
+    "Solidity",
+    "CSS"
+  ]
+}

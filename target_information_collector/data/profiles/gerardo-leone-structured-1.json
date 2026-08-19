@@ -1,0 +1,61 @@
+{
+  "name": "Gerardo Leone",
+  "summary": "Studente Magistrale di Cloud Computing. 25 years old.",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "Avellino, Italy"
+  ],
+  "education": [
+    "Università degli Studi di Salerno — Laurea triennale — Informatica",
+    "Liceo Scientifico V. De Caprariis",
+    "Università degli Studi di Salerno — Laurea Magistrale LM Cloud Computing — 2023-2026"
+  ],
+  "emails": [
+    "gleone2000@gmail.com"
+  ],
+  "social_links": [
+    {
+      "platform": "github",
+      "url": "https://github.com/GerardoLeone",
+      "confidence": 0.8
+    },
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/gerardo.leone.00",
+      "confidence": 0.8
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/gerardo-leone-232534281",
+      "confidence": 1.0
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/gerardo_leone",
+      "confidence": 1.0
+    }
+  ],
+  "mentions": [
+    {
+      "title": "l'intelligenza artificiale che rivoluziona i colloqui di lavoro",
+      "url": "https://www.emmsystems.it/news/intervista-a-vicky-lintelligenza-artificiale-che-rivoluziona-i-colloqui-di-lavoro/",
+      "confidence": 0.8
+    }
+  ],
+  "tech_stack": [
+    "HTML",
+    "Java",
+    "Dart",
+    "Solidity",
+    "JavaScript",
+    "C++",
+    "CMake",
+    "CSS",
+    "Python",
+    "PowerShell",
+    "C",
+    "Swift",
+    "Kotlin",
+    "Objective-C"
+  ]
+}

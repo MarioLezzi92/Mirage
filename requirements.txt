@@ -12,3 +12,4 @@ gender-guesser
 selenium
 python-multipart
 pydantic-settings
+openai

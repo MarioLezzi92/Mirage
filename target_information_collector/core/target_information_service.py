@@ -1,246 +1,198 @@
+import json
+import os
+from collections.abc import Callable
+from dataclasses import dataclass
+from pathlib import Path
+
+from target_information_collector.agents.github_agent import GitHubAgent
+from target_information_collector.agents.input_agent import InputAgent
+from target_information_collector.agents.social_agent import SocialAgent
+from target_information_collector.agents.social_discovery_agent import (
+    SocialDiscoveryAgent,
+)
+from target_information_collector.agents.web_agent import WebAgent
 from target_information_collector.core.collector_pipeline import CollectorPipeline
-from target_information_collector.core.identity_resolver import IdentityResolver
-from target_information_collector.core.structured_profile_builder import StructuredProfileBuilder
-from target_information_collector.shared.models import Evidence, PublicProfile, TargetInput
-from target_information_collector.storage.json_writer import JsonProfileWriter
+from target_information_collector.core.identity_matcher import IdentityMatcher
+from target_information_collector.core.profile_builder import ProfileBuilder
+from target_information_collector.providers.apify_provider import (
+    ApifyActor,
+    ApifyFacebookSearchProvider,
+    ApifySearchProvider,
+    ApifySocialDiscoveryProvider,
+    ApifySocialProvider,
+    apify_usage,
+)
+from target_information_collector.providers.github_provider import GitHubProvider
+from target_information_collector.providers.http_client import HttpClient
+from target_information_collector.shared.config import Settings
+from target_information_collector.shared.models import TargetInput, TargetProfile
+from target_information_collector.storage.json_writer import JsonWriter
+
+
+@dataclass(frozen=True)
+class SavedResult:
+    raw_file: Path
+    profile_file: Path
+    profile: TargetProfile
+    errors: list[str]
+    warnings: list[str]
+    active_profile_agents: list[str]
 
 
 class TargetInformationService:
-    MIN_PROFILE_LINK_CONFIDENCE = 0.45
-    MIN_STRUCTURED_CONFIDENCE = 0.55
+    def __init__(self, pipeline: CollectorPipeline, writer: JsonWriter) -> None:
+        self.pipeline = pipeline
+        self.writer = writer
+        self.builder = ProfileBuilder()
 
-    def __init__(self):
-        self.pipeline = CollectorPipeline()
-        self.writer = JsonProfileWriter()
-        self.structured_builder = StructuredProfileBuilder()
-        self.identity_resolver = IdentityResolver()
-
-    def collect_live(self, target: TargetInput) -> dict:
-        raw_data = self.pipeline.collect_raw(target)
-        raw_filename = self.writer.save(target.full_name, raw_data)
-        structured_filename = self.build_from_raw(target, raw_data)
-
-        return {
-            "status": "success",
-            "raw_file": raw_filename,
-            "structured_file": structured_filename,
-        }
-
-    def collect_from_raw(
+    def collect(
         self,
         target: TargetInput,
-        raw_data: dict,
-        raw_filename: str,
-    ) -> dict:
-        structured_filename = self.build_from_raw(target, raw_data)
-
-        return {
-            "status": "success",
-            "raw_file": raw_filename,
-            "structured_file": structured_filename,
-        }
-
-    def build_from_raw(self, target: TargetInput, raw_data: dict) -> str:
-        evidence_objects = [
-            Evidence(**evidence)
-            for evidence in raw_data.get("evidence", [])
-        ]
-
-        public_profiles = self._build_public_profiles(
-            raw_candidates=raw_data.get("candidates", []),
-            evidence_objects=evidence_objects,
+        progress: Callable[[str, int, int, str], None] | None = None,
+    ) -> SavedResult:
+        raw = self.pipeline.collect(target, progress)
+        profile = self.builder.build(raw)
+        return SavedResult(
+            raw_file=self.writer.save(target.full_name, "raw", raw),
+            profile_file=self.writer.save(
+                target.full_name,
+                "profiles",
+                profile,
+                suffix="structured",
+                omit_empty=True,
+            ),
+            profile=profile,
+            errors=raw.errors,
+            warnings=raw.warnings,
+            active_profile_agents=raw.active_profile_agents,
         )
 
-        resolved = self.identity_resolver.resolve(
-            target=target,
-            candidates=raw_data.get("candidates", []),
-            profiles=public_profiles,
-            evidence=evidence_objects,
+
+def build_service(settings: Settings) -> TargetInformationService:
+    client, matcher = HttpClient(), IdentityMatcher()
+    github = GitHubAgent(
+        GitHubProvider(client, settings.github_token),
+        matcher,
+        settings.identity_threshold,
+        settings.max_candidates_per_source,
+    )
+    discovery, profiles = [InputAgent(), github], {"github": github}
+
+    def actor(actor_id: str) -> ApifyActor:
+        return ApifyActor(client, settings.apify_token or "", actor_id)
+
+    if settings.apify_token and settings.apify_search_actor_id:
+        discovery.append(
+            WebAgent(
+                ApifySearchProvider(
+                    actor(settings.apify_search_actor_id),
+                    settings.search_country_code,
+                ),
+                matcher,
+                settings.max_candidates_per_source,
+            )
+        )
+    if settings.apify_token and settings.apify_social_discovery_actor_id:
+        discovery.append(
+            SocialDiscoveryAgent(
+                ApifySocialDiscoveryProvider(
+                    actor(settings.apify_social_discovery_actor_id)
+                ),
+                settings.max_candidates_per_source,
+            )
+        )
+    if settings.apify_token and settings.apify_facebook_search_actor_id:
+        discovery.append(
+            WebAgent(
+                ApifyFacebookSearchProvider(
+                    actor(settings.apify_facebook_search_actor_id)
+                ),
+                matcher,
+                max(settings.max_candidates_per_source, 10),
+                name="facebook_search",
+            )
         )
 
-        target_profile = {
-            "target": target.model_dump(mode="json"),
-            "identity_candidates": [
-                candidate.model_dump(mode="json")
-                for candidate in resolved.get("identity_candidates", [])
-            ],
-            "public_profiles": [
-                profile.model_dump(mode="json")
-                for profile in public_profiles
-            ],
-            "evidence": raw_data.get("evidence", []),
-            "tech_stack": self._extract_tech_stack(evidence_objects),
-            "contact": self._build_contact(evidence_objects),
-        }
-
-        return self.structured_builder.build_from_raw(target_profile)
-
-    def _build_public_profiles(
-        self,
-        raw_candidates: list[dict],
-        evidence_objects: list[Evidence],
-    ) -> list[PublicProfile]:
-        profiles = []
-
-        for candidate in raw_candidates:
-            url = candidate.get("url")
-            platform = candidate.get("platform")
-
-            if not url or not platform:
-                continue
-
-            profiles.append(
-                PublicProfile(
-                    platform=platform,
-                    url=url,
-                    username=candidate.get("username"),
-                    confidence=float(candidate.get("confidence") or 0.0),
-                )
+    actor_ids = {
+        "linkedin": settings.apify_linkedin_actor_id,
+        "instagram": settings.apify_instagram_actor_id,
+        "facebook": settings.apify_facebook_actor_id,
+    }
+    for platform, actor_id in actor_ids.items():
+        if settings.apify_token and actor_id:
+            profiles[platform] = SocialAgent(
+                platform,
+                ApifySocialProvider(platform, actor(actor_id)),
+                matcher,
+                settings.identity_threshold,
             )
 
-        for evidence in evidence_objects:
-            evidence_type = self._value(evidence.evidence_type)
+    return TargetInformationService(
+        CollectorPipeline(discovery, profiles),
+        JsonWriter(settings.output_dir),
+    )
 
-            if evidence_type not in {"profile", "public_link"}:
-                continue
 
-            if not evidence.url or not evidence.platform:
-                continue
+def collect_file(
+    input_file: str | Path | None = None,
+    progress: Callable[[str, int, int, str], None] | None = None,
+) -> list[SavedResult]:
+    settings = Settings.from_environment()
+    path = Path(input_file or os.getenv("TARGET_INPUT_FILE", "target_input.json"))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    service = build_service(settings)
+    return [
+        service.collect(TargetInput.model_validate(item), progress)
+        for item in (data if isinstance(data, list) else [data])
+    ]
 
-            if evidence.confidence < self.MIN_PROFILE_LINK_CONFIDENCE:
-                continue
 
-            if self._is_document_dorking_evidence(evidence):
-                continue
-
-            profiles.append(
-                PublicProfile(
-                    platform=evidence.platform,
-                    url=evidence.url,
-                    username=evidence.username,
-                    confidence=evidence.confidence,
-                )
+def run(input_file: str | Path | None = None) -> None:
+    settings = Settings.from_environment()
+    usage_client = HttpClient()
+    usage_before: tuple[float, float] | None = None
+    if settings.apify_token:
+        try:
+            usage_before = apify_usage(usage_client, settings.apify_token)
+            used, limit = usage_before
+            remaining = max(0.0, limit - used)
+            print(
+                f"Apify iniziale: ${remaining:.2f} rimanenti | "
+                f"${used:.2f}/${limit:.2f} usati"
             )
+        except Exception:
+            print("Apify iniziale: utilizzo non disponibile")
 
-        return self._deduplicate_profiles(profiles)
+    try:
+        for result in collect_file(input_file, _terminal_progress):
+            print(f"raw: {result.raw_file}\nprofile: {result.profile_file}")
+            for error in result.errors:
+                print(f"error: {error}")
+    finally:
+        if settings.apify_token:
+            try:
+                used, limit = apify_usage(usage_client, settings.apify_token)
+                remaining = max(0.0, limit - used)
+                if usage_before:
+                    spent = max(0.0, used - usage_before[0])
+                    print(
+                        f"Apify run: ${spent:.4f} spesi | "
+                        f"${remaining:.2f} rimanenti"
+                    )
+                else:
+                    print(
+                        "Apify run: spesa non disponibile | "
+                        f"${remaining:.2f} rimanenti"
+                    )
+            except Exception:
+                print("Apify fine run: utilizzo non disponibile")
 
-    def _build_contact(self, evidence_objects: list[Evidence]) -> dict | None:
-        emails = []
 
-        for evidence in evidence_objects:
-            if self._value(evidence.evidence_type) != "email":
-                continue
-
-            if not evidence.value:
-                continue
-
-            if evidence.confidence < self.MIN_STRUCTURED_CONFIDENCE:
-                continue
-
-            if self._is_document_dorking_evidence(evidence):
-                continue
-
-            emails.append(evidence.value)
-
-        emails = self._unique(emails)
-
-        if not emails:
-            return None
-
-        return {
-            "email": emails[0],
-            "status": "PUBLIC_CONFIRMED",
-            "confidence": 0.85,
-            "campaign_eligible": True,
-            "reason": "Found during public OSINT collection",
-            "evidence": [],
-        }
-
-    def _extract_tech_stack(self, evidence_objects: list[Evidence]) -> list[str]:
-        values = []
-
-        for evidence in evidence_objects:
-            if self._value(evidence.evidence_type) != "tech_stack":
-                continue
-
-            if not evidence.value:
-                continue
-
-            if evidence.confidence < self.MIN_STRUCTURED_CONFIDENCE:
-                continue
-
-            if self._is_document_dorking_evidence(evidence):
-                continue
-
-            source = self._value(evidence.source)
-            platform = self._value(evidence.platform)
-
-            if source not in {"github", "linkedin"} and platform not in {"github", "linkedin"}:
-                continue
-
-            values.append(evidence.value)
-
-        return self._unique(values)
-
-    def _is_document_dorking_evidence(self, evidence: Evidence) -> bool:
-        return (evidence.raw_data or {}).get("phase") == "document_dorking"
-
-    def _deduplicate_profiles(self, profiles: list[PublicProfile]) -> list[PublicProfile]:
-        by_key = {}
-
-        for profile in profiles:
-            key = self._canonical_key(profile.url, profile.platform)
-
-            if key not in by_key:
-                by_key[key] = profile
-                continue
-
-            if profile.confidence > by_key[key].confidence:
-                by_key[key] = profile
-
-        return list(by_key.values())
-
-    def _canonical_key(self, url: str, platform: str) -> tuple[str, str]:
-        cleaned_url = str(url).strip().lower()
-
-        cleaned_url = cleaned_url.replace("https://www.", "https://")
-        cleaned_url = cleaned_url.replace("http://www.", "http://")
-        cleaned_url = cleaned_url.replace("https://web.", "https://")
-        cleaned_url = cleaned_url.replace("http://web.", "http://")
-
-        if cleaned_url.endswith("/"):
-            cleaned_url = cleaned_url[:-1]
-
-        return cleaned_url, str(platform).lower().strip()
-
-    def _value(self, value) -> str:
-        if value is None:
-            return ""
-
-        if hasattr(value, "value"):
-            return str(value.value).lower().strip()
-
-        return str(value).lower().strip()
-
-    def _unique(self, values: list[str]) -> list[str]:
-        seen = set()
-        output = []
-
-        for value in values:
-            if not value:
-                continue
-
-            cleaned = str(value).strip()
-
-            if not cleaned:
-                continue
-
-            key = cleaned.lower()
-
-            if key in seen:
-                continue
-
-            seen.add(key)
-            output.append(cleaned)
-
-        return output
+def _terminal_progress(phase: str, done: int, total: int, label: str) -> None:
+    width = 24
+    ratio = 1.0 if total == 0 else done / total
+    filled = round(width * ratio)
+    bar = "#" * filled + "-" * (width - filled)
+    status = "completato" if done >= total else label
+    line = f"\r{phase:<8} [{bar}] {done:>2}/{total:<2} {status[:42]:<42}"
+    print(line, end="\n" if done >= total else "", flush=True)

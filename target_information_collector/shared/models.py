@@ -1,160 +1,113 @@
 from enum import Enum
-from typing import Any, Optional, List
-from pydantic import BaseModel, Field
+from typing import Any
 
-
-class AuthorizationStatus(str, Enum):
-    AUTHORIZED = "AUTHORIZED"
-    UNAUTHORIZED = "UNAUTHORIZED"
-
-
-class EvidenceSource(str, Enum):
-    INPUT = "input"
-    GITHUB = "github"
-    WEB = "web"
-    LINKEDIN = "linkedin"
-    FACEBOOK = "facebook"
-    INSTAGRAM = "instagram"
-    APIFY = "apify"
+from pydantic import BaseModel, Field, HttpUrl, field_validator
 
 
 class EvidenceType(str, Enum):
-    IDENTITY = "identity"
     PROFILE = "profile"
-    PUBLIC_LINK = "public_link"
     EMAIL = "email"
+    ROLE = "role"
+    BIO = "bio"
+    COMPANY = "company"
     LOCATION = "location"
     EDUCATION = "education"
-    ORGANIZATION = "organization"
-    ROLE = "role"
     TECH_STACK = "tech_stack"
-    SOCIAL_HINT = "social_hint"
     WEB_MENTION = "web_mention"
-    ERROR = "error"
-
-
-class CandidateStatus(str, Enum):
-    UNVERIFIED = "unverified"
-    CANDIDATE = "candidate"
-    PROBABLE = "probable"
-    CONFIRMED = "confirmed"
-    REJECTED = "rejected"
 
 
 class TargetInput(BaseModel):
-    full_name: str
-    birth_date: Optional[str] = None
-    gender: Optional[str] = None
-    cities: List[str] = Field(default_factory=list)
-    education: List[str] = Field(default_factory=list)
-    contacts: List[str] = Field(default_factory=list)
-    public_links: List[str] = Field(default_factory=list)
-    aliases: List[str] = Field(default_factory=list)
+    full_name: str = Field(min_length=1)
+    company: str | None = None
+    role: str | None = None
+    department: str | None = None
+    email: str | None = None
+    github_username: str | None = None
+    cities: list[str] = Field(default_factory=list)
+    education: list[str] = Field(default_factory=list)
+    public_links: list[HttpUrl] = Field(default_factory=list)
 
-    location: Optional[str] = None
-    company: Optional[str] = None
-    role: Optional[str] = None
-    department: Optional[str] = None
-    email: Optional[str] = None
-    email_domain: Optional[str] = None
-    linkedin_url: Optional[str] = None
-    github_username: Optional[str] = None
+    @field_validator("full_name", "company", "role", "department", "email", "github_username")
+    @classmethod
+    def clean_text(cls, value: str | None) -> str | None:
+        return value.strip() if value and value.strip() else None
 
 
-class Evidence(BaseModel):
-    source: EvidenceSource | str
-    evidence_type: EvidenceType | str
-    value: Optional[str] = None
-    url: Optional[str] = None
-    platform: Optional[str] = None
-    username: Optional[str] = None
-    title: Optional[str] = None
-    description: Optional[str] = None
-    confidence: float = 0.0
-    raw_data: dict[str, Any] = Field(default_factory=dict)
+class SearchResult(BaseModel):
+    url: HttpUrl
+    title: str = ""
+    snippet: str = ""
 
 
 class CandidateProfile(BaseModel):
     platform: str
-    url: str
-    username: Optional[str] = None
-    display_name: Optional[str] = None
-    confidence: float = 0.0
-    matched_context: List[str] = Field(default_factory=list)
-    raw_data: dict[str, Any] = Field(default_factory=dict)
+    url: HttpUrl
+    username: str | None = None
+    discovered_by: str
+    title: str = ""
+    snippet: str = ""
+    context: str = ""
+    explicit: bool = False
 
 
-class PublicProfile(BaseModel):
+class ProfileData(BaseModel):
     platform: str
-    url: str
-    username: Optional[str] = None
-    confidence: float = 0.0
+    url: HttpUrl
+    full_name: str | None = None
+    username: str | None = None
+    role: str | None = None
+    bio: str | None = None
+    company: str | None = None
+    locations: list[str] = Field(default_factory=list)
+    education: list[str] = Field(default_factory=list)
+    emails: list[str] = Field(default_factory=list)
+    tech_stack: list[str] = Field(default_factory=list)
+    raw: dict[str, Any] = Field(default_factory=dict)
 
 
-class IdentityCandidate(BaseModel):
-    candidate_id: str
-    full_name: Optional[str] = None
+class Evidence(BaseModel):
+    source: str
     platform: str
-    profile_url: str
-    username: Optional[str] = None
-    company: Optional[str] = None
-    role: Optional[str] = None
-    location: Optional[str] = None
-
-    matched_fields: List[str] = Field(default_factory=list)
-    confidence: float = 0.0
-    status: CandidateStatus | str = CandidateStatus.UNVERIFIED
-    positive_evidence: List[str] = Field(default_factory=list)
-    negative_evidence: List[str] = Field(default_factory=list)
-    reason: Optional[str] = None
-
-    evidence: List[Evidence] = Field(default_factory=list)
+    evidence_type: EvidenceType
+    value: str
+    url: HttpUrl | None = None
+    confidence: float = Field(ge=0.0, le=1.0)
+    metadata: dict[str, Any] = Field(default_factory=dict)
 
 
-class Contact(BaseModel):
-    email: Optional[str] = None
-    status: Optional[str] = None
-    confidence: float = 0.0
-    campaign_eligible: bool = False
-    reason: Optional[str] = None
-    evidence: List[Any] = Field(default_factory=list)
+class DiscoveryOutput(BaseModel):
+    candidates: list[CandidateProfile] = Field(default_factory=list)
+    evidence: list[Evidence] = Field(default_factory=list)
+
+
+class CollectionResult(BaseModel):
+    target: TargetInput
+    candidates: list[CandidateProfile] = Field(default_factory=list)
+    evidence: list[Evidence] = Field(default_factory=list)
+    errors: list[str] = Field(default_factory=list)
+    warnings: list[str] = Field(default_factory=list)
+    active_profile_agents: list[str] = Field(default_factory=list)
+
+
+class ProfileLink(BaseModel):
+    platform: str
+    url: HttpUrl
+    confidence: float = Field(ge=0.0, le=1.0)
+
+
+class WebMention(BaseModel):
+    title: str
+    url: HttpUrl
+    confidence: float = Field(ge=0.0, le=1.0)
 
 
 class TargetProfile(BaseModel):
-    target: TargetInput
-    identity_candidates: List[IdentityCandidate] = Field(default_factory=list)
-    public_profiles: List[PublicProfile] = Field(default_factory=list)
-    evidence: List[Evidence] = Field(default_factory=list)
-    tech_stack: List[str] = Field(default_factory=list)
-    contact: Optional[Contact] = None
-
-
-class StructuredPublicLink(BaseModel):
-    url: str
-    platform: str
-    status: CandidateStatus | str = CandidateStatus.CANDIDATE
-    context: Optional[str] = None
-    matched_context: List[str] = Field(default_factory=list)
-
-
-class StructuredPublicMention(BaseModel):
-    url: str
-    platform: str
-    mention_type: str
-    confidence: float = 0.0
-    context: Optional[str] = None
-    reason: Optional[str] = None
-
-
-class StructuredProfile(BaseModel):
     name: str
-    gender: Optional[str] = None
-    birth_date: Optional[str] = None
-    position: Optional[str] = None
-    organization: Optional[str] = None
-    cities: List[str] = Field(default_factory=list)
-    education: List[str] = Field(default_factory=list)
-    contacts: List[str] = Field(default_factory=list)
-    public_links: List[StructuredPublicLink] = Field(default_factory=list)
-    public_mentions: List[StructuredPublicMention] = Field(default_factory=list)
-    tech_stack: List[str] = Field(default_factory=list)
+    summary: str | None = None
+    organization: str | None = None
+    cities: list[str] = Field(default_factory=list)
+    education: list[str] = Field(default_factory=list)
+    emails: list[str] = Field(default_factory=list)
+    social_links: list[ProfileLink] = Field(default_factory=list)
+    mentions: list[WebMention] = Field(default_factory=list)
+    tech_stack: list[str] = Field(default_factory=list)

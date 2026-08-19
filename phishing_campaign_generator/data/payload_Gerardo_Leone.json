@@ -2,55 +2,22 @@
     "target": {
         "name": "Gerardo Leone",
         "organization": "Università degli Studi di Salerno",
-        "position": "Graduate in Computer Science from the University of Salerno (UNISA).\r\nMaster's degree student specializing in Cloud Computing (UNISA).",
-        "city": "salerno",
+        "position": null,
+        "city": "Avellino, Italy",
         "cities": [
-            "salerno",
-            "Avellino",
             "Avellino, Italy"
         ],
-        "email": "gleone2000@gmail.com",
+        "email": null,
         "tech_stack": [
-            "Machine Learning",
+            "C",
             "Dart",
             "Java",
-            "Python",
-            "C",
+            "HTML",
             "JavaScript",
-            "HTML"
+            "Python"
         ],
-        "platforms": [
-            "github",
-            "linkedin",
-            "facebook",
-            "instagram"
-        ],
-        "confirmed_sources": [
-            {
-                "platform": "github",
-                "url": "https://github.com/GerardoLeone",
-                "status": "confirmed",
-                "context": null
-            },
-            {
-                "platform": "linkedin",
-                "url": "https://it.linkedin.com/in/gerardo-leone-232534281",
-                "status": "confirmed",
-                "context": null
-            },
-            {
-                "platform": "facebook",
-                "url": "https://facebook.com/gerardo.leone.00",
-                "status": "confirmed",
-                "context": null
-            },
-            {
-                "platform": "instagram",
-                "url": "https://instagram.com/gerardo_leone",
-                "status": "confirmed",
-                "context": null
-            }
-        ],
+        "platforms": [],
+        "confirmed_sources": [],
         "institutional_sources": []
     },
     "campaign": {

@@ -1,0 +1,62 @@
+{
+  "name": "Carmine Calabrese",
+  "summary": "Master's Degree Student in Computer Science - Software Engineering and IT Management",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "Naples, Italy",
+    "Sant’Antonio Abate, Campania, Italy",
+    "Castellammare di Stabia"
+  ],
+  "education": [
+    "Università degli Studi di Salerno — Laurea Magistrale LM — Informatica - Software Engineering and IT Management",
+    "Università degli Studi di Salerno — Laurea triennale — Computer Science",
+    "ITI \"Renato Elia\""
+  ],
+  "emails": [
+    "carmine.calabrese99@gmail.com"
+  ],
+  "social_links": [
+    {
+      "platform": "github",
+      "url": "https://github.com/Carmineh",
+      "confidence": 0.7
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/carmine-calabrese-8929bb189",
+      "confidence": 1.0
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/carmineh_",
+      "confidence": 1.0
+    },
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/carmine.calabrese.9",
+      "confidence": 1.0
+    }
+  ],
+  "mentions": [
+    {
+      "title": "Carmine Calabrese",
+      "url": "https://scholar.google.com/citations?user=ns39HiYAAAAJ&hl=it",
+      "confidence": 0.8
+    }
+  ],
+  "tech_stack": [
+    "Java",
+    "Python",
+    "Jupyter Notebook",
+    "JavaScript",
+    "TypeScript",
+    "CSS",
+    "PowerShell",
+    "Solidity",
+    "HTML",
+    "GLSL",
+    "Dockerfile",
+    "Batchfile",
+    "C"
+  ]
+}
