@@ -1,0 +1,12 @@
+{
+  "target": "Carmine Calabrese",
+  "scenario": "repository_access",
+  "channel": "email",
+  "tone": "urgent",
+  "sender_template": "Repository Security",
+  "subject_template": "Repository access review required",
+  "body_template": "Hi {{name}}, a recent permissions change requires confirmation before repository access can continue. Review the access request here: {{simulation_url}}.",
+  "variables": {
+    "name": "Carmine Calabrese"
+  }
+}

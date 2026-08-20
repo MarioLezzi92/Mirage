@@ -1,0 +1,12 @@
+{
+  "target": "Mario Lezzi",
+  "scenario": "password_reset",
+  "channel": "email",
+  "tone": "urgent",
+  "sender_template": "Account Security",
+  "subject_template": "Unusual sign-in activity detected",
+  "body_template": "Hi {{name}}, we detected a sign-in attempt that needs to be reviewed. If this was not you, secure your account using the link below: {{simulation_url}}.",
+  "variables": {
+    "name": "Mario Lezzi"
+  }
+}

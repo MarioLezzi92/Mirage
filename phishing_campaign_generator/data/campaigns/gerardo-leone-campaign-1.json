@@ -1,0 +1,13 @@
+{
+  "target": "Gerardo Leone",
+  "scenario": "fake_invoice",
+  "channel": "email",
+  "tone": "formal",
+  "sender_template": "{{organization}} Billing Services",
+  "subject_template": "Invoice awaiting review - {{organization}}",
+  "body_template": "Hi {{name}}, an invoice linked to {{organization}} is awaiting your review. Please verify the billing details before the due date: {{simulation_url}}.",
+  "variables": {
+    "name": "Gerardo Leone",
+    "organization": "Università degli Studi di Salerno"
+  }
+}

@@ -1,119 +1,146 @@
 [
-  {
-    "template_id": "SIM-SEC-01",
-    "scenario_type": "password_reset",
-    "category": "security",
-    "description": "Scenario di verifica sicurezza account.",
-    "trigger_keywords": ["account", "login", "password", "security", "sicurezza", "credenziali", "accesso"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization"],
-    "base_score": 30,
-    "safety_constraints": ["authorized_simulation_only", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Verifica impostazioni di sicurezza account",
-    "base_body": "Ciao {name},\n\nè disponibile un avviso relativo alle impostazioni di sicurezza degli account associati a {organization}.\n\nTi invitiamo a consultare il riepilogo dell’avviso e verificare che le informazioni riportate siano coerenti con il tuo profilo.\n\nLa comunicazione non richiede l’invio di password, codici temporanei o dati personali.\n\nCordiali saluti,\nTeam Sicurezza"
-  },
-  {
-    "template_id": "SIM-SEC-02",
-    "scenario_type": "mfa_verification",
-    "category": "security",
-    "description": "Scenario basato su verifica MFA o controllo accessi.",
-    "trigger_keywords": ["mfa", "2fa", "otp", "authenticator", "sicurezza", "accesso", "account", "login"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization"],
-    "base_score": 35,
-    "safety_constraints": ["authorized_simulation_only", "no_real_otp", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Controllo configurazione accesso sicuro",
-    "base_body": "Ciao {name},\n\nè stato predisposto un controllo sulle impostazioni di accesso sicuro relative agli account collegati a {organization}.\n\nPuoi consultare il riepilogo per verificare lo stato della configurazione e gli eventuali indicatori rilevati.\n\nNon vengono richiesti codici OTP, password o credenziali reali.\n\nCordiali saluti,\nTeam Sicurezza"
-  },
-  {
-    "template_id": "SIM-DEV-01",
-    "scenario_type": "developer_platform",
-    "category": "technical",
-    "description": "Scenario per profili tecnici, strumenti di sviluppo e contesto accademico/professionale.",
-    "trigger_keywords": ["python", "java", "javascript", "typescript", "html", "css", "github", "gitlab", "docker", "api", "token", "jupyter notebook"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization", "tech_stack", "platforms"],
-    "base_score": 35,
-    "safety_constraints": ["authorized_simulation_only", "no_real_tokens", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Verifica attività tecnica associata al tuo profilo",
-    "base_body": "Ciao {name},\n\nè stata generata una segnalazione collegata a un profilo tecnico associato a {organization}.\n\nIl contesto rilevato include: {tech_stack}.\nPiattaforme pubbliche associate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che l’attività sia coerente con il tuo profilo pubblico.\n\nCordiali saluti,\nTeam Sicurezza"
-  },
-  {
-    "template_id": "SIM-DEV-02",
-    "scenario_type": "repository_access_review",
-    "category": "technical",
-    "description": "Scenario di revisione accessi o attività su repository e ambienti di sviluppo.",
-    "trigger_keywords": ["github", "gitlab", "repository", "repo", "commit", "pull request", "developer", "software", "pipeline", "ci/cd", "cyber security", "penetration testing", "jupyter notebook", "machine learning"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization", "platforms", "tech_stack"],
-    "base_score": 45,
-    "safety_constraints": ["authorized_simulation_only", "no_real_repository_access", "no_real_tokens", "no_real_credentials", "awareness_landing_page_only"],
-    "base_subject": "Revisione attività repository",
-    "base_body": "Ciao {name},\n\nè disponibile un riepilogo relativo ad attività tecniche e repository associati al profilo pubblico collegato a {organization}.\n\nSono stati rilevati elementi coerenti con: {tech_stack}.\nPiattaforme considerate: {platforms}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che le informazioni risultino coerenti con le attività previste.\n\nCordiali saluti,\nTeam Sicurezza"
-  },
-  {
-    "template_id": "SIM-UNI-01",
-    "scenario_type": "university_account_notice",
-    "category": "academic",
-    "description": "Scenario per profili universitari, studenti e servizi online accademici.",
-    "trigger_keywords": ["università", "university", "student", "studente", "docente", "dipartimento", "campus", "moodle", "esse3", "segreteria", "matricola"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization"],
-    "base_score": 45,
-    "safety_constraints": ["authorized_simulation_only", "no_real_student_credentials", "no_real_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Avviso servizi online per {organization}",
-    "base_body": "Gentile {name},\n\nè disponibile un avviso relativo ai servizi online collegati a {organization}.\n\nLa comunicazione riguarda account, servizi digitali o accessi associati al contesto accademico.\n\nTi invitiamo a consultare il riepilogo dell’avviso e verificare eventuali aggiornamenti attraverso i canali indicati.\n\nCordiali saluti,\nServizi Online"
-  },
-  {
-    "template_id": "SIM-EVENT-01",
-    "scenario_type": "event_invitation",
-    "category": "social",
-    "description": "Scenario basato su invito a evento, webinar, challenge o iniziativa formativa.",
-    "trigger_keywords": ["evento", "webinar", "conference", "conferenza", "seminario", "workshop", "formazione", "training", "challenge", "cyber security", "machine learning", "università", "institutional"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["city", "organization", "tech_stack", "institutional_sources"],
-    "base_score": 42,
-    "safety_constraints": ["authorized_simulation_only", "no_real_payment_request", "no_sensitive_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Invito a iniziativa formativa",
-    "base_body": "Gentile {name},\n\nè disponibile un invito a un’iniziativa formativa coerente con il contesto pubblico associato al tuo profilo.\n\nOrganizzazione rilevata: {organization}.\nInteressi tecnici rilevati: {tech_stack}.\nRiferimenti pubblici istituzionali: {institutional_sources}.\n\nTi invitiamo a consultare i dettagli dell’iniziativa e verificare l’eventuale interesse.\n\nCordiali saluti,\nSegreteria Eventi"
-  },
-  {
-    "template_id": "SIM-SOC-01",
-    "scenario_type": "social_media_notice",
-    "category": "social",
-    "description": "Scenario basato su piattaforme social o profili pubblici.",
-    "trigger_keywords": ["instagram", "facebook", "linkedin", "twitter", "x", "social", "profile", "profilo", "account", "community", "creator"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization", "platforms"],
-    "base_score": 30,
-    "safety_constraints": ["authorized_simulation_only", "no_real_social_credentials", "no_account_takeover", "awareness_landing_page_only"],
-    "base_subject": "Comunicazione relativa al profilo pubblico",
-    "base_body": "Ciao {name},\n\nè disponibile una comunicazione collegata alla tua presenza pubblica su piattaforme social o professionali.\n\nPiattaforme rilevate: {platforms}.\nOrganizzazione associata: {organization}.\n\nTi invitiamo a consultare il dettaglio dell’avviso e verificare che le informazioni siano coerenti con il tuo profilo pubblico.\n\nCordiali saluti,\nTeam Supporto Profili"
-  },
-  {
-    "template_id": "SIM-DOC-01",
-    "scenario_type": "document_review",
-    "category": "document",
-    "description": "Scenario basato su richiesta di revisione documento o file condiviso.",
-    "trigger_keywords": ["documento", "document", "pdf", "word", "excel", "drive", "sharepoint", "onedrive", "google drive", "allegato", "file", "revisione", "report"],
-    "required_placeholders": ["name"],
-    "optional_placeholders": ["organization", "position"],
-    "base_score": 40,
-    "safety_constraints": ["authorized_simulation_only", "no_malicious_attachments", "no_real_document_collection", "awareness_landing_page_only"],
-    "base_subject": "Richiesta revisione documento",
-    "base_body": "Gentile {name},\n\nè disponibile una richiesta di revisione documento collegata a un contesto professionale o accademico.\n\nOrganizzazione associata: {organization}.\nRuolo o posizione rilevata: {position}.\n\nTi invitiamo a consultare il riepilogo della richiesta e verificare l’attendibilità del documento tramite i canali indicati.\n\nCordiali saluti,\nUfficio Documentazione"
-  },
-  {
-    "template_id": "SIM-GEN-01",
-    "scenario_type": "generic_awareness_notice",
-    "category": "fallback",
-    "description": "Template fallback usato quando il profilo contiene pochi dati utili.",
-    "trigger_keywords": [],
-    "required_placeholders": ["name"],
-    "optional_placeholders": [],
-    "base_score": 10,
-    "safety_constraints": ["authorized_simulation_only", "no_real_credentials", "no_sensitive_personal_data_collection", "awareness_landing_page_only"],
-    "base_subject": "Comunicazione di sicurezza digitale",
-    "base_body": "Gentile {name},\n\nè disponibile una comunicazione relativa alla sicurezza digitale e alla verifica dell’attendibilità dei messaggi ricevuti.\n\nTi invitiamo a consultare il contenuto e valutare gli indicatori presenti nella comunicazione.\n\nCordiali saluti,\nTeam Sicurezza"
-  }
+    {
+        "scenario": "password_reset",
+        "channel": "email",
+        "tone": "urgent",
+        "sender_template": "Account Security",
+        "subject_template": "Unusual sign-in activity detected",
+        "body_template": "Hi {{name}}, we detected a sign-in attempt that needs to be reviewed. If this was not you, secure your account using the link below: {{simulation_url}}.",
+        "required_fields": [],
+        "preferred_fields": [
+            "emails",
+            "tech_stack"
+        ],
+        "selection_terms": [
+            "cyber security",
+            "cybersecurity",
+            "security",
+            "information security",
+            "authentication",
+            "identity"
+        ]
+    },
+    {
+        "scenario": "fake_invoice",
+        "channel": "email",
+        "tone": "formal",
+        "sender_template": "{{organization}} Billing Services",
+        "subject_template": "Invoice awaiting review - {{organization}}",
+        "body_template": "Hi {{name}}, an invoice linked to {{organization}} is awaiting your review. Please verify the billing details before the due date: {{simulation_url}}.",
+        "required_fields": [
+            "organization"
+        ],
+        "preferred_fields": [
+            "organization",
+            "tech_stack",
+            "emails"
+        ],
+        "selection_terms": [
+            "cloud computing",
+            "cloud",
+            "aws",
+            "azure",
+            "billing",
+            "invoice",
+            "payment"
+        ]
+    },
+    {
+        "scenario": "executive_impersonation",
+        "channel": "email",
+        "tone": "urgent",
+        "sender_template": "{{organization}} Management Office",
+        "subject_template": "Quick review needed",
+        "body_template": "Hi {{name}}, the management office needs a short review of a document before it is shared. Open the current version here: {{simulation_url}}.",
+        "required_fields": [
+            "organization"
+        ],
+        "preferred_fields": [
+            "organization",
+            "summary",
+            "mentions"
+        ],
+        "selection_terms": [
+            "it management",
+            "management",
+            "manager",
+            "executive",
+            "director",
+            "leadership",
+            "administration"
+        ]
+    },
+    {
+        "scenario": "shared_document",
+        "channel": "email",
+        "tone": "formal",
+        "sender_template": "{{organization}} Workspace",
+        "subject_template": "A document is waiting for your review",
+        "body_template": "Hi {{name}}, a document connected to {{organization}} has been shared with you and is awaiting review. Open the latest version here: {{simulation_url}}.",
+        "required_fields": [
+            "organization"
+        ],
+        "preferred_fields": [
+            "organization",
+            "summary",
+            "mentions"
+        ],
+        "selection_terms": [
+            "project",
+            "collaboration",
+            "thesis",
+            "tesi",
+            "research",
+            "repository"
+        ]
+    },
+    {
+        "scenario": "repository_access",
+        "channel": "email",
+        "tone": "urgent",
+        "sender_template": "Repository Security",
+        "subject_template": "Repository access review required",
+        "body_template": "Hi {{name}}, a recent permissions change requires confirmation before repository access can continue. Review the access request here: {{simulation_url}}.",
+        "required_fields": [
+            "tech_stack"
+        ],
+        "preferred_fields": [
+            "tech_stack",
+            "social_links",
+            "emails"
+        ],
+        "selection_terms": [
+            "github",
+            "repository",
+            "software engineering",
+            "developer",
+            "code review"
+        ]
+    },
+    {
+        "scenario": "event_invitation",
+        "channel": "email",
+        "tone": "formal",
+        "sender_template": "{{organization}} Events",
+        "subject_template": "Invitation regarding {{web_mention}}",
+        "body_template": "Hi {{name}}, we are contacting you regarding {{web_mention}}. Please review the invitation details and confirm your availability: {{simulation_url}}.",
+        "required_fields": [
+            "organization",
+            "mentions"
+        ],
+        "preferred_fields": [
+            "organization",
+            "mentions",
+            "summary"
+        ],
+        "selection_terms": [
+            "conference",
+            "event",
+            "speaker",
+            "interview",
+            "intervista",
+            "workshop",
+            "seminar"
+        ]
+    }
 ]
