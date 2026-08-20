@@ -61,7 +61,7 @@ def run(
     deliveries: list[Delivery] = []
 
     for index, message in enumerate(messages, 1):
-        tracking_id = uuid4().hex
+        tracking_id = _tracking_id(message.target)
         tracking_url = f"{base_url}/{tracking_id}"
         status: Literal["prepared", "sent", "failed"] = "prepared"
         error = ""
@@ -176,6 +176,19 @@ def _save(delivery: Delivery) -> None:
     for old in DELIVERIES.glob(f"{slug}-delivery-*.json"):
         if old != path:
             old.unlink()
+
+
+def _tracking_id(target: str) -> str:
+    path = DELIVERIES / f"{_slug(target)}-delivery-1.json"
+    if path.exists():
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            tracking_id = str(data.get("tracking_id") or "").casefold()
+            if re.fullmatch(r"[a-f0-9]{32}", tracking_id):
+                return tracking_id
+        except (OSError, json.JSONDecodeError):
+            pass
+    return uuid4().hex
 
 
 def _slug(value: str) -> str:

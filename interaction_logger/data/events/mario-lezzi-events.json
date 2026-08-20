@@ -1,0 +1,15 @@
+{
+  "target": "Mario Lezzi",
+  "events": [
+    {
+      "type": "link_clicked",
+      "tracking_id": "6195797c46bf4112ae519a56109b8448",
+      "timestamp": "2026-08-20T12:25:23.633269+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "tracking_id": "6195797c46bf4112ae519a56109b8448",
+      "timestamp": "2026-08-20T12:30:47.861713+00:00"
+    }
+  ]
+}

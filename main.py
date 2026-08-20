@@ -1,52 +1,55 @@
 import campaign_launcher
+import interaction_logger
 import nlp_text_personalizer
 import phishing_campaign_generator
 
 
-# True usa gli output salvati dei moduli 1-3; False li rigenera.
+# True usa gli output salvati dei moduli 1-4; False li rigenera.
 USE_MOCK = True
-# True prepara gli invii senza spedire email; False usa SMTP reale.
+# Usato solo con USE_MOCK=False: True non spedisce email.
 DRY_RUN = True
 
 
 def main() -> None:
     print("=== SocialEng pipeline ===\n")
 
-    print("[1/4] TARGET INFORMATION COLLECTOR")
+    print("[1/5] TARGET INFORMATION COLLECTOR")
     if USE_MOCK:
         print("      MOCK: uso i profili salvati, nessuna chiamata Apify")
     else:
         print("      LIVE: raccolta e normalizzazione dei target")
-        from target_information_collector import run_live
+        from target_information_collector.core.target_information_service import run_live
 
         run_live()
-    print("      Output: profili strutturati")
+    print("      Output: profili strutturati\n")
 
-    print("\n[2/4] PHISHING CAMPAIGN GENERATOR")
+    print("[2/5] PHISHING CAMPAIGN GENERATOR")
     if USE_MOCK:
         print("      MOCK: uso le campagne salvate")
     else:
         campaigns = phishing_campaign_generator.generate()
         print(f"      Output: {len(campaigns)} campagne email")
 
-    print("\n[3/4] NLP TEXT PERSONALIZER")
+    print("\n[3/5] NLP TEXT PERSONALIZER")
     if USE_MOCK:
         print("      MOCK: uso i messaggi personalizzati salvati")
     else:
         messages = nlp_text_personalizer.run()
         print(f"      Output: {len(messages)} messaggi personalizzati")
 
-    print("\n[4/4] CAMPAIGN LAUNCHER")
-    print(f"      Modalità: {'DRY-RUN' if DRY_RUN else 'SMTP LIVE'}")
-    deliveries = campaign_launcher.run(dry_run=DRY_RUN)
+    print("\n[4/5] CAMPAIGN LAUNCHER")
+    if USE_MOCK:
+        print("      MOCK: uso i delivery salvati, nessun invio SMTP")
+    else:
+        print(f"      Modalità: {'DRY-RUN' if DRY_RUN else 'SMTP LIVE'}")
+        deliveries = campaign_launcher.run(dry_run=DRY_RUN)
+        print(f"      Output: {len(deliveries)} delivery")
 
-    prepared = sum(item.status == "prepared" for item in deliveries)
-    sent = sum(item.status == "sent" for item in deliveries)
-    failed = sum(item.status == "failed" for item in deliveries)
+    print("\n[5/5] INTERACTION LOGGER")
+    print("      Registra i click tramite tracking UUID")
+    interaction_logger.run()
 
-    print(f"      Output: {len(deliveries)} delivery")
-    print("\n=== Pipeline completata ===")
-    print(f"Preparati: {prepared} | Inviati: {sent} | Falliti: {failed}")
+    print("\n=== Pipeline terminata ===")
 
 
 if __name__ == "__main__":
