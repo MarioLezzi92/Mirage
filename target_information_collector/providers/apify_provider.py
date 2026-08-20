@@ -71,6 +71,12 @@ class ApifySearchProvider:
         )
         results: list[SearchResult] = []
         for row in rows:
+            search_query = row.get("searchQuery") or row.get("search_query") or {}
+            query = (
+                search_query.get("term")
+                if isinstance(search_query, dict)
+                else str(search_query or "")
+            ) or row.get("query") or ""
             organic = row.get("organicResults") or row.get("organic_results") or []
             for item in organic:
                 url = item.get("url") or item.get("link")
@@ -81,6 +87,7 @@ class ApifySearchProvider:
                         url=url,
                         title=item.get("title") or "",
                         snippet=item.get("description") or item.get("snippet") or "",
+                        query=str(query),
                     )
                 )
         return results

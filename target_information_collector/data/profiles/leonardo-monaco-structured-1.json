@@ -1,0 +1,66 @@
+{
+  "name": "Leonardo Monaco",
+  "summary": "Studente presso Università degli Studi di Salerno. Leonardo Monaco 26 Italy DI UNISA Dipartimento Informatica",
+  "organization": "Università degli Studi di Salerno",
+  "cities": [
+    "Greater Salerno Metropolitan Area",
+    "Napoli, Campania, Italia"
+  ],
+  "education": [
+    "Università degli Studi di Salerno — Laurea triennale — Informatica",
+    "Università degli Studi di Salerno — Laurea Magistrale LM -18 — Informatica"
+  ],
+  "emails": [
+    "L.MONACO11@STUDENTI.UNISA.IT"
+  ],
+  "social_links": [
+    {
+      "platform": "github",
+      "url": "https://github.com/lnrdmnc",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/leonardo.monaco24",
+      "confidence": 0.8999999999999999
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/leonardo-monaco-9a083b239",
+      "confidence": 0.7
+    }
+  ],
+  "mentions": [
+    {
+      "title": "Componenti | - Leonardo Monaco",
+      "url": "https://web.unisa.it/ateneo/organi/senato-accademico/componenti?contatti=460",
+      "confidence": 0.8
+    },
+    {
+      "title": "Senato Accademico | - Leonardo Monaco",
+      "url": "https://trasparenza.unisa.it/organizzazione/organi/senato-accademico?dettaglio=460",
+      "confidence": 0.8
+    }
+  ],
+  "tech_stack": [
+    "Python",
+    "Jupyter Notebook",
+    "Cython",
+    "C",
+    "Java",
+    "JavaScript",
+    "C++",
+    "PowerShell",
+    "HTML",
+    "Fortran",
+    "Smarty",
+    "CSS",
+    "Lex",
+    "Shell",
+    "Forth",
+    "Batchfile",
+    "Solidity",
+    "XSLT",
+    "Dockerfile"
+  ]
+}

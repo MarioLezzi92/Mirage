@@ -17,14 +17,14 @@
   ],
   "social_links": [
     {
+      "platform": "facebook",
+      "url": "https://facebook.com/carmine.calabrese.9",
+      "confidence": 1.0
+    },
+    {
       "platform": "github",
       "url": "https://github.com/Carmineh",
       "confidence": 0.7
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/carmine-calabrese-8929bb189",
-      "confidence": 1.0
     },
     {
       "platform": "instagram",
@@ -32,16 +32,9 @@
       "confidence": 1.0
     },
     {
-      "platform": "facebook",
-      "url": "https://facebook.com/carmine.calabrese.9",
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/carmine-calabrese-8929bb189",
       "confidence": 1.0
-    }
-  ],
-  "mentions": [
-    {
-      "title": "Carmine Calabrese",
-      "url": "https://scholar.google.com/citations?user=ns39HiYAAAAJ&hl=it",
-      "confidence": 0.8
     }
   ],
   "tech_stack": [

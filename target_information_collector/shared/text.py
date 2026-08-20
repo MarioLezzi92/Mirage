@@ -70,6 +70,38 @@ def owner_name_matches(full_name: str, title: str) -> bool:
     )
 
 
+def profile_owner_matches(
+    full_name: str,
+    title: str = "",
+    username: str | None = None,
+) -> bool:
+    """Il risultato deve rappresentare la persona, non una pagina che la cita."""
+    return owner_name_matches(full_name, title) or owner_name_matches(
+        full_name,
+        username or "",
+    )
+
+
+def email_owner_matches(full_name: str, email: str) -> bool:
+    """Accetta dal web solo indirizzi il cui local-part identifica il target."""
+    parts = normalize(full_name).split()
+    if len(parts) < 2 or "@" not in email:
+        return False
+
+    first, last = parts[0], parts[-1]
+    local = normalize(email.split("@", 1)[0]).replace(" ", "")
+    local = re.sub(r"\d+$", "", local)
+    variants = {
+        f"{first}{last}",
+        f"{last}{first}",
+        f"{first[0]}{last}",
+        f"{last}{first[0]}",
+        f"{first}{last[0]}",
+        f"{last[0]}{first}",
+    }
+    return local in variants
+
+
 def canonical_url(url: str) -> str:
     parsed = urlparse(url)
     host = parsed.netloc.casefold()

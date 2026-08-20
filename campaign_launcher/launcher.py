@@ -4,6 +4,7 @@ import os
 import re
 import smtplib
 import unicodedata
+from collections.abc import Iterable, Mapping
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from email.utils import formataddr
@@ -43,9 +44,13 @@ class Delivery(BaseModel):
 def run(
     dry_run: bool = True,
     base_url: str | None = None,
+    *,
+    messages: Iterable[PersonalizedEmail | Mapping[str, object]] | None = None,
 ) -> list[Delivery]:
     _load_env()
-    messages = _load_messages()
+    message_list = (
+        _coerce_messages(messages) if messages is not None else _load_messages()
+    )
     base_url = (base_url or os.getenv(
         "SIMULATION_BASE_URL", "http://localhost:8000/track"
     )).rstrip("/")
@@ -54,14 +59,14 @@ def run(
     if smtp and test_recipient:
         matching = [
             message
-            for message in messages
+            for message in message_list
             if message.recipient.casefold() == test_recipient.casefold()
         ]
-        messages = (matching or messages)[:1]
+        message_list = (matching or message_list)[:1]
         print(f"  Test SMTP: un solo messaggio verso {test_recipient}")
     deliveries: list[Delivery] = []
 
-    for index, message in enumerate(messages, 1):
+    for index, message in enumerate(message_list, 1):
         tracking_id = _tracking_id(message.target)
         tracking_url = f"{base_url}/{tracking_id}"
         status: Literal["prepared", "sent", "failed"] = "prepared"
@@ -103,7 +108,7 @@ def run(
         )
         _save(delivery)
         deliveries.append(delivery)
-        print(f"  [{index}/{len(messages)}] {message.target}: {status}")
+        print(f"  [{index}/{len(message_list)}] {message.target}: {status}")
 
     return deliveries
 
@@ -122,6 +127,20 @@ def _load_messages() -> list[PersonalizedEmail]:
     if not latest:
         raise FileNotFoundError(f"Nessun messaggio personalizzato in {MESSAGES}")
     return [latest[key] for key in sorted(latest)]
+
+
+def _coerce_messages(
+    messages: Iterable[PersonalizedEmail | Mapping[str, object]],
+) -> list[PersonalizedEmail]:
+    output = [
+        item
+        if isinstance(item, PersonalizedEmail)
+        else PersonalizedEmail.model_validate(dict(item))
+        for item in messages
+    ]
+    if not output:
+        raise ValueError("Nessun messaggio da preparare o inviare")
+    return output
 
 
 def _smtp_settings() -> dict[str, object]:

@@ -26,6 +26,15 @@ class TargetInput(BaseModel):
     cities: list[str] = Field(default_factory=list)
     education: list[str] = Field(default_factory=list)
     public_links: list[HttpUrl] = Field(default_factory=list)
+    # Contesto ricavato internamente da fonti indipendenti. Non fa parte
+    # dell'input utente e non viene scritto nei JSON.
+    corroboration: list[str] = Field(default_factory=list, exclude=True)
+    # Profili ancora ambigui usati soltanto per cercare collegamenti pubblici
+    # tra piattaforme. Non sono considerati automaticamente verificati.
+    profile_hypotheses: dict[str, str] = Field(
+        default_factory=dict,
+        exclude=True,
+    )
 
     @field_validator("full_name", "company", "role", "department", "email", "github_username")
     @classmethod
@@ -37,6 +46,7 @@ class SearchResult(BaseModel):
     url: HttpUrl
     title: str = ""
     snippet: str = ""
+    query: str = ""
 
 
 class CandidateProfile(BaseModel):
@@ -48,6 +58,7 @@ class CandidateProfile(BaseModel):
     snippet: str = ""
     context: str = ""
     explicit: bool = False
+    related_profiles: list[str] = Field(default_factory=list)
 
 
 class ProfileData(BaseModel):
@@ -62,6 +73,7 @@ class ProfileData(BaseModel):
     education: list[str] = Field(default_factory=list)
     emails: list[str] = Field(default_factory=list)
     tech_stack: list[str] = Field(default_factory=list)
+    crosslinks: list[str] = Field(default_factory=list)
     raw: dict[str, Any] = Field(default_factory=dict)
 
 

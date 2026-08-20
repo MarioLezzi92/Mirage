@@ -2,7 +2,7 @@
   "target": "Mario Lezzi",
   "recipient": "mario.lezzi9212@gmail.com",
   "scenario": "password_reset",
-  "sender": "LinkedIn Security",
-  "subject": "URGENT SECURITY ALERT: verify your LinkedIn account now",
-  "body": "Hi Mario Lezzi, a sign-in attempt on your LinkedIn account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}."
+  "sender": "Facebook Security",
+  "subject": "URGENT SECURITY ALERT: verify your Facebook account now",
+  "body": "Hi Mario Lezzi, a sign-in attempt on your Facebook account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}."
 }

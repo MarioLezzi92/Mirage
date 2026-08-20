@@ -7,7 +7,7 @@
   "subject_template": "URGENT SECURITY ALERT: verify your {{account_service}} account now",
   "body_template": "Hi {{name}}, a sign-in attempt on your {{account_service}} account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}.",
   "variables": {
-    "account_service": "LinkedIn",
+    "account_service": "Facebook",
     "name": "Mario Lezzi"
   }
 }

@@ -4,14 +4,80 @@
     {
       "type": "link_clicked",
       "scenario": "password_reset",
-      "tracking_id": "2d0a7b35425a49058f0ae3db9b36414a",
-      "timestamp": "2026-08-20T15:14:32.721605+00:00"
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T22:58:23.763098+00:00"
     },
     {
       "type": "form_submitted",
       "scenario": "password_reset",
-      "tracking_id": "2d0a7b35425a49058f0ae3db9b36414a",
-      "timestamp": "2026-08-20T15:14:41.722844+00:00"
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T22:58:37.171863+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:09:41.520734+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:09:54.865589+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:16:55.871300+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:17:07.225929+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:22:17.775415+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:22:26.117986+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:26:11.174798+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:26:20.094118+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:30:45.327792+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:30:56.402328+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "password_reset",
+      "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+      "timestamp": "2026-08-20T23:33:28.137799+00:00"
     }
   ]
 }

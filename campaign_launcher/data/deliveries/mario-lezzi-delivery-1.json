@@ -2,12 +2,12 @@
   "target": "Mario Lezzi",
   "recipient": "mario.lezzi9212@gmail.com",
   "scenario": "password_reset",
-  "tracking_id": "2d0a7b35425a49058f0ae3db9b36414a",
-  "tracking_url": "https://spare-ontario-experiment-classic.trycloudflare.com/track/2d0a7b35425a49058f0ae3db9b36414a",
-  "sender": "LinkedIn Security",
-  "subject": "URGENT SECURITY ALERT: verify your LinkedIn account now",
-  "body": "Hi Mario Lezzi, a sign-in attempt on your LinkedIn account remains unverified. Access may be temporarily restricted unless you review it today: https://spare-ontario-experiment-classic.trycloudflare.com/track/2d0a7b35425a49058f0ae3db9b36414a.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "tracking_id": "1ffb43184725428c9987bf1211f59f51",
+  "tracking_url": "https://unfortunately-logan-union-apache.trycloudflare.com/track/1ffb43184725428c9987bf1211f59f51",
+  "sender": "Facebook Security",
+  "subject": "URGENT SECURITY ALERT: verify your Facebook account now",
+  "body": "Hi Mario Lezzi, a sign-in attempt on your Facebook account remains unverified. Access may be temporarily restricted unless you review it today: https://unfortunately-logan-union-apache.trycloudflare.com/track/1ffb43184725428c9987bf1211f59f51.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
   "status": "sent",
-  "timestamp": "2026-08-20T15:11:38.438739+00:00",
+  "timestamp": "2026-08-20T23:33:19.135847+00:00",
   "error": ""
 }

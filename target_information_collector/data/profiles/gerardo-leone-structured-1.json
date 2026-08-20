@@ -6,32 +6,32 @@
     "Avellino, Italy"
   ],
   "education": [
+    "Università degli Studi di Salerno — Laurea Magistrale LM Cloud Computing — 2023-2026",
     "Università degli Studi di Salerno — Laurea triennale — Informatica",
-    "Liceo Scientifico V. De Caprariis",
-    "Università degli Studi di Salerno — Laurea Magistrale LM Cloud Computing — 2023-2026"
+    "Liceo Scientifico V. De Caprariis"
   ],
   "emails": [
     "gleone2000@gmail.com"
   ],
   "social_links": [
     {
-      "platform": "github",
-      "url": "https://github.com/GerardoLeone",
-      "confidence": 0.8
-    },
-    {
       "platform": "facebook",
       "url": "https://facebook.com/gerardo.leone.00",
-      "confidence": 0.8
+      "confidence": 1.0
     },
     {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/gerardo-leone-232534281",
-      "confidence": 1.0
+      "platform": "github",
+      "url": "https://github.com/GerardoLeone",
+      "confidence": 0.8999999999999999
     },
     {
       "platform": "instagram",
       "url": "https://instagram.com/gerardo_leone",
+      "confidence": 1.0
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/gerardo-leone-232534281",
       "confidence": 1.0
     }
   ],

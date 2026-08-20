@@ -1,3 +1,3 @@
-from interaction_logger.logger import run
+from interaction_logger.logger import LoggerSession, run, start
 
-__all__ = ["run"]
+__all__ = ["LoggerSession", "run", "start"]

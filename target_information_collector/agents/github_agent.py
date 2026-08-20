@@ -1,6 +1,7 @@
 from target_information_collector.agents.base_agent import DiscoveryAgent, ProfileAgent
 from target_information_collector.core.evidence_factory import EvidenceFactory
 from target_information_collector.core.identity_matcher import IdentityMatcher
+from target_information_collector.core.profile_normalizer import ProfileNormalizer
 from target_information_collector.providers.github_provider import GitHubProvider
 from target_information_collector.shared.models import (
     CandidateProfile,
@@ -76,7 +77,9 @@ class GitHubAgent(DiscoveryAgent, ProfileAgent):
             username=raw.get("login") or username,
             bio=raw.get("bio"),
             company=raw.get("company"),
-            locations=[raw["location"]] if raw.get("location") else [],
+            locations=ProfileNormalizer.valid_locations(
+                [raw["location"]] if raw.get("location") else []
+            ),
             emails=[raw["email"]] if raw.get("email") else [],
             raw=raw,
         )
@@ -130,7 +133,10 @@ class GitHubAgent(DiscoveryAgent, ProfileAgent):
                     value=url,
                     url=url,
                     confidence=score,
-                    metadata={"crosslink": True},
+                    metadata={
+                        "crosslink": True,
+                        "related_profiles": [str(profile.url)],
+                    },
                 )
             )
         return evidence

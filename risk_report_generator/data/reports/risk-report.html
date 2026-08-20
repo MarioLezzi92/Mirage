@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mirage Risk Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{
+  --ink:#3a2e24; 
+  --muted:#8c7a65; 
+  --line:#e8dcca; 
+  --gold-grad:linear-gradient(135deg, #c19b6c, #8b662d); 
+  --bg:#f9f8f4; 
+  --card-bg:#ffffff;
+}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+main{max-width:1120px;margin:32px auto;padding:0 20px 48px} 
+header{background:var(--card-bg);color:var(--ink);padding:32px;border-radius:16px;border:1px solid var(--line);box-shadow: 0 4px 24px rgba(139,102,45,0.08);}
+h1{margin:0 0 8px; font-weight: 300; letter-spacing: 1px;} h2{margin:32px 0 14px; font-weight: 400; text-transform: uppercase; font-size: 16px; letter-spacing: 1.5px; color: #8b662d;}
+.muted{color:var(--muted); font-size: 14px;}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+.card,.panel{background:var(--card-bg);border:1px solid var(--line);border-radius:12px;padding:24px;box-shadow: 0 4px 16px rgba(0,0,0,0.03);}
+.card strong{display:block;font-size:32px;background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.scroll{overflow:auto}
+.chart-container{height: 250px; position: relative; display: flex; justify-content: center; align-items: center;}
+table{width:100%;border-collapse:collapse;background:var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.03);}
+th,td{padding:16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:center}
+th{background:#fdfcf8;font-size:13px; font-weight: 600; text-transform: uppercase; color: var(--muted); letter-spacing: 1px;}
+.check-yes{color:#4a7c59; font-weight:bold; font-size:18px;}
+.check-no{color:#a94442; font-weight:bold; font-size:18px;}
+.risk{padding:4px 10px;border-radius:6px;font-size: 12px; font-weight:bold; text-transform: uppercase;}
+.risk.high{background:#f2dede;color:#a94442}
+.risk.medium{background:#fcf8e3;color:#8a6d3b}
+.risk.low{background:#dff0d8;color:#3c763d}
+.risk.not_assessed{background:#f5f5f5;color:#777777}
+.note{color:var(--muted); font-size: 13px; background: transparent; border: none; box-shadow: none; padding: 0; margin-top: 24px;}
+ul{line-height:1.7; padding-left: 20px;}
+@media(max-width:760px){.cards,.grid{grid-template-columns:1fr}table{font-size:13px}th,td{padding:10px}}
+</style></head><body><main>
+<header><h1>Simulazione Completata: Risk Report</h1><div class="muted">Generato il 20/08/2026 23:33:37</div>
+<div class="cards"><div class="card"><strong>100.0%</strong>Click rate</div>
+<div class="card"><strong>100.0%</strong>Submission rate</div>
+<div class="card"><strong>0.0%</strong>Download rate</div></div></header>
+<section class="grid">
+    <div>
+        <h2>Funnel Interazioni</h2>
+        <div class="panel chart-container">
+            <canvas id="funnelChart"></canvas>
+        </div>
+    </div>
+    <div>
+        <h2>Distribuzione del Rischio</h2>
+        <div class="panel chart-container">
+            <canvas id="riskChart"></canvas>
+        </div>
+    </div>
+</section>
+<h2>Risultati per Target</h2><div class="scroll"><table><thead><tr><th>Target</th><th>Scenario</th><th>Click</th><th>Form</th><th>Download</th><th>Rischio</th><th>Formazione Consigliata</th></tr></thead><tbody><tr><td><strong>Mario Lezzi</strong></td><td>password_reset</td><td><span class='check-yes'>✓</span></td><td><span class='check-yes'>✓</span></td><td><span class='check-no'>✗</span></td><td><span class='risk high'>high</span></td><td>Attenzione ai link sospetti nelle email di reset password, verificate sempre l&#x27;indirizzo del mittente.</td></tr></tbody></table></div>
+<h2>Prestazioni per Scenario</h2><div class="scroll"><table><thead><tr><th>Scenario</th><th>Inviate</th><th>Click</th><th>Form</th><th>Download</th><th>CTR</th></tr></thead><tbody><tr><td>password_reset</td><td>1</td><td>1</td><td>1</td><td>0</td><td>100.0%</td></tr></tbody></table></div>
+
+<h2>Timeline Eventi</h2>
+<div class="panel chart-container" style="height: 300px; padding: 20px;">
+    <canvas id="timelineChart"></canvas>
+</div>
+
+<h2>Raccomandazioni AI</h2><div class="panel"><ul><li>Un risultato con un solo utente ad alto rischio indica la necessità di concentrarsi su una formazione personalizzata per gli individui che hanno mostrato vulnerabilità.</li><li>Il focus dovrebbe essere su campagne di sensibilizzazione che simulano scenari pertinenti al ruolo specifico dell&#x27;utente ad alto rischio e sulle tecniche di social engineering più comuni.</li><li>È inoltre fondamentale implementare un sistema di monitoraggio continuo per identificare eventuali cambiamenti nel comportamento degli utenti e fornire feedback e aggiornamenti di formazione proattivi.</li></ul></div>
+<p class="panel note">ℹ️ <b>Nota di Sistema:</b> Le percentuali usano target unici e solo delivery con stato sent. Gli invii del form sono eventi simulati: nessuna credenziale viene letta o conservata. Refresh e click ripetuti restano nella timeline ma non aumentano le percentuali. Le raccomandazioni sono generate da AI.</p>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const colorHigh = '#a94442';
+    const colorMedium = '#8a6d3b';
+    const colorLow = '#3c763d';
+    const colorNotAssessed = '#cccccc';
+    const colorGold = '#c19b6c';
+    const colorMuted = '#8c7a65';
+    const colorLine = '#e8dcca';
+
+    // Grafico a Ciambella (Rischio)
+    const riskCtx = document.getElementById('riskChart').getContext('2d');
+    new Chart(riskCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ["high", "medium", "low", "not_assessed"],
+            datasets: [{
+                data: [1, 0, 0, 0],
+                backgroundColor: [colorHigh, colorMedium, colorLow, colorNotAssessed],
+                borderWidth: 0,
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'right', labels: { font: { family: "'Segoe UI', sans-serif" } } }
+            },
+            cutout: '70%'
+        }
+    });
+
+    // Grafico a Barre (Funnel)
+    const funnelCtx = document.getElementById('funnelChart').getContext('2d');
+    new Chart(funnelCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Inviate', 'Click', 'Form Dati', 'Download'],
+            datasets: [{
+                label: 'Numero di Target',
+                data: [1, 1, 1, 0],
+                backgroundColor: colorGold,
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, ticks: { stepSize: 1, precision: 0 } }
+            }
+        }
+    });
+
+    // Grafico Scatter (Timeline Eventi)
+    const timelineData = [{"x": "20/08/2026 22:58:23", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 22:58:37", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:09:41", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:09:54", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:16:55", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:17:07", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:22:17", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:22:26", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:26:11", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:26:20", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:30:45", "y": "Link aperto", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:30:56", "y": "Form sottomesso", "target": "Mario Lezzi"}, {"x": "20/08/2026 23:33:28", "y": "Link aperto", "target": "Mario Lezzi"}];
+    const timelineXLabels = [...new Set(timelineData.map(d => d.x))];
+    const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+    
+    if (timelineData.length > 0) {
+        new Chart(timelineCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Interazioni',
+                    data: timelineData,
+                    pointBackgroundColor: colorGold,
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 8,
+                    pointHoverRadius: 11
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'category',
+                        labels: timelineXLabels,
+                        ticks: { display: false }, // Nasconde le date per pulire il grafico
+                        grid: { color: colorLine, drawBorder: false }
+                    },
+                    y: {
+                        type: 'category',
+                        labels: ['Link aperto', 'Form sottomesso', 'Download avviato'],
+                        offset: true,
+                        ticks: { color: colorMuted, font: { weight: 'bold' } },
+                        grid: { color: colorLine, drawBorder: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(58, 46, 36, 0.95)',
+                        titleFont: { size: 14 },
+                        bodyFont: { size: 14 },
+                        padding: 14,
+                        callbacks: {
+                            title: function(context) {
+                                return "Data e Ora: " + context[0].raw.x;
+                            },
+                            label: function(context) {
+                                const d = context.raw;
+                                return "Target: " + d.target;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    } else {
+        document.getElementById('timelineChart').outerHTML = "<p style='text-align:center; color:var(--muted); margin-top:130px;'>Nessuna interazione registrata.</p>";
+    }
+});
+</script>
+</body></html>

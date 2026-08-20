@@ -19,7 +19,8 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": false
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "linkedin",
@@ -29,7 +30,10 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": true
+      "explicit": true,
+      "related_profiles": [
+        "https://github.com/MarioLezzi92"
+      ]
     },
     {
       "platform": "instagram",
@@ -39,7 +43,10 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": true
+      "explicit": true,
+      "related_profiles": [
+        "https://github.com/MarioLezzi92"
+      ]
     },
     {
       "platform": "instagram",
@@ -48,8 +55,9 @@
       "discovered_by": "web",
       "title": "Mario Lezzi (@mariolezzi)",
       "snippet": "Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
-      "context": "Mario Lezzi (@mariolezzi) Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message.",
-      "explicit": false
+      "context": "Mario Lezzi (@mariolezzi) Log in · Open app · mariolezzi's profile picture. mariolezzi. Mario Lezzi. 284 followers · 386 following · 112 posts · @mariolezzi. Follow. Message. instagram.com",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
@@ -58,8 +66,20 @@
       "discovered_by": "web",
       "title": "Mario Lezzi",
       "snippet": "Mario Lezzi. 1323 likes · 97 talking about this. Mario lezzi.",
-      "context": "Mario Lezzi Mario Lezzi. 1323 likes · 97 talking about this. Mario lezzi.",
-      "explicit": false
+      "context": "Mario Lezzi Mario Lezzi. 1323 likes · 97 talking about this. Mario lezzi. facebook.com",
+      "explicit": false,
+      "related_profiles": []
+    },
+    {
+      "platform": "facebook",
+      "url": "https://facebook.com/mario.lezzi",
+      "username": "mario.lezzi",
+      "discovered_by": "web",
+      "title": "Mario Lezzi",
+      "snippet": "Mario Lezzi is on Facebook. Join Facebook to connect with Mario Lezzi and others you may know. Facebook gives people the power to share and makes the...",
+      "context": "Mario Lezzi Mario Lezzi is on Facebook. Join Facebook to connect with Mario Lezzi and others you may know. Facebook gives people the power to share and makes the... facebook.com",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "instagram",
@@ -69,7 +89,8 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": false
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "instagram",
@@ -79,67 +100,52 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": false
+      "explicit": false,
+      "related_profiles": []
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/mario-gallizzi-3a865331",
+      "username": "mario-gallizzi-3a865331",
+      "discovered_by": "social_discovery",
+      "title": "",
+      "snippet": "",
+      "context": "",
+      "explicit": false,
+      "related_profiles": []
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/mario-easy-359a781b7",
+      "username": "mario-easy-359a781b7",
+      "discovered_by": "social_discovery",
+      "title": "",
+      "snippet": "",
+      "context": "",
+      "explicit": false,
+      "related_profiles": []
+    },
+    {
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/mariolazaro",
+      "username": "mariolazaro",
+      "discovered_by": "social_discovery",
+      "title": "",
+      "snippet": "",
+      "context": "",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
-      "url": "https://facebook.com/mario.lezzi",
-      "username": "mario.lezzi",
-      "discovered_by": "social_discovery",
-      "title": "",
-      "snippet": "",
-      "context": "",
-      "explicit": false
-    },
-    {
-      "platform": "instagram",
-      "url": "https://instagram.com/just_lez94",
-      "username": "just_lez94",
-      "discovered_by": "social_discovery",
-      "title": "",
-      "snippet": "",
-      "context": "",
-      "explicit": false
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/cuezzomario",
-      "username": "cuezzomario",
-      "discovered_by": "social_discovery",
-      "title": "",
-      "snippet": "",
-      "context": "",
-      "explicit": false
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/mariolezoche",
-      "username": "mariolezoche",
-      "discovered_by": "social_discovery",
-      "title": "",
-      "snippet": "",
-      "context": "",
-      "explicit": false
-    },
-    {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/alessia-cesario-180597108",
-      "username": "alessia-cesario-180597108",
-      "discovered_by": "social_discovery",
-      "title": "",
-      "snippet": "",
-      "context": "",
-      "explicit": false
-    },
-    {
-      "platform": "facebook",
-      "url": "https://facebook.com/people/Mario-Lezzi/pfbid036Y2MawTmhjTM5sbxjWTz4NjGwCGrcf98X8iuZ3MbUJxtXjdLUpVJGPdnModB6AJvl",
-      "username": "pfbid036Y2MawTmhjTM5sbxjWTz4NjGwCGrcf98X8iuZ3MbUJxtXjdLUpVJGPdnModB6AJvl",
+      "url": "https://facebook.com/people/Mario-Lezzi/pfbid022zPAfmqQramQsWtwN879s7Bd7CfAHcZJXN1XvVFUby8PbDngz52pzPQPb8q9trQZl",
+      "username": "pfbid022zPAfmqQramQsWtwN879s7Bd7CfAHcZJXN1XvVFUby8PbDngz52pzPQPb8q9trQZl",
       "discovered_by": "facebook_search",
       "title": "Mario Lezzi",
-      "snippet": "",
-      "context": "Mario Lezzi",
-      "explicit": false
+      "snippet": "Lives in Chieti, Italy",
+      "context": "Mario Lezzi Lives in Chieti, Italy facebook.com",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
@@ -147,9 +153,10 @@
       "username": "mario.lezzi.100",
       "discovered_by": "facebook_search",
       "title": "Mario Lezzi",
-      "snippet": "",
-      "context": "Mario Lezzi",
-      "explicit": false
+      "snippet": "Lives in Leverano, Italy",
+      "context": "Mario Lezzi Lives in Leverano, Italy facebook.com",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
@@ -157,9 +164,10 @@
       "username": "mario.lezzi.16",
       "discovered_by": "facebook_search",
       "title": "Mario Lezzi",
-      "snippet": "",
-      "context": "Mario Lezzi",
-      "explicit": false
+      "snippet": "Lives in Monteforte Irpino",
+      "context": "Mario Lezzi Lives in Monteforte Irpino facebook.com",
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
@@ -169,7 +177,8 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": false
+      "explicit": false,
+      "related_profiles": []
     },
     {
       "platform": "facebook",
@@ -179,7 +188,8 @@
       "title": "",
       "snippet": "",
       "context": "",
-      "explicit": false
+      "explicit": false,
+      "related_profiles": []
     }
   ],
   "evidence": [
@@ -198,18 +208,33 @@
       }
     },
     {
+      "source": "web",
+      "platform": "web",
+      "evidence_type": "web_mention",
+      "value": "Special Agents On-line",
+      "url": "https://www.mondodigitale.org/en/news/special-agents-line",
+      "confidence": 0.8,
+      "metadata": {
+        "reasons": [
+          "nome presente nella menzione",
+          "organizzazione compatibile"
+        ]
+      }
+    },
+    {
       "source": "github",
       "platform": "github",
       "evidence_type": "profile",
       "value": "https://github.com/MarioLezzi92",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {
         "full_name": "Mario Lezzi",
         "username": "MarioLezzi92",
         "reasons": [
           "nome completo corrispondente",
           "username compatibile con il nome",
+          "nome e username concordanti",
           "organizzazione compatibile"
         ]
       }
@@ -220,7 +245,7 @@
       "evidence_type": "email",
       "value": "mario.lezzi9212@gmail.com",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -229,7 +254,7 @@
       "evidence_type": "bio",
       "value": "Cybersecurity student at the University of Salerno ",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -238,7 +263,7 @@
       "evidence_type": "company",
       "value": "University of Salerno",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -247,7 +272,7 @@
       "evidence_type": "location",
       "value": "Avellino, Italy",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -256,7 +281,7 @@
       "evidence_type": "tech_stack",
       "value": "Jupyter Notebook",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -265,7 +290,7 @@
       "evidence_type": "tech_stack",
       "value": "JavaScript",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -274,7 +299,7 @@
       "evidence_type": "tech_stack",
       "value": "Python",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -283,7 +308,7 @@
       "evidence_type": "tech_stack",
       "value": "HTML",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -292,7 +317,7 @@
       "evidence_type": "tech_stack",
       "value": "Solidity",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -301,7 +326,7 @@
       "evidence_type": "tech_stack",
       "value": "CSS",
       "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8,
+      "confidence": 0.8999999999999999,
       "metadata": {}
     },
     {
@@ -316,7 +341,11 @@
         "username": "mario-lezzi-3b69a2262",
         "reasons": [
           "profilo fornito esplicitamente"
-        ]
+        ],
+        "related_profiles": [
+          "https://github.com/MarioLezzi92"
+        ],
+        "search_crosslink": true
       }
     },
     {
@@ -331,7 +360,11 @@
         "username": "mario_lezzi_",
         "reasons": [
           "profilo fornito esplicitamente"
-        ]
+        ],
+        "related_profiles": [
+          "https://github.com/MarioLezzi92"
+        ],
+        "search_crosslink": true
       }
     },
     {
@@ -392,17 +425,17 @@
       "source": "facebook",
       "platform": "facebook",
       "evidence_type": "profile",
-      "value": "https://facebook.com/mario.lezzi.16",
-      "url": "https://facebook.com/mario.lezzi.16",
-      "confidence": 0.9,
+      "value": "https://facebook.com/mario.lezzi.100",
+      "url": "https://facebook.com/mario.lezzi.100",
+      "confidence": 0.7999999999999999,
       "metadata": {
         "full_name": "Mario Lezzi",
-        "username": "mario.lezzi.16",
+        "username": "mario.lezzi.100",
         "reasons": [
           "nome completo corrispondente",
           "username compatibile con il nome",
-          "organizzazione compatibile",
-          "formazione compatibile"
+          "nome e username concordanti",
+          "ruolo compatibile"
         ]
       }
     },
@@ -410,9 +443,49 @@
       "source": "facebook",
       "platform": "facebook",
       "evidence_type": "education",
+      "value": "diploma superiore",
+      "url": "https://facebook.com/mario.lezzi.100",
+      "confidence": 0.7999999999999999,
+      "metadata": {}
+    },
+    {
+      "source": "facebook",
+      "platform": "facebook",
+      "evidence_type": "profile",
+      "value": "https://facebook.com/mario.lezzi.16",
+      "url": "https://facebook.com/mario.lezzi.16",
+      "confidence": 1.0,
+      "metadata": {
+        "full_name": "Mario Lezzi",
+        "username": "mario.lezzi.16",
+        "reasons": [
+          "nome completo corrispondente",
+          "username compatibile con il nome",
+          "nome e username concordanti",
+          "organizzazione compatibile",
+          "ruolo compatibile",
+          "località compatibile",
+          "formazione compatibile",
+          "evidenze indipendenti compatibili"
+        ]
+      }
+    },
+    {
+      "source": "facebook",
+      "platform": "facebook",
+      "evidence_type": "location",
+      "value": "Monteforte Irpino, Campania, Italy",
+      "url": "https://facebook.com/mario.lezzi.16",
+      "confidence": 1.0,
+      "metadata": {}
+    },
+    {
+      "source": "facebook",
+      "platform": "facebook",
+      "evidence_type": "education",
       "value": "Università degli Studi di Salerno",
       "url": "https://facebook.com/mario.lezzi.16",
-      "confidence": 0.9,
+      "confidence": 1.0,
       "metadata": {}
     },
     {
@@ -421,19 +494,12 @@
       "evidence_type": "education",
       "value": "Liceo Scientifico P. S. Mancini",
       "url": "https://facebook.com/mario.lezzi.16",
-      "confidence": 0.9,
+      "confidence": 1.0,
       "metadata": {}
     }
   ],
   "errors": [],
-  "warnings": [
-    "candidato non verificato: https://facebook.com/mario.lezzi.12",
-    "candidato non verificato: https://facebook.com/mario.lezzi.92",
-    "candidato non verificato: https://facebook.com/mario.lezzi.9",
-    "candidato non verificato: https://facebook.com/mario.lezzi",
-    "candidato non verificato: https://facebook.com/people/Mario-Lezzi/pfbid036Y2MawTmhjTM5sbxjWTz4NjGwCGrcf98X8iuZ3MbUJxtXjdLUpVJGPdnModB6AJvl",
-    "candidato non verificato: https://facebook.com/mario.lezzi.100"
-  ],
+  "warnings": [],
   "active_profile_agents": [
     "facebook",
     "github",

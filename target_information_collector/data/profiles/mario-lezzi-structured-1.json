@@ -15,14 +15,14 @@
   ],
   "social_links": [
     {
-      "platform": "github",
-      "url": "https://github.com/MarioLezzi92",
-      "confidence": 0.8
+      "platform": "facebook",
+      "url": "https://facebook.com/mario.lezzi.16",
+      "confidence": 1.0
     },
     {
-      "platform": "linkedin",
-      "url": "https://linkedin.com/in/mario-lezzi-3b69a2262",
-      "confidence": 1.0
+      "platform": "github",
+      "url": "https://github.com/MarioLezzi92",
+      "confidence": 0.8999999999999999
     },
     {
       "platform": "instagram",
@@ -30,15 +30,20 @@
       "confidence": 1.0
     },
     {
-      "platform": "facebook",
-      "url": "https://facebook.com/mario.lezzi.16",
-      "confidence": 0.9
+      "platform": "linkedin",
+      "url": "https://linkedin.com/in/mario-lezzi-3b69a2262",
+      "confidence": 1.0
     }
   ],
   "mentions": [
     {
       "title": "Come agenti speciali in rete",
       "url": "https://www.mondodigitale.org/notizie/come-agenti-speciali-rete",
+      "confidence": 0.8
+    },
+    {
+      "title": "Special Agents On-line",
+      "url": "https://www.mondodigitale.org/en/news/special-agents-line",
       "confidence": 0.8
     }
   ],

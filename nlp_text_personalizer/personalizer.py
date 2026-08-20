@@ -2,6 +2,7 @@ import json
 import os
 import re
 import unicodedata
+from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -45,25 +46,39 @@ def run(
     use_mock: bool = False,
     ollama_url: str | None = None,
     model: str | None = None,
+    *,
+    campaigns: Iterable[Any] | None = None,
+    profiles: Iterable[Any] | None = None,
+    targets: Iterable[str] | None = None,
 ) -> list[PersonalizedEmail]:
     if use_mock:
+        saved = _load(MESSAGES, "message", "target")
         return [
-            PersonalizedEmail.model_validate(item)
-            for item in _load(MESSAGES, "message", "target").values()
+            PersonalizedEmail.model_validate(saved[key])
+            for key in _selected_keys(saved, targets)
         ]
 
-    campaigns = _load(CAMPAIGNS, "campaign", "target")
-    profiles = _load(PROFILES, "structured", "name")
+    campaign_items = (
+        _index(campaigns, "target")
+        if campaigns is not None
+        else _load(CAMPAIGNS, "campaign", "target")
+    )
+    profile_items = (
+        _index(profiles, "name")
+        if profiles is not None
+        else _load(PROFILES, "structured", "name")
+    )
     messages: list[PersonalizedEmail] = []
     url = ollama_url or os.getenv("OLLAMA_URL", "http://localhost:11434")
     model = model or os.getenv("OLLAMA_MODEL", "gemma2:latest")
 
-    for index, key in enumerate(sorted(campaigns), 1):
-        campaign = campaigns[key]
-        if key not in profiles:
+    keys = _selected_keys(campaign_items, targets)
+    for index, key in enumerate(keys, 1):
+        campaign = campaign_items[key]
+        if key not in profile_items:
             raise ValueError(f"Profilo non trovato per {campaign['target']}")
-        print(f"  [{index}/{len(campaigns)}] {campaign['target']}")
-        message = _personalize(campaign, profiles[key], url, model)
+        print(f"  [{index}/{len(keys)}] {campaign['target']}")
+        message = _personalize(campaign, profile_items[key], url, model)
         _save(message)
         messages.append(message)
     return messages
@@ -261,6 +276,43 @@ def _load(directory: Path, marker: str, field: str) -> dict[str, dict[str, Any]]
     if not items:
         raise FileNotFoundError(f"Nessun file valido in {directory}")
     return items
+
+
+def _index(items: Iterable[Any], field: str) -> dict[str, dict[str, Any]]:
+    indexed: dict[str, dict[str, Any]] = {}
+    for item in items:
+        if isinstance(item, Mapping):
+            data = dict(item)
+        else:
+            model_dump = getattr(item, "model_dump", None)
+            if not callable(model_dump):
+                raise TypeError("Elemento non convertibile in dizionario")
+            data = model_dump(mode="json")
+        name = str(data.get(field) or "").strip()
+        if name:
+            indexed[unicodedata.normalize("NFKC", name).casefold()] = data
+    if not indexed:
+        raise ValueError("Nessun elemento valido ricevuto")
+    return indexed
+
+
+def _selected_keys(
+    items: dict[str, dict[str, Any]],
+    targets: Iterable[str] | None,
+) -> list[str]:
+    if targets is None:
+        return sorted(items)
+    target_list = list(targets)
+    keys = [
+        unicodedata.normalize("NFKC", target).casefold()
+        for target in target_list
+    ]
+    missing = [
+        target for target, key in zip(target_list, keys) if key not in items
+    ]
+    if missing:
+        raise FileNotFoundError(f"Dati salvati non trovati per: {', '.join(missing)}")
+    return keys
 
 
 def _save(message: PersonalizedEmail) -> None:

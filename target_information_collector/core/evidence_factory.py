@@ -1,4 +1,5 @@
 from target_information_collector.shared.models import Evidence, EvidenceType, ProfileData
+from target_information_collector.shared.text import platform_from_url
 
 
 class EvidenceFactory:
@@ -43,4 +44,19 @@ class EvidenceFactory:
                         value=value,
                     )
                 )
+        for link in profile.crosslinks:
+            evidence.append(
+                Evidence(
+                    source=profile.platform,
+                    platform=platform_from_url(link),
+                    evidence_type=EvidenceType.PROFILE,
+                    value=link,
+                    url=link,
+                    confidence=confidence,
+                    metadata={
+                        "crosslink": True,
+                        "related_profiles": [str(profile.url)],
+                    },
+                )
+            )
         return evidence

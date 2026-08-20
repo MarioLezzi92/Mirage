@@ -1,14 +1,22 @@
 import re
+from urllib.parse import urlparse
 
+from target_information_collector.core.identity_matcher import IdentityMatcher
+from target_information_collector.core.profile_normalizer import ProfileNormalizer
 from target_information_collector.shared.models import (
     CollectionResult,
     Evidence,
     EvidenceType,
     ProfileLink,
+    TargetInput,
     TargetProfile,
     WebMention,
 )
-from target_information_collector.shared.text import normalize, tokens
+from target_information_collector.shared.text import (
+    email_owner_matches,
+    normalize,
+    tokens,
+)
 
 
 class ProfileBuilder:
@@ -23,7 +31,7 @@ class ProfileBuilder:
 
     def build(self, result: CollectionResult) -> TargetProfile:
         target = result.target
-        social_links = self._verified_links(result.evidence)
+        social_links = self._verified_links(target, result.evidence)
         evidence = self._verified_evidence(result.evidence, social_links)
         return TargetProfile(
             name=target.full_name,
@@ -40,12 +48,17 @@ class ProfileBuilder:
                     *self._values(evidence, EvidenceType.EDUCATION),
                 ]
             ),
-            emails=self._unique(
-                ([target.email] if target.email else [])
-                + self._values(evidence, EvidenceType.EMAIL)
-            ),
+            emails=self._emails(target.full_name, target.email, evidence),
             social_links=social_links,
-            mentions=self._mentions(result.evidence),
+            mentions=self._mentions(
+                target.full_name,
+                result.evidence,
+                identity_verified=bool(target.email) or any(
+                    item.evidence_type == EvidenceType.EMAIL
+                    and email_owner_matches(target.full_name, item.value)
+                    for item in evidence
+                ),
+            ),
             tech_stack=self._unique(
                 self._values(evidence, EvidenceType.TECH_STACK)
             ),
@@ -60,42 +73,41 @@ class ProfileBuilder:
         candidates = [item for item in evidence if item.evidence_type == evidence_type]
         return max(candidates, key=lambda item: item.confidence).value if candidates else None
 
-    @staticmethod
+    @classmethod
+    def _emails(
+        cls,
+        full_name: str,
+        input_email: str | None,
+        evidence: list[Evidence],
+    ) -> list[str]:
+        values = [input_email] if input_email else []
+        values.extend(
+            item.value
+            for item in evidence
+            if item.evidence_type == EvidenceType.EMAIL
+            and (
+                item.platform != "web"
+                or email_owner_matches(full_name, item.value)
+            )
+        )
+        return cls._unique(values)
+
+    @classmethod
     def _verified_links(
+        cls,
+        target: TargetInput,
         evidence: list[Evidence],
     ) -> list[ProfileLink]:
-        by_platform: dict[str, dict[str, ProfileLink]] = {}
-        for item in evidence:
-            if item.evidence_type != EvidenceType.PROFILE or not item.url:
-                continue
-            key = str(item.url).casefold().rstrip("/")
-            platform_links = by_platform.setdefault(item.platform, {})
-            current = platform_links.get(key)
-            link = ProfileLink(
+        resolved = IdentityMatcher.resolve_profiles(target, evidence)
+        return [
+            ProfileLink(
                 platform=item.platform,
                 url=item.url,
                 confidence=item.confidence,
             )
-            if current is None or link.confidence > current.confidence:
-                platform_links[key] = link
-
-        verified: list[ProfileLink] = []
-        for platform, links_by_url in by_platform.items():
-            links = sorted(
-                links_by_url.values(),
-                key=lambda link: link.confidence,
-                reverse=True,
-            )
-            if len(links) == 1:
-                verified.append(links[0])
-                continue
-
-            best_score = links[0].confidence
-            tied = [link for link in links if best_score - link.confidence <= 0.05]
-            if len(tied) == 1:
-                verified.append(links[0])
-
-        return verified
+            for item in resolved.values()
+            if item.url
+        ]
 
     @staticmethod
     def _verified_evidence(
@@ -106,6 +118,11 @@ class ProfileBuilder:
             str(link.url).casefold().rstrip("/")
             for link in links
         }
+        allowed.update(
+            str(item.url).casefold().rstrip("/")
+            for item in evidence
+            if item.evidence_type == EvidenceType.WEB_MENTION and item.url
+        )
         return [
             item
             for item in evidence
@@ -186,6 +203,10 @@ class ProfileBuilder:
 
     @staticmethod
     def _bio_information(value: str) -> int:
+        if normalize(value) in {
+            "current", "in corso", "ongoing", "presente",
+        }:
+            return 0
         cleaned = re.sub(r"https?://\S+|@[\w.-]+", " ", value)
         cleaned = re.sub(
             r"\b\d{1,3}\s*(?:y/o|yo|years? old|anni)?\b",
@@ -222,11 +243,27 @@ class ProfileBuilder:
                 candidates.append((item.confidence, age))
         return max(candidates)[1] if candidates else None
 
-    @staticmethod
-    def _mentions(evidence: list[Evidence]) -> list[WebMention]:
+    @classmethod
+    def _mentions(
+        cls,
+        full_name: str,
+        evidence: list[Evidence],
+        *,
+        identity_verified: bool,
+    ) -> list[WebMention]:
+        identity_verified = identity_verified or any(
+            item.platform == "web"
+            and item.evidence_type == EvidenceType.EMAIL
+            and email_owner_matches(full_name, item.value)
+            for item in evidence
+        )
+        if not identity_verified:
+            return []
         output: dict[str, WebMention] = {}
         for item in evidence:
             if item.evidence_type != EvidenceType.WEB_MENTION or not item.url:
+                continue
+            if cls._profile_like_mention(str(item.url)):
                 continue
             output[str(item.url).casefold().rstrip("/")] = WebMention(
                 title=item.value,
@@ -234,6 +271,18 @@ class ProfileBuilder:
                 confidence=item.confidence,
             )
         return list(output.values())
+
+    @staticmethod
+    def _profile_like_mention(url: str) -> bool:
+        sections = {
+            part.casefold()
+            for part in urlparse(url).path.split("/")
+            if part
+        }
+        return bool(sections & {
+            "author", "authors", "citations", "people", "person",
+            "profile", "profiles",
+        })
 
     @staticmethod
     def _unique(values: list[str]) -> list[str]:
@@ -250,7 +299,7 @@ class ProfileBuilder:
     @classmethod
     def _locations(cls, values: list[str]) -> list[str]:
         output: dict[str, tuple[tuple[bool, int, int], str]] = {}
-        for value in cls._unique(values):
+        for value in ProfileNormalizer.valid_locations(cls._unique(values)):
             locality = normalize(value.split(",", 1)[0])
             specific = re.sub(
                 r"^greater\s+|\s+metropolitan\s+area$", "", locality

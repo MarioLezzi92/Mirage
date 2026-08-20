@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
@@ -74,7 +75,7 @@ def build_service(settings: Settings) -> TargetInformationService:
         GitHubProvider(client, settings.github_token),
         matcher,
         settings.identity_threshold,
-        settings.max_candidates_per_source,
+        max(settings.max_candidates_per_source, 20),
     )
     discovery, profiles = [InputAgent(), github], {"github": github}
 
@@ -89,7 +90,10 @@ def build_service(settings: Settings) -> TargetInformationService:
                     settings.search_country_code,
                 ),
                 matcher,
-                settings.max_candidates_per_source,
+                # Conserva una rosa più ampia dei risultati gratuiti della
+                # discovery. Il limite delle chiamate ai profile scraper
+                # resta quello configurato nel CollectorPipeline.
+                max(settings.max_candidates_per_source, 10),
             )
         )
     if settings.apify_token and settings.apify_social_discovery_actor_id:
@@ -108,7 +112,7 @@ def build_service(settings: Settings) -> TargetInformationService:
                     actor(settings.apify_facebook_search_actor_id)
                 ),
                 matcher,
-                max(settings.max_candidates_per_source, 10),
+                settings.max_candidates_per_source,
                 name="facebook_search",
             )
         )
@@ -128,7 +132,11 @@ def build_service(settings: Settings) -> TargetInformationService:
             )
 
     return TargetInformationService(
-        CollectorPipeline(discovery, profiles),
+        CollectorPipeline(
+            discovery,
+            profiles,
+            settings.max_candidates_per_source,
+        ),
         JsonWriter(settings.output_dir),
     )
 
@@ -138,17 +146,53 @@ def collect_file(
     progress: Callable[[str, int, int, str], None] | None = None,
 ) -> list[SavedResult]:
     settings = Settings.from_environment()
-    path = Path(input_file or os.getenv("TARGET_INPUT_FILE", "target_input.json"))
-    data = json.loads(path.read_text(encoding="utf-8"))
     service = build_service(settings)
     return [
-        service.collect(TargetInput.model_validate(item), progress)
-        for item in (data if isinstance(data, list) else [data])
+        service.collect(target, progress)
+        for target in _load_targets(input_file)
     ]
 
 
-def run(input_file: str | Path | None = None) -> None:
+def load_profiles(input_file: str | Path | None = None) -> list[TargetProfile]:
+    """Carica soltanto il profilo più recente del target corrente."""
     settings = Settings.from_environment()
+    targets = _load_targets(input_file)
+    _require_single_target(targets)
+    directory = Path(settings.output_dir) / "profiles"
+    saved: list[tuple[tuple[int, int], TargetProfile]] = []
+    for path in directory.glob("*-structured-*.json"):
+        try:
+            profile = TargetProfile.model_validate_json(
+                path.read_text(encoding="utf-8")
+            )
+        except (OSError, ValueError):
+            continue
+
+        match = re.search(r"-structured-(\d+)\.json$", path.name)
+        rank = (
+            int(match.group(1)) if match else 0,
+            path.stat().st_mtime_ns,
+        )
+        saved.append((rank, profile))
+
+    profiles: list[TargetProfile] = []
+    for target in targets:
+        matches = [
+            item for item in saved
+            if item[1].name.casefold() == target.full_name.casefold()
+        ]
+        if not matches:
+            raise FileNotFoundError(
+                f"Profilo salvato non trovato per {target.full_name} in {directory}"
+            )
+        profiles.append(max(matches, key=lambda item: item[0])[1])
+    return profiles
+
+
+def run(input_file: str | Path | None = None) -> list[SavedResult]:
+    settings = Settings.from_environment()
+    targets = _load_targets(input_file)
+    _require_single_target(targets)
     usage_client = HttpClient()
     usage_before: tuple[float, float] | None = None
     if settings.apify_token:
@@ -163,8 +207,14 @@ def run(input_file: str | Path | None = None) -> None:
         except Exception:
             print("Apify iniziale: utilizzo non disponibile")
 
+    results: list[SavedResult] = []
     try:
-        for result in collect_file(input_file, _terminal_progress):
+        service = build_service(settings)
+        results = [
+            service.collect(target, _terminal_progress)
+            for target in targets
+        ]
+        for result in results:
             print(f"raw: {result.raw_file}\nprofile: {result.profile_file}")
             for error in result.errors:
                 print(f"error: {error}")
@@ -186,6 +236,29 @@ def run(input_file: str | Path | None = None) -> None:
                     )
             except Exception:
                 print("Apify fine run: utilizzo non disponibile")
+    return results
+
+
+def run_live(input_file: str | Path | None = None) -> list[SavedResult]:
+    """Alias compatibile con il main minimale già in uso."""
+    return run(input_file)
+
+
+def _load_targets(input_file: str | Path | None = None) -> list[TargetInput]:
+    path = Path(input_file or os.getenv("TARGET_INPUT_FILE", "target_input.json"))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    items = data if isinstance(data, list) else [data]
+    targets = [TargetInput.model_validate(item) for item in items]
+    if not targets:
+        raise ValueError(f"Nessun target presente in {path}")
+    return targets
+
+
+def _require_single_target(targets: list[TargetInput]) -> None:
+    if len(targets) != 1:
+        raise ValueError(
+            "La pipeline richiede esattamente un target in target_input.json"
+        )
 
 
 def _terminal_progress(phase: str, done: int, total: int, label: str) -> None:

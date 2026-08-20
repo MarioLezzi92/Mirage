@@ -30,6 +30,8 @@ class EvidenceStore:
             current = self._evidence.get(key)
             if current is None or item.confidence > current.confidence:
                 self._evidence[key] = item
+            elif item.confidence == current.confidence:
+                current.metadata.update(item.metadata)
 
     def evidence(self) -> list[Evidence]:
         return list(self._evidence.values())

@@ -1,0 +1,8 @@
+{
+  "target": "Leonardo Monaco",
+  "recipient": "L.MONACO11@STUDENTI.UNISA.IT",
+  "scenario": "repository_access",
+  "sender": "GitHub Repository Security",
+  "subject": "ACTION REQUIRED: GitHub access will be suspended today",
+  "body": "Hi Leonardo Monaco, your GitHub repository permissions are scheduled to be suspended today unless you confirm the recent access change: {{simulation_url}}."
+}

@@ -193,7 +193,7 @@ class CampaignGenerator:
         def social_service(repository_only: bool = False) -> str:
             links = profile.get("social_links")
             if not isinstance(links, list):
-                return ""
+                links = []
             repositories = {"github", "gitlab", "bitbucket"}
             candidates = [
                 item
@@ -206,7 +206,7 @@ class CampaignGenerator:
                 )
             ]
             if not candidates:
-                return ""
+                return "" if repository_only else email_service()
 
             def confidence(item: Mapping[str, Any]) -> float:
                 try:
@@ -223,6 +223,26 @@ class CampaignGenerator:
                 "instagram": "Instagram",
                 "facebook": "Facebook",
             }.get(platform, platform.replace("-", " ").title())
+
+        def email_service() -> str:
+            email = first("emails").casefold()
+            domain = email.rsplit("@", 1)[-1] if "@" in email else ""
+            known = {
+                "gmail.com": "Google",
+                "outlook.com": "Microsoft",
+                "hotmail.com": "Microsoft",
+                "live.com": "Microsoft",
+                "icloud.com": "Apple",
+                "yahoo.com": "Yahoo",
+                "proton.me": "Proton Mail",
+                "protonmail.com": "Proton Mail",
+                "libero.it": "Libero Mail",
+                "virgilio.it": "Virgilio Mail",
+            }
+            if domain in known:
+                return known[domain]
+            labels = [part for part in domain.split(".") if part]
+            return labels[-2].replace("-", " ").title() if len(labels) >= 2 else ""
 
         def mention_source() -> str:
             mentions = profile.get("mentions")
@@ -272,17 +292,7 @@ class CampaignGenerator:
                 and urlparse(str(item.get("url") or "")).hostname
             )
         if field in {"account_service", "repository_service"}:
-            links = profile.get("social_links")
-            if not isinstance(links, list):
-                return False
-            platforms = {
-                str(item.get("platform") or "").casefold()
-                for item in links
-                if isinstance(item, Mapping)
-            }
-            if field == "repository_service":
-                return bool(platforms & {"github", "gitlab", "bitbucket"})
-            return bool(platforms)
+            return bool(CampaignGenerator._variable_values(profile).get(field))
         return bool(profile.get(field))
 
     def _save(self, campaign: Campaign) -> Path:

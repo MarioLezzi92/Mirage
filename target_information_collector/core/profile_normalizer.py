@@ -2,7 +2,12 @@ import re
 from typing import Any
 
 from target_information_collector.shared.models import ProfileData, TargetInput
-from target_information_collector.shared.text import normalize
+from target_information_collector.shared.text import (
+    canonical_url,
+    is_profile_url,
+    normalize,
+    platform_from_url,
+)
 
 
 class ProfileNormalizer:
@@ -64,6 +69,7 @@ class ProfileNormalizer:
     )
     GENERIC_ITEMS = ("name", "title", "text", "value", "label", "description")
     EMAIL_PATTERN = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
+    URL_PATTERN = re.compile(r"https?://[^\s\"'<>]+", re.I)
 
     def normalize(self, platform: str, url: str, raw: dict[str, Any]) -> ProfileData:
         full_name = self._direct_text(raw, self.NAME_KEYS)
@@ -96,6 +102,7 @@ class ProfileNormalizer:
             strings,
             ("Lives in", "From", "Vive a", "Originario di"),
         )
+        locations = self.valid_locations(locations)
         education = self._enriched_values(
             raw,
             self.EDUCATION_KEYS,
@@ -130,8 +137,36 @@ class ProfileNormalizer:
                     re.IGNORECASE,
                 )
             ],
+            crosslinks=self._crosslinks(raw, platform, url),
             raw=raw,
         )
+
+    @classmethod
+    def _crosslinks(
+        cls,
+        raw: dict[str, Any],
+        own_platform: str,
+        own_url: str,
+    ) -> list[str]:
+        own_key = canonical_url(own_url).casefold()
+        output: list[str] = []
+        seen: set[str] = set()
+        for value in cls._strings(raw):
+            for match in cls.URL_PATTERN.findall(value):
+                url = match.rstrip(".,;:!?)]}")
+                platform = platform_from_url(url)
+                if (
+                    platform in {"web", own_platform}
+                    or not is_profile_url(url, platform)
+                ):
+                    continue
+                canonical = canonical_url(url)
+                key = canonical.casefold()
+                if key == own_key or key in seen:
+                    continue
+                output.append(canonical)
+                seen.add(key)
+        return output
 
     def enrich_from_discovery(
         self,
@@ -468,7 +503,13 @@ class ProfileNormalizer:
 
     @classmethod
     def _looks_like_location(cls, value: str) -> bool:
-        if cls._location_noise(value) or "@" in value or len(value) > 100:
+        normalized = normalize(value)
+        if (
+            len(normalized) < 2
+            or cls._location_noise(value)
+            or "@" in value
+            or len(value) > 100
+        ):
             return False
         parts = [part.strip() for part in value.split(",")]
         if not 1 <= len(parts) <= 4:
@@ -481,6 +522,12 @@ class ProfileNormalizer:
             and any(character.isalpha() for character in part)
             and part[0].isupper()
             for part in parts
+        )
+
+    @classmethod
+    def valid_locations(cls, values: list[str]) -> list[str]:
+        return cls._merge_locations(
+            [value.strip() for value in values if cls._looks_like_location(value)]
         )
 
     @staticmethod

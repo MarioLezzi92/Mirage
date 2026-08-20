@@ -1,0 +1,13 @@
+{
+  "target": "Leonardo Monaco",
+  "scenario": "repository_access",
+  "channel": "email",
+  "tone": "urgent",
+  "sender_template": "{{repository_service}} Repository Security",
+  "subject_template": "ACTION REQUIRED: {{repository_service}} access will be suspended today",
+  "body_template": "Hi {{name}}, your {{repository_service}} repository permissions are scheduled to be suspended today unless you confirm the recent access change: {{simulation_url}}.",
+  "variables": {
+    "name": "Leonardo Monaco",
+    "repository_service": "GitHub"
+  }
+}

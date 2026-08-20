@@ -21,7 +21,7 @@ class Settings(BaseModel):
     apify_facebook_actor_id: str | None = None
     search_country_code: str = "it"
     identity_threshold: float = Field(default=0.7, ge=0.0, le=1.0)
-    max_candidates_per_source: int = Field(default=5, ge=1, le=20)
+    max_candidates_per_source: int = Field(default=4, ge=1, le=20)
     output_dir: str = "target_information_collector/data"
 
     @classmethod
@@ -66,7 +66,7 @@ class Settings(BaseModel):
             ),
             search_country_code=first("SEARCH_COUNTRY_CODE") or "it",
             identity_threshold=float(first("IDENTITY_THRESHOLD") or "0.7"),
-            max_candidates_per_source=int(first("MAX_CANDIDATES_PER_SOURCE") or "5"),
+            max_candidates_per_source=int(first("MAX_CANDIDATES_PER_SOURCE") or "4"),
             output_dir=first("TARGET_OUTPUT_DIR")
             or "target_information_collector/data",
         )
