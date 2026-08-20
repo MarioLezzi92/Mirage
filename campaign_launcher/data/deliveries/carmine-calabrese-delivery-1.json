@@ -1,0 +1,13 @@
+{
+  "target": "Carmine Calabrese",
+  "recipient": "carmine.calabrese99@gmail.com",
+  "scenario": "repository_access",
+  "tracking_id": "71a6062853614c31acec1da0cc57f2c5",
+  "tracking_url": "http://localhost:8000/track/71a6062853614c31acec1da0cc57f2c5",
+  "sender": "Repository Security",
+  "subject": "Repository access review required",
+  "body": "Hi Carmine Calabrese, as a Master's Degree Student in Computer Science - Software Engineering and IT Management, a recent permissions change requires confirmation before repository access can continue. Review the access request here: http://localhost:8000/track/71a6062853614c31acec1da0cc57f2c5.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "status": "sent",
+  "timestamp": "2026-08-20T11:23:07.805058+00:00",
+  "error": ""
+}

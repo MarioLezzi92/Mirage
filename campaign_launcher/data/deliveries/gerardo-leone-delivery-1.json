@@ -1,0 +1,13 @@
+{
+  "target": "Gerardo Leone",
+  "recipient": "gleone2000@gmail.com",
+  "scenario": "fake_invoice",
+  "tracking_id": "bf14523d1ef8488d861128d2fb54e323",
+  "tracking_url": "http://localhost:8000/track/bf14523d1ef8488d861128d2fb54e323",
+  "sender": "Università degli Studi di Salerno Billing Services",
+  "subject": "Invoice awaiting review - Università degli Studi di Salerno",
+  "body": "Dear Gerardo Leone, as a Master's student in Cloud Computing at Università degli Studi di Salerno, an invoice linked to your studies is awaiting your review. Please verify the billing details before the due date: http://localhost:8000/track/bf14523d1ef8488d861128d2fb54e323.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "status": "sent",
+  "timestamp": "2026-08-20T11:23:09.247863+00:00",
+  "error": ""
+}
