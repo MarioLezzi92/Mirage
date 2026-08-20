@@ -220,17 +220,15 @@ class CampaignGenerator:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         slug = self._slug(campaign.target)
         pattern = re.compile(rf"^{re.escape(slug)}-campaign-(\d+)\.json$")
-        sequences = [
-            int(match.group(1))
-            for path in self.output_dir.glob(f"{slug}-campaign-*.json")
-            if (match := pattern.match(path.name))
-        ]
-        path = self.output_dir / f"{slug}-campaign-{max(sequences, default=0) + 1}.json"
+        path = self.output_dir / f"{slug}-campaign-1.json"
         path.write_text(
             json.dumps(campaign.model_dump(mode="json"), ensure_ascii=False, indent=2)
             + "\n",
             encoding="utf-8",
         )
+        for old_path in self.output_dir.glob(f"{slug}-campaign-*.json"):
+            if old_path != path and pattern.fullmatch(old_path.name):
+                old_path.unlink()
         return path
 
     @staticmethod
