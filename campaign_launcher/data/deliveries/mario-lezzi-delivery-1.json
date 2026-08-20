@@ -2,12 +2,12 @@
   "target": "Mario Lezzi",
   "recipient": "mario.lezzi9212@gmail.com",
   "scenario": "password_reset",
-  "tracking_id": "6195797c46bf4112ae519a56109b8448",
-  "tracking_url": "http://localhost:8000/track/6195797c46bf4112ae519a56109b8448",
-  "sender": "Account Security",
-  "subject": "Unusual sign-in activity detected",
-  "body": "Hi Mario Lezzi, we detected a sign-in attempt that needs to be reviewed. As a student pursuing a master's degree in Cyber Security, we understand the importance of account security. If this was not you, please secure your account using the link below: http://localhost:8000/track/6195797c46bf4112ae519a56109b8448.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "tracking_id": "2d0a7b35425a49058f0ae3db9b36414a",
+  "tracking_url": "https://spare-ontario-experiment-classic.trycloudflare.com/track/2d0a7b35425a49058f0ae3db9b36414a",
+  "sender": "LinkedIn Security",
+  "subject": "URGENT SECURITY ALERT: verify your LinkedIn account now",
+  "body": "Hi Mario Lezzi, a sign-in attempt on your LinkedIn account remains unverified. Access may be temporarily restricted unless you review it today: https://spare-ontario-experiment-classic.trycloudflare.com/track/2d0a7b35425a49058f0ae3db9b36414a.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
   "status": "sent",
-  "timestamp": "2026-08-20T11:23:10.564929+00:00",
+  "timestamp": "2026-08-20T15:11:38.438739+00:00",
   "error": ""
 }

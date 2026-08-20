@@ -3,10 +3,11 @@
   "scenario": "password_reset",
   "channel": "email",
   "tone": "urgent",
-  "sender_template": "Account Security",
-  "subject_template": "Unusual sign-in activity detected",
-  "body_template": "Hi {{name}}, we detected a sign-in attempt that needs to be reviewed. If this was not you, secure your account using the link below: {{simulation_url}}.",
+  "sender_template": "{{account_service}} Security",
+  "subject_template": "URGENT SECURITY ALERT: verify your {{account_service}} account now",
+  "body_template": "Hi {{name}}, a sign-in attempt on your {{account_service}} account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}.",
   "variables": {
+    "account_service": "LinkedIn",
     "name": "Mario Lezzi"
   }
 }

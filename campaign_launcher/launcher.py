@@ -1,3 +1,4 @@
+import html
 import json
 import os
 import re
@@ -76,7 +77,13 @@ def run(
                 + f"\n\n---\n{DISCLAIMER}"
             )
             if smtp:
-                _send(message, recipient, body, smtp)
+                _send(
+                    message,
+                    recipient,
+                    body,
+                    _html_body(message.body, tracking_url),
+                    smtp,
+                )
                 status = "sent"
         except Exception as exc:
             status, error = "failed", str(exc)
@@ -137,6 +144,7 @@ def _send(
     message: PersonalizedEmail,
     recipient: str,
     body: str,
+    html_body: str,
     smtp: dict[str, object],
 ) -> None:
     email = EmailMessage()
@@ -144,6 +152,7 @@ def _send(
     email["To"] = recipient
     email["Subject"] = message.subject
     email.set_content(body)
+    email.add_alternative(html_body, subtype="html")
 
     with smtplib.SMTP(str(smtp["host"]), int(smtp["port"]), timeout=30) as client:
         if smtp["starttls"]:
@@ -153,11 +162,31 @@ def _send(
         client.send_message(email)
 
 
+def _html_body(body: str, tracking_url: str) -> str:
+    italian = re.search(
+        r"\b(ciao|gentile|verifica|conferma|accedi|scarica)\b",
+        body.casefold(),
+    )
+    label = "Clicca qui" if italian else "Click here"
+    link = (
+        f'<a href="{html.escape(tracking_url, quote=True)}" '
+        f'style="color:#2457b8;font-weight:600">{label}</a>'
+    )
+    content = html.escape(body).replace(SIMULATION_URL, link)
+    content = content.replace("\n", "<br>\n")
+    return f"""<!doctype html>
+<html><body style="font-family:Arial,sans-serif;color:#202124;line-height:1.5">
+<p>{content}</p>
+<hr style="border:0;border-top:1px solid #dadce0;margin:24px 0 16px">
+<p style="font-size:12px;color:#5f6368">{html.escape(DISCLAIMER)}</p>
+</body></html>"""
+
+
 def _load_env() -> None:
     path = ROOT / ".env"
     if not path.exists():
         return
-    for raw_line in path.read_text(encoding="utf-8").splitlines():
+    for raw_line in path.read_text(encoding="utf-8-sig").splitlines():
         line = raw_line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue

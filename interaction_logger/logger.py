@@ -8,6 +8,8 @@ from pathlib import Path
 from threading import Lock
 from urllib.parse import urlparse
 
+from interaction_logger.pages import completion_page, landing_page, page_type
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DELIVERIES = ROOT / "campaign_launcher/data/deliveries"
@@ -15,16 +17,8 @@ EVENTS = ROOT / "interaction_logger/data/events"
 TRACK_PATH = re.compile(r"/track/([a-f0-9]{32})/?", re.IGNORECASE)
 SUBMIT_PATH = re.compile(r"/submit/([a-f0-9]{32})/?", re.IGNORECASE)
 DOWNLOAD_PATH = re.compile(r"/download/([a-f0-9]{32})/?", re.IGNORECASE)
-WRITE_LOCK = Lock()
 EVENT_TYPES = {"link_clicked", "form_submitted", "file_downloaded"}
-STYLE = """
-body{font-family:Arial,sans-serif;max-width:680px;margin:70px auto;padding:24px;color:#172033}
-main{border:1px solid #d9deea;border-radius:14px;padding:32px;box-shadow:0 8px 30px #17203312}
-h1{margin-top:0}p{line-height:1.55}label{display:block;margin:18px 0 6px}
-input{box-sizing:border-box;width:100%;padding:12px;border:1px solid #b8c0d2;border-radius:7px}
-button,a.button{display:inline-block;margin-top:20px;padding:12px 18px;border:0;border-radius:7px;
-background:#2149b8;color:white;text-decoration:none;cursor:pointer}.note{font-size:.88rem;color:#596176}
-"""
+WRITE_LOCK = Lock()
 DOWNLOAD_CONTENT = (
     "Simulazione di sicurezza completata.\n\n"
     "Questo file è innocuo e fa parte del progetto di tesi di Mario Lezzi.\n"
@@ -58,12 +52,19 @@ def _handler(deliveries: dict[str, dict[str, str]]):
             delivery, tracking_id = _match(path, TRACK_PATH, deliveries)
             if delivery:
                 _save_event(delivery, tracking_id, "link_clicked")
-                print(f"      Click registrato: {delivery['target']}")
-                self._reply(200, _login_page(tracking_id), "text/html; charset=utf-8")
+                print(
+                    f"      Click registrato: {delivery['target']} "
+                    f"[{delivery['scenario']}]"
+                )
+                self._reply(
+                    200,
+                    landing_page(delivery, tracking_id),
+                    "text/html; charset=utf-8",
+                )
                 return
 
             delivery, tracking_id = _match(path, DOWNLOAD_PATH, deliveries)
-            if delivery:
+            if delivery and page_type(delivery) == "document":
                 _save_event(delivery, tracking_id, "file_downloaded")
                 print(f"      Download registrato: {delivery['target']}")
                 self._reply(
@@ -74,22 +75,25 @@ def _handler(deliveries: dict[str, dict[str, str]]):
                 )
                 return
 
-            self._reply(404, "Collegamento non valido", "text/plain; charset=utf-8")
+            self._not_found()
 
         def do_POST(self) -> None:
             path = urlparse(self.path).path
             delivery, tracking_id = _match(path, SUBMIT_PATH, deliveries)
-            if not delivery:
-                self._reply(404, "Collegamento non valido", "text/plain; charset=utf-8")
+            if not delivery or page_type(delivery) == "document":
+                self._not_found()
                 return
 
             _save_event(delivery, tracking_id, "form_submitted")
             print(f"      Form registrato: {delivery['target']}")
             self._reply(
                 200,
-                _completion_page(tracking_id),
+                completion_page(delivery),
                 "text/html; charset=utf-8",
             )
+
+        def _not_found(self) -> None:
+            self._reply(404, "Collegamento non valido", "text/plain; charset=utf-8")
 
         def _reply(
             self,
@@ -125,45 +129,15 @@ def _match(
     return deliveries.get(tracking_id), tracking_id
 
 
-def _page(title: str, content: str) -> str:
-    return f"""<!doctype html><html lang="it"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title}</title><style>{STYLE}</style></head><body><main>{content}</main></body></html>"""
-
-
-def _login_page(tracking_id: str) -> str:
-    return _page(
-        "Verifica attività",
-        f"""<h1>Verifica attività recente</h1>
-<p>Per continuare, conferma i dati dell'account.</p>
-<form method="post" action="/submit/{tracking_id}" autocomplete="off">
-<label>Email</label><input type="email" autocomplete="off" required>
-<label>Password</label><input type="password" autocomplete="new-password" required>
-<button type="submit">Continua</button></form>
-<p class="note">Simulazione controllata: i valori digitati restano nel browser e non
-vengono trasmessi né salvati.</p>""",
-    )
-
-
-def _completion_page(tracking_id: str) -> str:
-    return _page(
-        "Simulazione completata",
-        f"""<h1>Simulazione completata</h1>
-<p>Hai completato una simulazione controllata realizzata nell'ambito del progetto
-di tesi di Mario Lezzi.</p>
-<p>Non sono state raccolte credenziali né altri dati personali.</p>
-<a class="button" href="/download/{tracking_id}">Scarica il report della simulazione</a>""",
-    )
-
-
 def _load_deliveries() -> dict[str, dict[str, str]]:
     deliveries: dict[str, dict[str, str]] = {}
     for path in DELIVERIES.glob("*-delivery-*.json"):
         data = json.loads(path.read_text(encoding="utf-8"))
         tracking_id = str(data.get("tracking_id") or "").casefold()
         target = str(data.get("target") or "").strip()
+        scenario = str(data.get("scenario") or "").strip().casefold()
         if re.fullmatch(r"[a-f0-9]{32}", tracking_id) and target:
-            deliveries[tracking_id] = {"target": target}
+            deliveries[tracking_id] = {"target": target, "scenario": scenario}
     if not deliveries:
         raise FileNotFoundError(f"Nessun delivery valido in {DELIVERIES}")
     return deliveries
@@ -187,6 +161,7 @@ def _save_event(
         data["events"].append(
             {
                 "type": event_type,
+                "scenario": delivery.get("scenario", ""),
                 "tracking_id": tracking_id,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }

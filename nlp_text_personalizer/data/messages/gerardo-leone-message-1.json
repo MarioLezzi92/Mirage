@@ -1,8 +1,8 @@
 {
   "target": "Gerardo Leone",
   "recipient": "gleone2000@gmail.com",
-  "scenario": "fake_invoice",
-  "sender": "Università degli Studi di Salerno Billing Services",
-  "subject": "Invoice awaiting review - Università degli Studi di Salerno",
-  "body": "Dear Gerardo Leone, as a Master's student in Cloud Computing at Università degli Studi di Salerno, an invoice linked to your studies is awaiting your review. Please verify the billing details before the due date: {{simulation_url}}."
+  "scenario": "event_invitation",
+  "sender": "Università degli Studi di Salerno Events",
+  "subject": "URGENT RESPONSE REQUIRED: invitation regarding l'intelligenza artificiale che rivoluziona i colloqui di lavoro",
+  "body": "Hi Gerardo Leone, an invitation related to l'intelligenza artificiale che rivoluziona i colloqui di lavoro from Università degli Studi di Salerno is awaiting your confirmation. Please confirm your availability before registration closes: {{simulation_url}}."
 }

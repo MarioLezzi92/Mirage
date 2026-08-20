@@ -5,6 +5,7 @@ import unicodedata
 from collections.abc import Iterable, Mapping
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 from pydantic import BaseModel, Field
 
@@ -189,6 +190,50 @@ class CampaignGenerator:
                 return str(item).strip()
             return ""
 
+        def social_service(repository_only: bool = False) -> str:
+            links = profile.get("social_links")
+            if not isinstance(links, list):
+                return ""
+            repositories = {"github", "gitlab", "bitbucket"}
+            candidates = [
+                item
+                for item in links
+                if isinstance(item, Mapping)
+                and str(item.get("platform") or "").strip()
+                and (
+                    not repository_only
+                    or str(item.get("platform") or "").casefold() in repositories
+                )
+            ]
+            if not candidates:
+                return ""
+
+            def confidence(item: Mapping[str, Any]) -> float:
+                try:
+                    return float(item.get("confidence") or 0)
+                except (TypeError, ValueError):
+                    return 0.0
+
+            platform = str(max(candidates, key=confidence)["platform"]).casefold()
+            return {
+                "github": "GitHub",
+                "gitlab": "GitLab",
+                "bitbucket": "Bitbucket",
+                "linkedin": "LinkedIn",
+                "instagram": "Instagram",
+                "facebook": "Facebook",
+            }.get(platform, platform.replace("-", " ").title())
+
+        def mention_source() -> str:
+            mentions = profile.get("mentions")
+            if not isinstance(mentions, list) or not mentions:
+                return ""
+            item = mentions[0]
+            if not isinstance(item, Mapping):
+                return ""
+            host = (urlparse(str(item.get("url") or "")).hostname or "").casefold()
+            return host.removeprefix("www.")
+
         return {
             key: value
             for key, value in {
@@ -199,6 +244,9 @@ class CampaignGenerator:
                 "email": first("emails"),
                 "technology": first("tech_stack"),
                 "web_mention": first("mentions"),
+                "mention_source": mention_source(),
+                "account_service": social_service(),
+                "repository_service": social_service(repository_only=True),
             }.items()
             if value
         }
@@ -214,6 +262,27 @@ class CampaignGenerator:
 
     @staticmethod
     def _has_value(profile: dict[str, Any], field: str) -> bool:
+        if field == "mention_source":
+            mentions = profile.get("mentions")
+            if not isinstance(mentions, list) or not mentions:
+                return False
+            item = mentions[0]
+            return bool(
+                isinstance(item, Mapping)
+                and urlparse(str(item.get("url") or "")).hostname
+            )
+        if field in {"account_service", "repository_service"}:
+            links = profile.get("social_links")
+            if not isinstance(links, list):
+                return False
+            platforms = {
+                str(item.get("platform") or "").casefold()
+                for item in links
+                if isinstance(item, Mapping)
+            }
+            if field == "repository_service":
+                return bool(platforms & {"github", "gitlab", "bitbucket"})
+            return bool(platforms)
         return bool(profile.get(field))
 
     def _save(self, campaign: Campaign) -> Path:

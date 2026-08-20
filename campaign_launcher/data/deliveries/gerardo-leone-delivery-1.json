@@ -1,13 +1,13 @@
 {
   "target": "Gerardo Leone",
   "recipient": "gleone2000@gmail.com",
-  "scenario": "fake_invoice",
-  "tracking_id": "bf14523d1ef8488d861128d2fb54e323",
-  "tracking_url": "http://localhost:8000/track/bf14523d1ef8488d861128d2fb54e323",
-  "sender": "Università degli Studi di Salerno Billing Services",
-  "subject": "Invoice awaiting review - Università degli Studi di Salerno",
-  "body": "Dear Gerardo Leone, as a Master's student in Cloud Computing at Università degli Studi di Salerno, an invoice linked to your studies is awaiting your review. Please verify the billing details before the due date: http://localhost:8000/track/bf14523d1ef8488d861128d2fb54e323.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "scenario": "event_invitation",
+  "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+  "tracking_url": "https://spare-ontario-experiment-classic.trycloudflare.com/track/ebc602bf5c0c48c48605f8843d97d05a",
+  "sender": "Università degli Studi di Salerno Events",
+  "subject": "URGENT RESPONSE REQUIRED: invitation regarding l'intelligenza artificiale che rivoluziona i colloqui di lavoro",
+  "body": "Hi Gerardo Leone, an invitation related to l'intelligenza artificiale che rivoluziona i colloqui di lavoro from Università degli Studi di Salerno is awaiting your confirmation. Please confirm your availability before registration closes: https://spare-ontario-experiment-classic.trycloudflare.com/track/ebc602bf5c0c48c48605f8843d97d05a.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
   "status": "sent",
-  "timestamp": "2026-08-20T11:23:09.247863+00:00",
+  "timestamp": "2026-08-20T15:11:36.590405+00:00",
   "error": ""
 }

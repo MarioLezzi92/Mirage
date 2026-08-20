@@ -1,0 +1,35 @@
+{
+  "target": "Gerardo Leone",
+  "events": [
+    {
+      "type": "link_clicked",
+      "scenario": "event_invitation",
+      "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+      "timestamp": "2026-08-20T15:12:53.400691+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "event_invitation",
+      "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+      "timestamp": "2026-08-20T15:12:54.913320+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "event_invitation",
+      "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+      "timestamp": "2026-08-20T15:12:55.277886+00:00"
+    },
+    {
+      "type": "link_clicked",
+      "scenario": "event_invitation",
+      "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+      "timestamp": "2026-08-20T15:12:55.626559+00:00"
+    },
+    {
+      "type": "form_submitted",
+      "scenario": "event_invitation",
+      "tracking_id": "ebc602bf5c0c48c48605f8843d97d05a",
+      "timestamp": "2026-08-20T15:12:59.280575+00:00"
+    }
+  ]
+}

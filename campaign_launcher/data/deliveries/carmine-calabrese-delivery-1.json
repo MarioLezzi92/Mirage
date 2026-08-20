@@ -2,12 +2,12 @@
   "target": "Carmine Calabrese",
   "recipient": "carmine.calabrese99@gmail.com",
   "scenario": "repository_access",
-  "tracking_id": "71a6062853614c31acec1da0cc57f2c5",
-  "tracking_url": "http://localhost:8000/track/71a6062853614c31acec1da0cc57f2c5",
-  "sender": "Repository Security",
-  "subject": "Repository access review required",
-  "body": "Hi Carmine Calabrese, as a Master's Degree Student in Computer Science - Software Engineering and IT Management, a recent permissions change requires confirmation before repository access can continue. Review the access request here: http://localhost:8000/track/71a6062853614c31acec1da0cc57f2c5.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
+  "tracking_id": "5d68189717bc4ad4825fb95826b18095",
+  "tracking_url": "https://spare-ontario-experiment-classic.trycloudflare.com/track/5d68189717bc4ad4825fb95826b18095",
+  "sender": "GitHub Repository Security",
+  "subject": "ACTION REQUIRED: GitHub access will be suspended today",
+  "body": "Hi Carmine Calabrese, your GitHub repository permissions are scheduled to be suspended today unless you confirm the recent access change: https://spare-ontario-experiment-classic.trycloudflare.com/track/5d68189717bc4ad4825fb95826b18095.\n\n---\nNota di trasparenza: questa email fa parte di una simulazione controllata realizzata nell'ambito del progetto di tesi di Mario Lezzi. Il collegamento non richiede né raccoglie credenziali o altri dati personali.",
   "status": "sent",
-  "timestamp": "2026-08-20T11:23:07.805058+00:00",
+  "timestamp": "2026-08-20T15:11:35.391966+00:00",
   "error": ""
 }

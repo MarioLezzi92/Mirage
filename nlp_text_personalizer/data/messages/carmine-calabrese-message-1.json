@@ -2,7 +2,7 @@
   "target": "Carmine Calabrese",
   "recipient": "carmine.calabrese99@gmail.com",
   "scenario": "repository_access",
-  "sender": "Repository Security",
-  "subject": "Repository access review required",
-  "body": "Hi Carmine Calabrese, as a Master's Degree Student in Computer Science - Software Engineering and IT Management, a recent permissions change requires confirmation before repository access can continue. Review the access request here: {{simulation_url}}."
+  "sender": "GitHub Repository Security",
+  "subject": "ACTION REQUIRED: GitHub access will be suspended today",
+  "body": "Hi Carmine Calabrese, your GitHub repository permissions are scheduled to be suspended today unless you confirm the recent access change: {{simulation_url}}."
 }

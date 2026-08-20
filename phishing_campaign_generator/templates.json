@@ -3,10 +3,12 @@
         "scenario": "password_reset",
         "channel": "email",
         "tone": "urgent",
-        "sender_template": "Account Security",
-        "subject_template": "Unusual sign-in activity detected",
-        "body_template": "Hi {{name}}, we detected a sign-in attempt that needs to be reviewed. If this was not you, secure your account using the link below: {{simulation_url}}.",
-        "required_fields": [],
+        "sender_template": "{{account_service}} Security",
+        "subject_template": "URGENT SECURITY ALERT: verify your {{account_service}} account now",
+        "body_template": "Hi {{name}}, a sign-in attempt on your {{account_service}} account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}.",
+        "required_fields": [
+            "account_service"
+        ],
         "preferred_fields": [
             "emails",
             "tech_stack"
@@ -25,8 +27,8 @@
         "channel": "email",
         "tone": "formal",
         "sender_template": "{{organization}} Billing Services",
-        "subject_template": "Invoice awaiting review - {{organization}}",
-        "body_template": "Hi {{name}}, an invoice linked to {{organization}} is awaiting your review. Please verify the billing details before the due date: {{simulation_url}}.",
+        "subject_template": "PAYMENT OVERDUE: immediate review required for {{organization}}",
+        "body_template": "Hi {{name}}, an invoice associated with {{organization}} is still pending and may be escalated today. Verify the billing details before the deadline: {{simulation_url}}.",
         "required_fields": [
             "organization"
         ],
@@ -36,8 +38,6 @@
             "emails"
         ],
         "selection_terms": [
-            "cloud computing",
-            "cloud",
             "aws",
             "azure",
             "billing",
@@ -50,8 +50,8 @@
         "channel": "email",
         "tone": "urgent",
         "sender_template": "{{organization}} Management Office",
-        "subject_template": "Quick review needed",
-        "body_template": "Hi {{name}}, the management office needs a short review of a document before it is shared. Open the current version here: {{simulation_url}}.",
+        "subject_template": "URGENT: approval required before today's deadline",
+        "body_template": "Hi {{name}}, the {{organization}} management office is waiting for your approval before today's deadline. Review the current document now: {{simulation_url}}.",
         "required_fields": [
             "organization"
         ],
@@ -75,8 +75,8 @@
         "channel": "email",
         "tone": "formal",
         "sender_template": "{{organization}} Workspace",
-        "subject_template": "A document is waiting for your review",
-        "body_template": "Hi {{name}}, a document connected to {{organization}} has been shared with you and is awaiting review. Open the latest version here: {{simulation_url}}.",
+        "subject_template": "ATTENTION: document access expires today",
+        "body_template": "Hi {{name}}, access to a document connected to {{organization}} expires today. Open the latest version before it becomes unavailable: {{simulation_url}}.",
         "required_fields": [
             "organization"
         ],
@@ -98,11 +98,12 @@
         "scenario": "repository_access",
         "channel": "email",
         "tone": "urgent",
-        "sender_template": "Repository Security",
-        "subject_template": "Repository access review required",
-        "body_template": "Hi {{name}}, a recent permissions change requires confirmation before repository access can continue. Review the access request here: {{simulation_url}}.",
+        "sender_template": "{{repository_service}} Repository Security",
+        "subject_template": "ACTION REQUIRED: {{repository_service}} access will be suspended today",
+        "body_template": "Hi {{name}}, your {{repository_service}} repository permissions are scheduled to be suspended today unless you confirm the recent access change: {{simulation_url}}.",
         "required_fields": [
-            "tech_stack"
+            "tech_stack",
+            "repository_service"
         ],
         "preferred_fields": [
             "tech_stack",
@@ -120,10 +121,10 @@
     {
         "scenario": "event_invitation",
         "channel": "email",
-        "tone": "formal",
+        "tone": "urgent",
         "sender_template": "{{organization}} Events",
-        "subject_template": "Invitation regarding {{web_mention}}",
-        "body_template": "Hi {{name}}, we are contacting you regarding {{web_mention}}. Please review the invitation details and confirm your availability: {{simulation_url}}.",
+        "subject_template": "URGENT RESPONSE REQUIRED: invitation regarding {{web_mention}}",
+        "body_template": "Hi {{name}}, an invitation related to {{web_mention}} from {{organization}} is awaiting your confirmation. Confirm your availability before registration closes: {{simulation_url}}.",
         "required_fields": [
             "organization",
             "mentions"
@@ -139,6 +140,12 @@
             "speaker",
             "interview",
             "intervista",
+            "colloquio",
+            "colloqui",
+            "publication",
+            "article",
+            "articolo",
+            "news",
             "workshop",
             "seminar"
         ]

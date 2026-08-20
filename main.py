@@ -4,14 +4,17 @@ import nlp_text_personalizer
 import phishing_campaign_generator
 
 
-# True usa gli output salvati dei moduli 1-4; False li rigenera.
+# True evita Apify e usa profili/campagne salvati.
 USE_MOCK = True
-# Usato solo con USE_MOCK=False: True non spedisce email.
-DRY_RUN = True
+# True rigenera i messaggi con Ollama/Gemma2.
+REBUILD_CONTENT = True
+# False prepara soltanto i delivery; True invia via SMTP.
+SEND_EMAILS = True
 
 
 def main() -> None:
     print("=== SocialEng pipeline ===\n")
+    rebuild = not USE_MOCK or REBUILD_CONTENT
 
     print("[1/5] TARGET INFORMATION COLLECTOR")
     if USE_MOCK:
@@ -24,25 +27,26 @@ def main() -> None:
     print("      Output: profili strutturati\n")
 
     print("[2/5] PHISHING CAMPAIGN GENERATOR")
-    if USE_MOCK:
+    if USE_MOCK and not REBUILD_CONTENT:
         print("      MOCK: uso le campagne salvate")
     else:
         campaigns = phishing_campaign_generator.generate()
         print(f"      Output: {len(campaigns)} campagne email")
 
     print("\n[3/5] NLP TEXT PERSONALIZER")
-    if USE_MOCK:
-        print("      MOCK: uso i messaggi personalizzati salvati")
-    else:
+    if rebuild:
         messages = nlp_text_personalizer.run()
         print(f"      Output: {len(messages)} messaggi personalizzati")
+    else:
+        print("      MOCK: uso i messaggi personalizzati salvati")
 
     print("\n[4/5] CAMPAIGN LAUNCHER")
-    if USE_MOCK:
+    if not rebuild and not SEND_EMAILS:
         print("      MOCK: uso i delivery salvati, nessun invio SMTP")
     else:
-        print(f"      Modalità: {'DRY-RUN' if DRY_RUN else 'SMTP LIVE'}")
-        deliveries = campaign_launcher.run(dry_run=DRY_RUN)
+        mode = "SMTP LIVE" if SEND_EMAILS else "DRY-RUN"
+        print(f"      Modalità: {mode}")
+        deliveries = campaign_launcher.run(dry_run=not SEND_EMAILS)
         print(f"      Output: {len(deliveries)} delivery")
 
     print("\n[5/5] INTERACTION LOGGER")

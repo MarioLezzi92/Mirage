@@ -2,7 +2,7 @@
   "target": "Mario Lezzi",
   "recipient": "mario.lezzi9212@gmail.com",
   "scenario": "password_reset",
-  "sender": "Account Security",
-  "subject": "Unusual sign-in activity detected",
-  "body": "Hi Mario Lezzi, we detected a sign-in attempt that needs to be reviewed. As a student pursuing a master's degree in Cyber Security, we understand the importance of account security. If this was not you, please secure your account using the link below: {{simulation_url}}."
+  "sender": "LinkedIn Security",
+  "subject": "URGENT SECURITY ALERT: verify your LinkedIn account now",
+  "body": "Hi Mario Lezzi, a sign-in attempt on your LinkedIn account remains unverified. Access may be temporarily restricted unless you review it today: {{simulation_url}}."
 }

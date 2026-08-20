@@ -1,13 +1,14 @@
 {
   "target": "Gerardo Leone",
-  "scenario": "fake_invoice",
+  "scenario": "event_invitation",
   "channel": "email",
-  "tone": "formal",
-  "sender_template": "{{organization}} Billing Services",
-  "subject_template": "Invoice awaiting review - {{organization}}",
-  "body_template": "Hi {{name}}, an invoice linked to {{organization}} is awaiting your review. Please verify the billing details before the due date: {{simulation_url}}.",
+  "tone": "urgent",
+  "sender_template": "{{organization}} Events",
+  "subject_template": "URGENT RESPONSE REQUIRED: invitation regarding {{web_mention}}",
+  "body_template": "Hi {{name}}, an invitation related to {{web_mention}} from {{organization}} is awaiting your confirmation. Confirm your availability before registration closes: {{simulation_url}}.",
   "variables": {
     "name": "Gerardo Leone",
-    "organization": "Università degli Studi di Salerno"
+    "organization": "Università degli Studi di Salerno",
+    "web_mention": "l'intelligenza artificiale che rivoluziona i colloqui di lavoro"
   }
 }
